@@ -51,8 +51,8 @@
             // button_num4
             // 
             this.button_num4.BackColor = System.Drawing.Color.White;
-            this.button_num4.Font = new System.Drawing.Font("돋움", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button_num4.Location = new System.Drawing.Point(6, 232);
+            this.button_num4.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.button_num4.Location = new System.Drawing.Point(6, 183);
             this.button_num4.Name = "button_num4";
             this.button_num4.Size = new System.Drawing.Size(100, 100);
             this.button_num4.TabIndex = 1;
@@ -76,42 +76,42 @@
             this.groupBox_numPad.Controls.Add(this.button_num1);
             this.groupBox_numPad.Controls.Add(this.button_num6);
             this.groupBox_numPad.Controls.Add(this.button_num4);
-            this.groupBox_numPad.Font = new System.Drawing.Font("돋움", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox_numPad.Location = new System.Drawing.Point(91, 200);
+            this.groupBox_numPad.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.groupBox_numPad.Location = new System.Drawing.Point(83, 446);
             this.groupBox_numPad.Name = "groupBox_numPad";
-            this.groupBox_numPad.Size = new System.Drawing.Size(400, 550);
+            this.groupBox_numPad.Size = new System.Drawing.Size(400, 504);
             this.groupBox_numPad.TabIndex = 2;
             this.groupBox_numPad.TabStop = false;
             // 
             // textBox_numRight
             // 
-            this.textBox_numRight.Font = new System.Drawing.Font("돋움", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox_numRight.Location = new System.Drawing.Point(274, 25);
+            this.textBox_numRight.Font = new System.Drawing.Font("맑은 고딕", 20F);
+            this.textBox_numRight.Location = new System.Drawing.Point(274, 18);
             this.textBox_numRight.Name = "textBox_numRight";
-            this.textBox_numRight.Size = new System.Drawing.Size(120, 63);
+            this.textBox_numRight.Size = new System.Drawing.Size(120, 43);
             this.textBox_numRight.TabIndex = 2;
             // 
             // textBox_numCenter
             // 
-            this.textBox_numCenter.Font = new System.Drawing.Font("돋움", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox_numCenter.Location = new System.Drawing.Point(141, 25);
+            this.textBox_numCenter.Font = new System.Drawing.Font("맑은 고딕", 20F);
+            this.textBox_numCenter.Location = new System.Drawing.Point(141, 18);
             this.textBox_numCenter.Name = "textBox_numCenter";
-            this.textBox_numCenter.Size = new System.Drawing.Size(120, 63);
+            this.textBox_numCenter.Size = new System.Drawing.Size(120, 43);
             this.textBox_numCenter.TabIndex = 2;
             // 
             // textBox_numLeft
             // 
-            this.textBox_numLeft.Font = new System.Drawing.Font("돋움", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox_numLeft.Location = new System.Drawing.Point(6, 25);
+            this.textBox_numLeft.Font = new System.Drawing.Font("맑은 고딕", 20F);
+            this.textBox_numLeft.Location = new System.Drawing.Point(6, 18);
             this.textBox_numLeft.Name = "textBox_numLeft";
-            this.textBox_numLeft.Size = new System.Drawing.Size(120, 63);
+            this.textBox_numLeft.Size = new System.Drawing.Size(120, 43);
             this.textBox_numLeft.TabIndex = 2;
             // 
             // button_num0
             // 
             this.button_num0.BackColor = System.Drawing.Color.White;
-            this.button_num0.Font = new System.Drawing.Font("돋움", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button_num0.Location = new System.Drawing.Point(149, 444);
+            this.button_num0.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.button_num0.Location = new System.Drawing.Point(149, 395);
             this.button_num0.Name = "button_num0";
             this.button_num0.Size = new System.Drawing.Size(100, 100);
             this.button_num0.TabIndex = 1;
@@ -121,19 +121,20 @@
             // button_check
             // 
             this.button_check.BackColor = System.Drawing.SystemColors.Control;
-            this.button_check.Font = new System.Drawing.Font("돋움", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button_check.Location = new System.Drawing.Point(294, 444);
+            this.button_check.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.button_check.Location = new System.Drawing.Point(294, 395);
             this.button_check.Name = "button_check";
             this.button_check.Size = new System.Drawing.Size(100, 100);
             this.button_check.TabIndex = 1;
             this.button_check.Text = "확인";
             this.button_check.UseVisualStyleBackColor = false;
+            this.button_check.Click += new System.EventHandler(this.button_check_Click);
             // 
             // button_num8
             // 
             this.button_num8.BackColor = System.Drawing.Color.White;
-            this.button_num8.Font = new System.Drawing.Font("돋움", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button_num8.Location = new System.Drawing.Point(149, 338);
+            this.button_num8.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.button_num8.Location = new System.Drawing.Point(149, 289);
             this.button_num8.Name = "button_num8";
             this.button_num8.Size = new System.Drawing.Size(100, 100);
             this.button_num8.TabIndex = 1;
@@ -143,8 +144,8 @@
             // button_num9
             // 
             this.button_num9.BackColor = System.Drawing.Color.White;
-            this.button_num9.Font = new System.Drawing.Font("돋움", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button_num9.Location = new System.Drawing.Point(294, 338);
+            this.button_num9.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.button_num9.Location = new System.Drawing.Point(294, 289);
             this.button_num9.Name = "button_num9";
             this.button_num9.Size = new System.Drawing.Size(100, 100);
             this.button_num9.TabIndex = 1;
@@ -154,8 +155,8 @@
             // button_num2
             // 
             this.button_num2.BackColor = System.Drawing.Color.White;
-            this.button_num2.Font = new System.Drawing.Font("돋움", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button_num2.Location = new System.Drawing.Point(149, 126);
+            this.button_num2.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.button_num2.Location = new System.Drawing.Point(149, 77);
             this.button_num2.Name = "button_num2";
             this.button_num2.Size = new System.Drawing.Size(100, 100);
             this.button_num2.TabIndex = 1;
@@ -165,8 +166,8 @@
             // button_reEnter
             // 
             this.button_reEnter.BackColor = System.Drawing.SystemColors.Control;
-            this.button_reEnter.Font = new System.Drawing.Font("돋움", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button_reEnter.Location = new System.Drawing.Point(6, 444);
+            this.button_reEnter.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.button_reEnter.Location = new System.Drawing.Point(6, 395);
             this.button_reEnter.Name = "button_reEnter";
             this.button_reEnter.Size = new System.Drawing.Size(100, 100);
             this.button_reEnter.TabIndex = 1;
@@ -176,8 +177,8 @@
             // button_num3
             // 
             this.button_num3.BackColor = System.Drawing.Color.White;
-            this.button_num3.Font = new System.Drawing.Font("돋움", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button_num3.Location = new System.Drawing.Point(294, 126);
+            this.button_num3.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.button_num3.Location = new System.Drawing.Point(294, 77);
             this.button_num3.Name = "button_num3";
             this.button_num3.Size = new System.Drawing.Size(100, 100);
             this.button_num3.TabIndex = 1;
@@ -187,8 +188,8 @@
             // button_num7
             // 
             this.button_num7.BackColor = System.Drawing.Color.White;
-            this.button_num7.Font = new System.Drawing.Font("돋움", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button_num7.Location = new System.Drawing.Point(6, 338);
+            this.button_num7.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.button_num7.Location = new System.Drawing.Point(6, 289);
             this.button_num7.Name = "button_num7";
             this.button_num7.Size = new System.Drawing.Size(100, 100);
             this.button_num7.TabIndex = 1;
@@ -198,8 +199,8 @@
             // button_num5
             // 
             this.button_num5.BackColor = System.Drawing.Color.White;
-            this.button_num5.Font = new System.Drawing.Font("돋움", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button_num5.Location = new System.Drawing.Point(149, 232);
+            this.button_num5.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.button_num5.Location = new System.Drawing.Point(149, 183);
             this.button_num5.Name = "button_num5";
             this.button_num5.Size = new System.Drawing.Size(100, 100);
             this.button_num5.TabIndex = 1;
@@ -209,8 +210,8 @@
             // button_num1
             // 
             this.button_num1.BackColor = System.Drawing.Color.White;
-            this.button_num1.Font = new System.Drawing.Font("돋움", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button_num1.Location = new System.Drawing.Point(6, 126);
+            this.button_num1.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.button_num1.Location = new System.Drawing.Point(6, 77);
             this.button_num1.Name = "button_num1";
             this.button_num1.Size = new System.Drawing.Size(100, 100);
             this.button_num1.TabIndex = 1;
@@ -220,8 +221,8 @@
             // button_num6
             // 
             this.button_num6.BackColor = System.Drawing.Color.White;
-            this.button_num6.Font = new System.Drawing.Font("돋움", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button_num6.Location = new System.Drawing.Point(294, 232);
+            this.button_num6.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.button_num6.Location = new System.Drawing.Point(294, 183);
             this.button_num6.Name = "button_num6";
             this.button_num6.Size = new System.Drawing.Size(100, 100);
             this.button_num6.TabIndex = 1;
@@ -231,19 +232,21 @@
             // button_goHome
             // 
             this.button_goHome.BackColor = System.Drawing.SystemColors.Control;
-            this.button_goHome.Font = new System.Drawing.Font("돋움", 12F);
-            this.button_goHome.Location = new System.Drawing.Point(440, 161);
+            this.button_goHome.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.button_goHome.Location = new System.Drawing.Point(440, 398);
             this.button_goHome.Name = "button_goHome";
             this.button_goHome.Size = new System.Drawing.Size(132, 42);
             this.button_goHome.TabIndex = 5;
             this.button_goHome.Text = "처음으로";
             this.button_goHome.UseVisualStyleBackColor = false;
+            this.button_goHome.Click += new System.EventHandler(this.button_goHome_Click);
             // 
             // FormMembersEnt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 762);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(584, 962);
             this.Controls.Add(this.button_goHome);
             this.Controls.Add(this.groupBox_numPad);
             this.Name = "FormMembersEnt";

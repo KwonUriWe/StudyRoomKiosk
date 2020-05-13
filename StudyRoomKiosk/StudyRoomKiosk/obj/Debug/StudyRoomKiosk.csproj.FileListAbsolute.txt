@@ -2,14 +2,10 @@ C:\z_c\C#\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\bin\Debug\StudyRoomKiosk.
 C:\z_c\C#\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\bin\Debug\StudyRoomKiosk.exe
 C:\z_c\C#\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\bin\Debug\StudyRoomKiosk.pdb
 C:\z_c\C#\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.csprojAssemblyReference.cache
-C:\z_c\C#\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.mainForm.resources
-C:\z_c\C#\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.membershipEntryForm.resources
 C:\z_c\C#\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.Properties.Resources.resources
-C:\z_c\C#\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.selectSeatForm.resources
 C:\z_c\C#\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.csproj.GenerateResource.cache
 C:\z_c\C#\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.exe
 C:\z_c\C#\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.pdb
-C:\z_c\C#\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.joinMembershipForm.resources
 Z:\git\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\bin\Debug\StudyRoomKiosk.exe.config
 Z:\git\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\bin\Debug\StudyRoomKiosk.exe
 Z:\git\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\bin\Debug\StudyRoomKiosk.pdb
@@ -48,3 +44,18 @@ C:\Users\KB\Desktop\스터디카페 키오스크\StudyRoomKiosk\StudyRoomKiosk\S
 C:\Users\KB\Desktop\스터디카페 키오스크\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.csproj.GenerateResource.cache
 C:\Users\KB\Desktop\스터디카페 키오스크\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.exe
 C:\Users\KB\Desktop\스터디카페 키오스크\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.pdb
+C:\z_c\C#\StudyRoomKiosk\StudyRoomKiosk\bin\Debug\StudyRoomKiosk.exe.config
+C:\z_c\C#\StudyRoomKiosk\StudyRoomKiosk\bin\Debug\StudyRoomKiosk.exe
+C:\z_c\C#\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.csprojAssemblyReference.cache
+C:\z_c\C#\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.FormMembersJoin.resources
+C:\z_c\C#\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.FormHome.resources
+C:\z_c\C#\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.FormMembersEnt.resources
+C:\z_c\C#\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.Properties.Resources.resources
+C:\z_c\C#\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.FormSelectSeatTime.resources
+C:\z_c\C#\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.csproj.GenerateResource.cache
+C:\z_c\C#\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.exe
+C:\z_c\C#\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.pdb
+C:\z_c\C#\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.FormMembersJoin.resources
+C:\z_c\C#\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.FormHome.resources
+C:\z_c\C#\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.FormMembersEnt.resources
+C:\z_c\C#\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.FormSelectSeatTime.resources

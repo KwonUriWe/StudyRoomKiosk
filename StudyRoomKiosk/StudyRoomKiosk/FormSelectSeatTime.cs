@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,15 @@ namespace StudyRoomKiosk
         public FormSelectSeatTime()
         {
             InitializeComponent();
+        }
+
+        private void button_goHome_Click(object sender, EventArgs e)
+        {
+            FormMembersEnt form = new FormMembersEnt();
+            this.Visible = false;
+            form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            form.ShowDialog();
+            Process.GetCurrentProcess().Kill();
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,8 +19,13 @@ namespace StudyRoomKiosk
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void button_membersJoin_Click(object sender, EventArgs e)
         {
+            FormMembersJoin form = new FormMembersJoin();
+            this.Visible = false;
+            form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            form.ShowDialog();
+            Process.GetCurrentProcess().Kill();
 
         }
 
@@ -29,6 +35,9 @@ namespace StudyRoomKiosk
             this.Visible = false;
             form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             form.ShowDialog();
+            Process.GetCurrentProcess().Kill();
         }
+
+        
     }
 }
