@@ -73,6 +73,7 @@
     <Compile Include="FormSelectSeatTime.Designer.cs">
       <DependentUpon>FormSelectSeatTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sql.cs" />
     <EmbeddedResource Include="FormMembersJoin.resx">
       <DependentUpon>FormMembersJoin.cs</DependentUpon>
     </EmbeddedResource>

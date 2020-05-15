@@ -1,7 +1,7 @@
 USE [StudyRoomKiosk]
 GO
 
-/****** Object:  Table [dbo].[TBL_MEMBER]    Script Date: 2020-05-14 오후 7:24:50 ******/
+/****** Object:  Table [dbo].[TBL_MEMBER]    Script Date: 2020-05-15 오후 2:04:31 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -12,7 +12,7 @@ SET ANSI_PADDING ON
 GO
 
 CREATE TABLE [dbo].[TBL_MEMBER](
-	[memberNo] [int] NOT NULL,
+	[memberNo] [varchar](7) NOT NULL,
 	[name] [varchar](20) NULL,
 	[dateBirth] [varchar](6) NULL,
 	[gender] [varchar](6) NULL,
