@@ -30,32 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button_seat11 = new System.Windows.Forms.Button();
-            this.button_seat16 = new System.Windows.Forms.Button();
-            this.button_seat7 = new System.Windows.Forms.Button();
-            this.button_seat12 = new System.Windows.Forms.Button();
-            this.button_seat21 = new System.Windows.Forms.Button();
-            this.button_seat22 = new System.Windows.Forms.Button();
-            this.button_seat19 = new System.Windows.Forms.Button();
-            this.button_seat20 = new System.Windows.Forms.Button();
-            this.button_seat8 = new System.Windows.Forms.Button();
-            this.button_seat13 = new System.Windows.Forms.Button();
-            this.button_seat9 = new System.Windows.Forms.Button();
-            this.button_seat14 = new System.Windows.Forms.Button();
-            this.button_seat10 = new System.Windows.Forms.Button();
-            this.button_seat15 = new System.Windows.Forms.Button();
-            this.button_seat6 = new System.Windows.Forms.Button();
-            this.button_seat5 = new System.Windows.Forms.Button();
-            this.button_seat17 = new System.Windows.Forms.Button();
-            this.button_seat23 = new System.Windows.Forms.Button();
-            this.button_seat24 = new System.Windows.Forms.Button();
-            this.button_seat18 = new System.Windows.Forms.Button();
-            this.button_seat4 = new System.Windows.Forms.Button();
-            this.button_seat3 = new System.Windows.Forms.Button();
-            this.button_seat2 = new System.Windows.Forms.Button();
-            this.button_seat1 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox_seat = new System.Windows.Forms.GroupBox();
+            this.groupBox_today = new System.Windows.Forms.GroupBox();
             this.radioButton_allDay = new System.Windows.Forms.RadioButton();
             this.radioButton_9Hours = new System.Windows.Forms.RadioButton();
             this.radioButton_7Hours = new System.Windows.Forms.RadioButton();
@@ -63,7 +39,7 @@
             this.radioButton_3Hours = new System.Windows.Forms.RadioButton();
             this.radioButton_2Hours = new System.Windows.Forms.RadioButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.radioButton_5Days = new System.Windows.Forms.GroupBox();
+            this.groupBox_longTime = new System.Windows.Forms.GroupBox();
             this.radioButton_8Weeks = new System.Windows.Forms.RadioButton();
             this.radioButton_2Weeks = new System.Windows.Forms.RadioButton();
             this.radioButton9 = new System.Windows.Forms.RadioButton();
@@ -75,9 +51,10 @@
             this.button25 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.button_goHome = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.radioButton_5Days.SuspendLayout();
+            this.button_goJoin = new System.Windows.Forms.Button();
+            this.groupBox_seat.SuspendLayout();
+            this.groupBox_today.SuspendLayout();
+            this.groupBox_longTime.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -91,354 +68,36 @@
             this.label1.Text = "출입문";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // groupBox1
+            // groupBox_seat
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.button_seat11);
-            this.groupBox1.Controls.Add(this.button_seat16);
-            this.groupBox1.Controls.Add(this.button_seat7);
-            this.groupBox1.Controls.Add(this.button_seat12);
-            this.groupBox1.Controls.Add(this.button_seat21);
-            this.groupBox1.Controls.Add(this.button_seat22);
-            this.groupBox1.Controls.Add(this.button_seat19);
-            this.groupBox1.Controls.Add(this.button_seat20);
-            this.groupBox1.Controls.Add(this.button_seat8);
-            this.groupBox1.Controls.Add(this.button_seat13);
-            this.groupBox1.Controls.Add(this.button_seat9);
-            this.groupBox1.Controls.Add(this.button_seat14);
-            this.groupBox1.Controls.Add(this.button_seat10);
-            this.groupBox1.Controls.Add(this.button_seat15);
-            this.groupBox1.Controls.Add(this.button_seat6);
-            this.groupBox1.Controls.Add(this.button_seat5);
-            this.groupBox1.Controls.Add(this.button_seat17);
-            this.groupBox1.Controls.Add(this.button_seat23);
-            this.groupBox1.Controls.Add(this.button_seat24);
-            this.groupBox1.Controls.Add(this.button_seat18);
-            this.groupBox1.Controls.Add(this.button_seat4);
-            this.groupBox1.Controls.Add(this.button_seat3);
-            this.groupBox1.Controls.Add(this.button_seat2);
-            this.groupBox1.Controls.Add(this.button_seat1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("돋움", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 298);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(560, 651);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
+            this.groupBox_seat.BackColor = System.Drawing.Color.White;
+            this.groupBox_seat.Controls.Add(this.label1);
+            this.groupBox_seat.Font = new System.Drawing.Font("돋움", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox_seat.Location = new System.Drawing.Point(12, 298);
+            this.groupBox_seat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox_seat.Name = "groupBox_seat";
+            this.groupBox_seat.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox_seat.Size = new System.Drawing.Size(560, 651);
+            this.groupBox_seat.TabIndex = 1;
+            this.groupBox_seat.TabStop = false;
             // 
-            // button_seat11
+            // groupBox_today
             // 
-            this.button_seat11.BackColor = System.Drawing.Color.White;
-            this.button_seat11.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.button_seat11.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button_seat11.Location = new System.Drawing.Point(6, 568);
-            this.button_seat11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_seat11.Name = "button_seat11";
-            this.button_seat11.Size = new System.Drawing.Size(80, 80);
-            this.button_seat11.TabIndex = 0;
-            this.button_seat11.Text = "11";
-            this.button_seat11.UseVisualStyleBackColor = false;
-            // 
-            // button_seat16
-            // 
-            this.button_seat16.BackColor = System.Drawing.Color.White;
-            this.button_seat16.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.button_seat16.Location = new System.Drawing.Point(474, 568);
-            this.button_seat16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_seat16.Name = "button_seat16";
-            this.button_seat16.Size = new System.Drawing.Size(80, 80);
-            this.button_seat16.TabIndex = 0;
-            this.button_seat16.Text = "16";
-            this.button_seat16.UseVisualStyleBackColor = false;
-            // 
-            // button_seat7
-            // 
-            this.button_seat7.BackColor = System.Drawing.Color.White;
-            this.button_seat7.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.button_seat7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button_seat7.Location = new System.Drawing.Point(6, 138);
-            this.button_seat7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_seat7.Name = "button_seat7";
-            this.button_seat7.Size = new System.Drawing.Size(80, 80);
-            this.button_seat7.TabIndex = 0;
-            this.button_seat7.Text = "7";
-            this.button_seat7.UseVisualStyleBackColor = false;
-            // 
-            // button_seat12
-            // 
-            this.button_seat12.BackColor = System.Drawing.Color.White;
-            this.button_seat12.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.button_seat12.Location = new System.Drawing.Point(474, 138);
-            this.button_seat12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_seat12.Name = "button_seat12";
-            this.button_seat12.Size = new System.Drawing.Size(80, 80);
-            this.button_seat12.TabIndex = 0;
-            this.button_seat12.Text = "12";
-            this.button_seat12.UseVisualStyleBackColor = false;
-            // 
-            // button_seat21
-            // 
-            this.button_seat21.BackColor = System.Drawing.Color.White;
-            this.button_seat21.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.button_seat21.Location = new System.Drawing.Point(111, 352);
-            this.button_seat21.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_seat21.Name = "button_seat21";
-            this.button_seat21.Size = new System.Drawing.Size(80, 80);
-            this.button_seat21.TabIndex = 0;
-            this.button_seat21.Text = "21";
-            this.button_seat21.UseVisualStyleBackColor = false;
-            // 
-            // button_seat22
-            // 
-            this.button_seat22.BackColor = System.Drawing.Color.White;
-            this.button_seat22.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.button_seat22.Location = new System.Drawing.Point(366, 352);
-            this.button_seat22.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_seat22.Name = "button_seat22";
-            this.button_seat22.Size = new System.Drawing.Size(80, 80);
-            this.button_seat22.TabIndex = 0;
-            this.button_seat22.Text = "22";
-            this.button_seat22.UseVisualStyleBackColor = false;
-            // 
-            // button_seat19
-            // 
-            this.button_seat19.BackColor = System.Drawing.Color.White;
-            this.button_seat19.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.button_seat19.Location = new System.Drawing.Point(111, 245);
-            this.button_seat19.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_seat19.Name = "button_seat19";
-            this.button_seat19.Size = new System.Drawing.Size(80, 80);
-            this.button_seat19.TabIndex = 0;
-            this.button_seat19.Text = "19";
-            this.button_seat19.UseVisualStyleBackColor = false;
-            // 
-            // button_seat20
-            // 
-            this.button_seat20.BackColor = System.Drawing.Color.White;
-            this.button_seat20.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.button_seat20.Location = new System.Drawing.Point(366, 256);
-            this.button_seat20.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_seat20.Name = "button_seat20";
-            this.button_seat20.Size = new System.Drawing.Size(80, 80);
-            this.button_seat20.TabIndex = 0;
-            this.button_seat20.Text = "20";
-            this.button_seat20.UseVisualStyleBackColor = false;
-            // 
-            // button_seat8
-            // 
-            this.button_seat8.BackColor = System.Drawing.Color.White;
-            this.button_seat8.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.button_seat8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button_seat8.Location = new System.Drawing.Point(6, 245);
-            this.button_seat8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_seat8.Name = "button_seat8";
-            this.button_seat8.Size = new System.Drawing.Size(80, 80);
-            this.button_seat8.TabIndex = 0;
-            this.button_seat8.Text = "8";
-            this.button_seat8.UseVisualStyleBackColor = false;
-            // 
-            // button_seat13
-            // 
-            this.button_seat13.BackColor = System.Drawing.Color.White;
-            this.button_seat13.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.button_seat13.Location = new System.Drawing.Point(474, 245);
-            this.button_seat13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_seat13.Name = "button_seat13";
-            this.button_seat13.Size = new System.Drawing.Size(80, 80);
-            this.button_seat13.TabIndex = 0;
-            this.button_seat13.Text = "13";
-            this.button_seat13.UseVisualStyleBackColor = false;
-            // 
-            // button_seat9
-            // 
-            this.button_seat9.BackColor = System.Drawing.Color.White;
-            this.button_seat9.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.button_seat9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button_seat9.Location = new System.Drawing.Point(6, 352);
-            this.button_seat9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_seat9.Name = "button_seat9";
-            this.button_seat9.Size = new System.Drawing.Size(80, 80);
-            this.button_seat9.TabIndex = 0;
-            this.button_seat9.Text = "9";
-            this.button_seat9.UseVisualStyleBackColor = false;
-            // 
-            // button_seat14
-            // 
-            this.button_seat14.BackColor = System.Drawing.Color.White;
-            this.button_seat14.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.button_seat14.Location = new System.Drawing.Point(474, 352);
-            this.button_seat14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_seat14.Name = "button_seat14";
-            this.button_seat14.Size = new System.Drawing.Size(80, 80);
-            this.button_seat14.TabIndex = 0;
-            this.button_seat14.Text = "14";
-            this.button_seat14.UseVisualStyleBackColor = false;
-            // 
-            // button_seat10
-            // 
-            this.button_seat10.BackColor = System.Drawing.Color.White;
-            this.button_seat10.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.button_seat10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button_seat10.Location = new System.Drawing.Point(6, 460);
-            this.button_seat10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_seat10.Name = "button_seat10";
-            this.button_seat10.Size = new System.Drawing.Size(80, 80);
-            this.button_seat10.TabIndex = 0;
-            this.button_seat10.Text = "10";
-            this.button_seat10.UseVisualStyleBackColor = false;
-            // 
-            // button_seat15
-            // 
-            this.button_seat15.BackColor = System.Drawing.Color.White;
-            this.button_seat15.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.button_seat15.Location = new System.Drawing.Point(474, 460);
-            this.button_seat15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_seat15.Name = "button_seat15";
-            this.button_seat15.Size = new System.Drawing.Size(80, 80);
-            this.button_seat15.TabIndex = 0;
-            this.button_seat15.Text = "15";
-            this.button_seat15.UseVisualStyleBackColor = false;
-            // 
-            // button_seat6
-            // 
-            this.button_seat6.BackColor = System.Drawing.Color.White;
-            this.button_seat6.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.button_seat6.Location = new System.Drawing.Point(474, 26);
-            this.button_seat6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_seat6.Name = "button_seat6";
-            this.button_seat6.Size = new System.Drawing.Size(80, 80);
-            this.button_seat6.TabIndex = 0;
-            this.button_seat6.Text = "6";
-            this.button_seat6.UseVisualStyleBackColor = false;
-            // 
-            // button_seat5
-            // 
-            this.button_seat5.BackColor = System.Drawing.Color.White;
-            this.button_seat5.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.button_seat5.Location = new System.Drawing.Point(388, 26);
-            this.button_seat5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_seat5.Name = "button_seat5";
-            this.button_seat5.Size = new System.Drawing.Size(80, 80);
-            this.button_seat5.TabIndex = 0;
-            this.button_seat5.Text = "5";
-            this.button_seat5.UseVisualStyleBackColor = false;
-            // 
-            // button_seat17
-            // 
-            this.button_seat17.BackColor = System.Drawing.Color.White;
-            this.button_seat17.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.button_seat17.Location = new System.Drawing.Point(194, 166);
-            this.button_seat17.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_seat17.Name = "button_seat17";
-            this.button_seat17.Size = new System.Drawing.Size(80, 80);
-            this.button_seat17.TabIndex = 0;
-            this.button_seat17.Text = "17";
-            this.button_seat17.UseVisualStyleBackColor = false;
-            // 
-            // button_seat23
-            // 
-            this.button_seat23.BackColor = System.Drawing.Color.White;
-            this.button_seat23.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.button_seat23.Location = new System.Drawing.Point(194, 437);
-            this.button_seat23.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_seat23.Name = "button_seat23";
-            this.button_seat23.Size = new System.Drawing.Size(80, 80);
-            this.button_seat23.TabIndex = 0;
-            this.button_seat23.Text = "23";
-            this.button_seat23.UseVisualStyleBackColor = false;
-            // 
-            // button_seat24
-            // 
-            this.button_seat24.BackColor = System.Drawing.Color.White;
-            this.button_seat24.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.button_seat24.Location = new System.Drawing.Point(282, 437);
-            this.button_seat24.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_seat24.Name = "button_seat24";
-            this.button_seat24.Size = new System.Drawing.Size(80, 80);
-            this.button_seat24.TabIndex = 0;
-            this.button_seat24.Text = "24";
-            this.button_seat24.UseVisualStyleBackColor = false;
-            // 
-            // button_seat18
-            // 
-            this.button_seat18.BackColor = System.Drawing.Color.White;
-            this.button_seat18.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.button_seat18.Location = new System.Drawing.Point(282, 166);
-            this.button_seat18.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_seat18.Name = "button_seat18";
-            this.button_seat18.Size = new System.Drawing.Size(80, 80);
-            this.button_seat18.TabIndex = 0;
-            this.button_seat18.Text = "18";
-            this.button_seat18.UseVisualStyleBackColor = false;
-            // 
-            // button_seat4
-            // 
-            this.button_seat4.BackColor = System.Drawing.Color.White;
-            this.button_seat4.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.button_seat4.Location = new System.Drawing.Point(302, 26);
-            this.button_seat4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_seat4.Name = "button_seat4";
-            this.button_seat4.Size = new System.Drawing.Size(80, 80);
-            this.button_seat4.TabIndex = 0;
-            this.button_seat4.Text = "4";
-            this.button_seat4.UseVisualStyleBackColor = false;
-            // 
-            // button_seat3
-            // 
-            this.button_seat3.BackColor = System.Drawing.Color.White;
-            this.button_seat3.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.button_seat3.Location = new System.Drawing.Point(178, 26);
-            this.button_seat3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_seat3.Name = "button_seat3";
-            this.button_seat3.Size = new System.Drawing.Size(80, 80);
-            this.button_seat3.TabIndex = 0;
-            this.button_seat3.Text = "3";
-            this.button_seat3.UseVisualStyleBackColor = false;
-            // 
-            // button_seat2
-            // 
-            this.button_seat2.BackColor = System.Drawing.Color.White;
-            this.button_seat2.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.button_seat2.Location = new System.Drawing.Point(92, 26);
-            this.button_seat2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_seat2.Name = "button_seat2";
-            this.button_seat2.Size = new System.Drawing.Size(80, 80);
-            this.button_seat2.TabIndex = 0;
-            this.button_seat2.Text = "2";
-            this.button_seat2.UseVisualStyleBackColor = false;
-            // 
-            // button_seat1
-            // 
-            this.button_seat1.BackColor = System.Drawing.Color.White;
-            this.button_seat1.Enabled = false;
-            this.button_seat1.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.button_seat1.Location = new System.Drawing.Point(6, 26);
-            this.button_seat1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_seat1.Name = "button_seat1";
-            this.button_seat1.Size = new System.Drawing.Size(80, 80);
-            this.button_seat1.TabIndex = 0;
-            this.button_seat1.Text = "1";
-            this.button_seat1.UseVisualStyleBackColor = false;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.radioButton_allDay);
-            this.groupBox2.Controls.Add(this.radioButton_9Hours);
-            this.groupBox2.Controls.Add(this.radioButton_7Hours);
-            this.groupBox2.Controls.Add(this.radioButton_5Hours);
-            this.groupBox2.Controls.Add(this.radioButton_3Hours);
-            this.groupBox2.Controls.Add(this.radioButton_2Hours);
-            this.groupBox2.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.groupBox2.Location = new System.Drawing.Point(12, 96);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(560, 80);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "당일이용권";
+            this.groupBox_today.Controls.Add(this.radioButton_allDay);
+            this.groupBox_today.Controls.Add(this.radioButton_9Hours);
+            this.groupBox_today.Controls.Add(this.radioButton_7Hours);
+            this.groupBox_today.Controls.Add(this.radioButton_5Hours);
+            this.groupBox_today.Controls.Add(this.radioButton_3Hours);
+            this.groupBox_today.Controls.Add(this.radioButton_2Hours);
+            this.groupBox_today.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.groupBox_today.Location = new System.Drawing.Point(12, 96);
+            this.groupBox_today.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox_today.Name = "groupBox_today";
+            this.groupBox_today.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox_today.Size = new System.Drawing.Size(560, 80);
+            this.groupBox_today.TabIndex = 2;
+            this.groupBox_today.TabStop = false;
+            this.groupBox_today.Text = "당일이용권";
             // 
             // radioButton_allDay
             // 
@@ -518,23 +177,24 @@
             this.radioButton_2Hours.Text = "2시간-3,000원";
             this.radioButton_2Hours.UseVisualStyleBackColor = true;
             // 
-            // radioButton_5Days
+            // groupBox_longTime
             // 
-            this.radioButton_5Days.Controls.Add(this.radioButton_8Weeks);
-            this.radioButton_5Days.Controls.Add(this.radioButton_2Weeks);
-            this.radioButton_5Days.Controls.Add(this.radioButton9);
-            this.radioButton_5Days.Controls.Add(this.radioButton_4Weeks);
-            this.radioButton_5Days.Controls.Add(this.radioButton_1Weeks);
-            this.radioButton_5Days.Controls.Add(this.radioButton_3Days);
-            this.radioButton_5Days.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.radioButton_5Days.Location = new System.Drawing.Point(12, 178);
-            this.radioButton_5Days.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.radioButton_5Days.Name = "radioButton_5Days";
-            this.radioButton_5Days.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.radioButton_5Days.Size = new System.Drawing.Size(560, 80);
-            this.radioButton_5Days.TabIndex = 2;
-            this.radioButton_5Days.TabStop = false;
-            this.radioButton_5Days.Text = "정기이용권";
+            this.groupBox_longTime.AccessibleRole = System.Windows.Forms.AccessibleRole.ProgressBar;
+            this.groupBox_longTime.Controls.Add(this.radioButton_8Weeks);
+            this.groupBox_longTime.Controls.Add(this.radioButton_2Weeks);
+            this.groupBox_longTime.Controls.Add(this.radioButton9);
+            this.groupBox_longTime.Controls.Add(this.radioButton_4Weeks);
+            this.groupBox_longTime.Controls.Add(this.radioButton_1Weeks);
+            this.groupBox_longTime.Controls.Add(this.radioButton_3Days);
+            this.groupBox_longTime.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.groupBox_longTime.Location = new System.Drawing.Point(12, 178);
+            this.groupBox_longTime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox_longTime.Name = "groupBox_longTime";
+            this.groupBox_longTime.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox_longTime.Size = new System.Drawing.Size(560, 80);
+            this.groupBox_longTime.TabIndex = 2;
+            this.groupBox_longTime.TabStop = false;
+            this.groupBox_longTime.Text = "장기 이용권";
             // 
             // radioButton_8Weeks
             // 
@@ -663,9 +323,20 @@
             this.button_goHome.Name = "button_goHome";
             this.button_goHome.Size = new System.Drawing.Size(132, 42);
             this.button_goHome.TabIndex = 9;
-            this.button_goHome.Text = "이전으로";
+            this.button_goHome.Text = "처음으로";
             this.button_goHome.UseVisualStyleBackColor = false;
             this.button_goHome.Click += new System.EventHandler(this.button_goHome_Click);
+            // 
+            // button_goJoin
+            // 
+            this.button_goJoin.BackColor = System.Drawing.SystemColors.Control;
+            this.button_goJoin.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.button_goJoin.Location = new System.Drawing.Point(302, 58);
+            this.button_goJoin.Name = "button_goJoin";
+            this.button_goJoin.Size = new System.Drawing.Size(132, 42);
+            this.button_goJoin.TabIndex = 10;
+            this.button_goJoin.Text = "회원가입";
+            this.button_goJoin.UseVisualStyleBackColor = false;
             // 
             // FormSelectSeatTime
             // 
@@ -673,24 +344,25 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(584, 962);
+            this.Controls.Add(this.button_goJoin);
             this.Controls.Add(this.button_goHome);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button25);
             this.Controls.Add(this.button26);
-            this.Controls.Add(this.radioButton_5Days);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox_longTime);
+            this.Controls.Add(this.groupBox_seat);
+            this.Controls.Add(this.groupBox_today);
             this.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormSelectSeatTime";
             this.Text = "자리선택";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.radioButton_5Days.ResumeLayout(false);
-            this.radioButton_5Days.PerformLayout();
+            this.groupBox_seat.ResumeLayout(false);
+            this.groupBox_seat.PerformLayout();
+            this.groupBox_today.ResumeLayout(false);
+            this.groupBox_today.PerformLayout();
+            this.groupBox_longTime.ResumeLayout(false);
+            this.groupBox_longTime.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -699,40 +371,16 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button_seat1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox_seat;
+        private System.Windows.Forms.GroupBox groupBox_today;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button button_seat11;
-        private System.Windows.Forms.Button button_seat16;
-        private System.Windows.Forms.Button button_seat7;
-        private System.Windows.Forms.Button button_seat12;
-        private System.Windows.Forms.Button button_seat21;
-        private System.Windows.Forms.Button button_seat22;
-        private System.Windows.Forms.Button button_seat19;
-        private System.Windows.Forms.Button button_seat20;
-        private System.Windows.Forms.Button button_seat8;
-        private System.Windows.Forms.Button button_seat13;
-        private System.Windows.Forms.Button button_seat9;
-        private System.Windows.Forms.Button button_seat14;
-        private System.Windows.Forms.Button button_seat10;
-        private System.Windows.Forms.Button button_seat15;
-        private System.Windows.Forms.Button button_seat6;
-        private System.Windows.Forms.Button button_seat5;
-        private System.Windows.Forms.Button button_seat17;
-        private System.Windows.Forms.Button button_seat23;
-        private System.Windows.Forms.Button button_seat24;
-        private System.Windows.Forms.Button button_seat18;
-        private System.Windows.Forms.Button button_seat4;
-        private System.Windows.Forms.Button button_seat3;
-        private System.Windows.Forms.Button button_seat2;
         private System.Windows.Forms.RadioButton radioButton_7Hours;
         private System.Windows.Forms.RadioButton radioButton_2Hours;
         private System.Windows.Forms.RadioButton radioButton_allDay;
         private System.Windows.Forms.RadioButton radioButton_9Hours;
         private System.Windows.Forms.RadioButton radioButton_5Hours;
         private System.Windows.Forms.RadioButton radioButton_3Hours;
-        private System.Windows.Forms.GroupBox radioButton_5Days;
+        private System.Windows.Forms.GroupBox groupBox_longTime;
         private System.Windows.Forms.RadioButton radioButton_8Weeks;
         private System.Windows.Forms.RadioButton radioButton_2Weeks;
         private System.Windows.Forms.RadioButton radioButton9;
@@ -744,5 +392,6 @@
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Button button26;
         private System.Windows.Forms.Button button_goHome;
+        private System.Windows.Forms.Button button_goJoin;
     }
 }

@@ -72,3 +72,15 @@ Z:\github\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.
 Z:\github\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.csproj.CoreCompileInputs.cache
 Z:\github\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.exe
 Z:\github\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.pdb
+C:\Users\dnflw\Desktop\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.csprojAssemblyReference.cache
+C:\Users\dnflw\Desktop\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.FormMembersJoin.resources
+C:\Users\dnflw\Desktop\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.FormHome.resources
+C:\Users\dnflw\Desktop\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.FormMembersEnt.resources
+C:\Users\dnflw\Desktop\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.Properties.Resources.resources
+C:\Users\dnflw\Desktop\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.FormSelectSeatTime.resources
+C:\Users\dnflw\Desktop\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.csproj.GenerateResource.cache
+C:\Users\dnflw\Desktop\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.exe
+C:\Users\dnflw\Desktop\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.pdb
+C:\Users\dnflw\Desktop\StudyRoomKiosk\StudyRoomKiosk\bin\Debug\StudyRoomKiosk.exe.config
+C:\Users\dnflw\Desktop\StudyRoomKiosk\StudyRoomKiosk\bin\Debug\StudyRoomKiosk.exe
+C:\Users\dnflw\Desktop\StudyRoomKiosk\StudyRoomKiosk\bin\Debug\StudyRoomKiosk.pdb
