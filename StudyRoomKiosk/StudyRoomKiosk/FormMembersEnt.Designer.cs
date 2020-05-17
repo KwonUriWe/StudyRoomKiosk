@@ -34,7 +34,7 @@
             this.textBox_numCenter = new System.Windows.Forms.TextBox();
             this.textBox_numLeft = new System.Windows.Forms.TextBox();
             this.button_num0 = new System.Windows.Forms.Button();
-            this.button_check = new System.Windows.Forms.Button();
+            this.button_backspace = new System.Windows.Forms.Button();
             this.button_num8 = new System.Windows.Forms.Button();
             this.button_num9 = new System.Windows.Forms.Button();
             this.button_num2 = new System.Windows.Forms.Button();
@@ -45,6 +45,7 @@
             this.button_num1 = new System.Windows.Forms.Button();
             this.button_num6 = new System.Windows.Forms.Button();
             this.button_goHome = new System.Windows.Forms.Button();
+            this.button_check = new System.Windows.Forms.Button();
             this.groupBox_numPad.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +59,7 @@
             this.button_num4.TabIndex = 1;
             this.button_num4.Text = "4";
             this.button_num4.UseVisualStyleBackColor = false;
+            this.button_num4.Click += new System.EventHandler(this.button_num4_Click);
             // 
             // groupBox_numPad
             // 
@@ -65,7 +67,7 @@
             this.groupBox_numPad.Controls.Add(this.textBox_numCenter);
             this.groupBox_numPad.Controls.Add(this.textBox_numLeft);
             this.groupBox_numPad.Controls.Add(this.button_num0);
-            this.groupBox_numPad.Controls.Add(this.button_check);
+            this.groupBox_numPad.Controls.Add(this.button_backspace);
             this.groupBox_numPad.Controls.Add(this.button_num8);
             this.groupBox_numPad.Controls.Add(this.button_num9);
             this.groupBox_numPad.Controls.Add(this.button_num2);
@@ -117,18 +119,19 @@
             this.button_num0.TabIndex = 1;
             this.button_num0.Text = "0";
             this.button_num0.UseVisualStyleBackColor = false;
+            this.button_num0.Click += new System.EventHandler(this.button_num0_Click);
             // 
-            // button_check
+            // button_backspace
             // 
-            this.button_check.BackColor = System.Drawing.SystemColors.Control;
-            this.button_check.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.button_check.Location = new System.Drawing.Point(294, 395);
-            this.button_check.Name = "button_check";
-            this.button_check.Size = new System.Drawing.Size(100, 100);
-            this.button_check.TabIndex = 1;
-            this.button_check.Text = "확인";
-            this.button_check.UseVisualStyleBackColor = false;
-            this.button_check.Click += new System.EventHandler(this.button_check_Click);
+            this.button_backspace.BackColor = System.Drawing.SystemColors.Control;
+            this.button_backspace.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.button_backspace.Location = new System.Drawing.Point(294, 395);
+            this.button_backspace.Name = "button_backspace";
+            this.button_backspace.Size = new System.Drawing.Size(100, 100);
+            this.button_backspace.TabIndex = 1;
+            this.button_backspace.Text = "backspace";
+            this.button_backspace.UseVisualStyleBackColor = false;
+            this.button_backspace.Click += new System.EventHandler(this.button_backspace_Click);
             // 
             // button_num8
             // 
@@ -140,6 +143,7 @@
             this.button_num8.TabIndex = 1;
             this.button_num8.Text = "8";
             this.button_num8.UseVisualStyleBackColor = false;
+            this.button_num8.Click += new System.EventHandler(this.button_num8_Click);
             // 
             // button_num9
             // 
@@ -151,6 +155,7 @@
             this.button_num9.TabIndex = 1;
             this.button_num9.Text = "9";
             this.button_num9.UseVisualStyleBackColor = false;
+            this.button_num9.Click += new System.EventHandler(this.button_num9_Click);
             // 
             // button_num2
             // 
@@ -162,6 +167,7 @@
             this.button_num2.TabIndex = 1;
             this.button_num2.Text = "2";
             this.button_num2.UseVisualStyleBackColor = false;
+            this.button_num2.Click += new System.EventHandler(this.button_num2_Click);
             // 
             // button_reEnter
             // 
@@ -173,6 +179,7 @@
             this.button_reEnter.TabIndex = 1;
             this.button_reEnter.Text = "재입력";
             this.button_reEnter.UseVisualStyleBackColor = false;
+            this.button_reEnter.Click += new System.EventHandler(this.button_reEnter_Click);
             // 
             // button_num3
             // 
@@ -184,6 +191,7 @@
             this.button_num3.TabIndex = 1;
             this.button_num3.Text = "3";
             this.button_num3.UseVisualStyleBackColor = false;
+            this.button_num3.Click += new System.EventHandler(this.button_num3_Click);
             // 
             // button_num7
             // 
@@ -195,6 +203,7 @@
             this.button_num7.TabIndex = 1;
             this.button_num7.Text = "7";
             this.button_num7.UseVisualStyleBackColor = false;
+            this.button_num7.Click += new System.EventHandler(this.button_num7_Click);
             // 
             // button_num5
             // 
@@ -206,6 +215,7 @@
             this.button_num5.TabIndex = 1;
             this.button_num5.Text = "5";
             this.button_num5.UseVisualStyleBackColor = false;
+            this.button_num5.Click += new System.EventHandler(this.button_num5_Click);
             // 
             // button_num1
             // 
@@ -217,6 +227,7 @@
             this.button_num1.TabIndex = 1;
             this.button_num1.Text = "1";
             this.button_num1.UseVisualStyleBackColor = false;
+            this.button_num1.Click += new System.EventHandler(this.button_num1_Click);
             // 
             // button_num6
             // 
@@ -228,6 +239,7 @@
             this.button_num6.TabIndex = 1;
             this.button_num6.Text = "6";
             this.button_num6.UseVisualStyleBackColor = false;
+            this.button_num6.Click += new System.EventHandler(this.button_num6_Click);
             // 
             // button_goHome
             // 
@@ -241,12 +253,25 @@
             this.button_goHome.UseVisualStyleBackColor = false;
             this.button_goHome.Click += new System.EventHandler(this.button_goHome_Click);
             // 
+            // button_check
+            // 
+            this.button_check.BackColor = System.Drawing.SystemColors.Control;
+            this.button_check.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.button_check.Location = new System.Drawing.Point(302, 398);
+            this.button_check.Name = "button_check";
+            this.button_check.Size = new System.Drawing.Size(132, 42);
+            this.button_check.TabIndex = 6;
+            this.button_check.Text = "완료";
+            this.button_check.UseVisualStyleBackColor = false;
+            this.button_check.Click += new System.EventHandler(this.button_check_Click);
+            // 
             // FormMembersEnt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(584, 962);
+            this.Controls.Add(this.button_check);
             this.Controls.Add(this.button_goHome);
             this.Controls.Add(this.groupBox_numPad);
             this.Name = "FormMembersEnt";
@@ -262,7 +287,7 @@
         private System.Windows.Forms.Button button_num4;
         private System.Windows.Forms.GroupBox groupBox_numPad;
         private System.Windows.Forms.Button button_num0;
-        private System.Windows.Forms.Button button_check;
+        private System.Windows.Forms.Button button_backspace;
         private System.Windows.Forms.Button button_num8;
         private System.Windows.Forms.Button button_num9;
         private System.Windows.Forms.Button button_num2;
@@ -276,5 +301,6 @@
         private System.Windows.Forms.TextBox textBox_numRight;
         private System.Windows.Forms.TextBox textBox_numCenter;
         private System.Windows.Forms.Button button_goHome;
+        private System.Windows.Forms.Button button_check;
     }
 }

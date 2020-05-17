@@ -60,8 +60,8 @@ namespace StudyRoomKiosk
         private void whoIs()
         {
             Sql sql = new Sql();
-            TblMember tblMember = new TblMember();
-            string str = "where phonenum = " + tblMember.phoneNum;
+            
+            string str = "where phonenum = " + TblMember.phoneNum;
             DataSet ds = sql.Query_Select_DataSet("memberno", str, "tbl_member");
             //비회원 입장일 경우
             //장기 이용권 그룹박스 텍스트 내용 변경, 박스 내 라디오 버튼 클릭 비활성화, 클릭 시 가입여부 팝업 이벤트 호출

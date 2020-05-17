@@ -78,7 +78,7 @@ namespace StudyRoomKiosk
          // ex) string product_Name = ds.Tables[0].Rows[0]["컬럼명"].ToString(); 가져오고싶은 값의 "컬럼명"을 입력
             ConnectDB();
             cmd.Connection = conn;
-            cmd.CommandText = "SELECT " + columnStr + " FROM" + tableStr + str;
+            cmd.CommandText = "SELECT " + columnStr + " FROM " + tableStr + str;
             da = new SqlDataAdapter(cmd);
             ds = new DataSet();
             da.Fill(ds, tableStr);
