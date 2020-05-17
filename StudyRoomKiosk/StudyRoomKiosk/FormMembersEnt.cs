@@ -17,8 +17,50 @@ namespace StudyRoomKiosk
         public FormMembersEnt()
         {
             InitializeComponent();
-        
+
+            //groupBox_seat 내 모든 버튼에 대한 클릭 이벤트 설정
+            //foreach (Button numButton in groupBox_numPad.Controls.OfType<Button>())
+            //{
+            //    numButton.Click += numPad_Click;
+            //}
         }
+
+        //groupBox_seat 내 번호버튼 클릭시 텍스트박스에 값 입력되는 이벤트.
+        //텍스트박스에 입력된 숫자 수에 따라 포커스 자동 넘김
+        //private void numPad_Click(object sender, EventArgs e)
+        //{
+        //    Button clickedButton = sender as Button;
+        //    string keyNum = "";
+
+        //    if (clickButton.Text == "1" || clickButton.Text == "2" || clickButton.Text == "3" || clickButton.Text == "4" ||
+        //        clickButton.Text == "5" || clickButton.Text == "6" || clickButton.Text == "7" || clickButton.Text == "8" ||
+        //        clickButton.Text == "9" || clickButton.Text == "0")
+        //    {
+        //        keyNum = clickButton.Text;
+        //    }
+
+        //    if (textBox_numLeft.Text.Length != 3)
+        //    {
+        //        textBox_numLeft.Focus();
+        //        SendKeys.Send(keyNum);
+        //    }
+        //    else
+        //    {
+        //        if (textBox_numCenter.Text.Length != 4)
+        //        {
+        //            textBox_numCenter.Focus();
+        //            SendKeys.Send(keyNum);
+        //        }
+        //        else
+        //        {
+        //            if (textBox_numRight.Text.Length != 4)
+        //            {
+        //                textBox_numRight.Focus();
+        //                SendKeys.Send(keyNum);
+        //            }
+        //        }
+        //    }
+        //}
 
         private void button_goHome_Click(object sender, EventArgs e)
         {
@@ -44,17 +86,19 @@ namespace StudyRoomKiosk
                     phonenum += textBox_numLeft.Text;
                     phonenum += textBox_numCenter.Text;
                     phonenum += textBox_numRight.Text;
-                    
+
+                    TblMember.phoneNum = phonenum;  //TblMember클래스의 phoneNum에 텍스트박스에 입력된 번호 set
+
                     MessageBox.Show(phonenum); // 입력한 전화번호 확인용 메세지 - 추후 삭제
-                    
+
                     string str = "phonenum = " + phonenum;
                     bool check = sql.Query_Select_Bool("tbl_member", str);
-                   
+
                     MessageBox.Show(check.ToString()); // 불값 참인지 확인용 메세지 - 추후 삭제
 
                     if (check)
                     {
-                        DataSet ds = sql.Query_Select_DataSet("*","","TBL_MEMBER");
+                        DataSet ds = sql.Query_Select_DataSet("*", "", "TBL_MEMBER");
                         TblMember.memberNo = ds.Tables[0].Rows[0]["memberNo"].ToString();
                         TblMember.name = ds.Tables[0].Rows[0]["name"].ToString();
                         TblMember.phoneNum = ds.Tables[0].Rows[0]["phonenum"].ToString();
@@ -63,13 +107,13 @@ namespace StudyRoomKiosk
                         TblMember.seatNo = ds.Tables[0].Rows[0]["seatNo"].ToString();
                         TblMember.expiredTime = ds.Tables[0].Rows[0]["expiredTime"].ToString();
                         TblMember.checkInDate = ds.Tables[0].Rows[0]["checkinDate"].ToString();
-                        TblMember.dateBirth= ds.Tables[0].Rows[0]["dateBirth"].ToString();
+                        TblMember.dateBirth = ds.Tables[0].Rows[0]["dateBirth"].ToString();
 
                         FormSelectSeatTime form = new FormSelectSeatTime(); // 에러! catch문으로 빠짐 
-                        this.Visible = false;
-                        form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-                        form.ShowDialog();
-                        Process.GetCurrentProcess().Kill();
+                    this.Visible = false;
+                    form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+                    form.ShowDialog();
+                    Process.GetCurrentProcess().Kill();
                     }
                     else
                     {
@@ -126,7 +170,7 @@ namespace StudyRoomKiosk
                 {
                     if (textBox_numRight.Text.Length != 4)
                     {
-                        
+
                         textBox_numRight.Focus();
                         SendKeys.Send("2");
                     }

@@ -13,47 +13,36 @@ namespace StudyRoomKiosk
 {
     public partial class FormSelectSeatTime : Form
     {
-        Button[] seat = new Button[42];
-        static int margin = 10;
-        static int btnWidth = 90;
-        static int btnHeight = 85;
-
         public FormSelectSeatTime()
         {
             InitializeComponent();
-            whoIs();
-            seatStatus();
+            //whoIs();
+            //seatStatus();
 
-            for (int i = 0; i < seat.Length; i++)
+            //groupBox_seat 내 모든 버튼에 대한 클릭 이벤트 설정
+            foreach (Button seatButton in groupBox_seat.Controls.OfType<Button>())
             {
-                seat[i] = new Button();
-                seat[i].Text = (1 + i).ToString();
-                seat[i].Size = new Size(btnWidth, btnHeight);
-                seat[i].BackColor = Color.FromArgb(255, 255, 255);
-                seat[i].Location = new Point(margin + i % 6 * seat[i].Width, 10 + margin + i / 6 * seat[i].Height);
-                seat[i].Click += seat_Click;
-                groupBox_seat.Controls.Add(seat[i]);
+                seatButton.Click += seat_Click;
             }
 
             button_goJoin.Visible = false;
         }
 
-    
-
-        //자리 선택 시 색상 변경 메소드
+        //자리 선택 시 색상 변경되는 이벤트
         private void seat_Click(object sender, EventArgs e)
         {
-            Button clicked = sender as Button;
+            Button clickedButton = sender as Button;
             //자리를 이미 선택해 둔 상태에서 다른 자리 선택시 기 선택 자리 색상 초기화
-            for (int i = 0; i < seat.Length; i++)
+            foreach (Button seatButton in groupBox_seat.Controls.OfType<Button>())
             {
-                if (seat[i].BackColor == Color.FromArgb(255, 220, 0))
+                if (seatButton.BackColor == Color.FromArgb(255, 220, 0))
                 {
-                    seat[i].BackColor = Color.FromArgb(255, 255, 255);
+                    seatButton.BackColor = Color.FromArgb(255, 255, 255);
                 }
             }
             //선택한 자리 색상 변경
-            clicked.BackColor = Color.FromArgb(255, 220, 0);
+            clickedButton.BackColor = Color.FromArgb(255, 220, 0);
+            TblMember.seatNo = clickedButton.Text;  //선택한 자리번호 저장
         }
 
         //비회원 입장시 장기이용권 결제 못하도록 하는 메소드
@@ -69,9 +58,12 @@ namespace StudyRoomKiosk
             {
                 button_goJoin.Visible = true;
                 groupBox_longTime.Text = "장기 이용권 _ 정회원만 선택 가능합니다.";
-                foreach (RadioButton controlInGroupBox in groupBox_longTime.Controls.OfType<RadioButton>())
+
+                //groupBox_longTime 내 모든 라디오 버튼에 대해 비활성화.
+                //그룹박스 자체를 비활성화 하면 혹시라도 클릭시 메시지박스가 팝업되도록 할 수 없으므로 아래와 같이 처리
+                foreach (RadioButton longTimeRadioButton in groupBox_longTime.Controls.OfType<RadioButton>())
                 {
-                    controlInGroupBox.Enabled = false;
+                    longTimeRadioButton.Enabled = false;
                 }
             } 
             else
@@ -97,31 +89,23 @@ namespace StudyRoomKiosk
         //자리의 상태에 따라 색상 변경, 선택 불가하도록 하는 메소드
         private void seatStatus()
         {
-            //아래는 배열로 생성한 자리가 아닐 경우 사용
-            //Sql sql = new Sql();
-            //string str = "where seatNo = button_seat1";
-            //DataSet ds = sql.Query_Select_DataSet("status", str, "TBL_SEAT");
-            //if (ds.Tables[0].Rows.ToString() == "1")
-            //{
-            //    button_seat1.BackColor = Color.FromArgb(255, 128, 0);
-            //}
-            //
-            //string str = "where seatNo = button_seat2";
-            //DataSet ds = sql.Query_Select_DataSet("status", str, "TBL_SEAT");
-            //if (ds.Tables[0].Rows.ToString() == "1")
-            //{
-            //    button_seat2.BackColor = Color.FromArgb(255, 128, 0);
-            //}
-
-            for (int i = 0; i < seat.Length; i++)
+            foreach (Button seatButton in groupBox_seat.Controls.OfType<Button>())
             {
-                Sql sql = new Sql();
-                string str = "where seatNo = " + i + 1;
-                DataSet ds = sql.Query_Select_DataSet("status", str, "TBL_SEAT");
-                if (ds.Tables[0].Rows.ToString() == "1")
+                try
                 {
-                    seat[i].BackColor = Color.FromArgb(255, 128, 0);
-                    seat[i].Enabled = false;
+                    Sql sql = new Sql();
+                    string seatNumber = seatButton.Text.Substring(11);  //모든 버튼의 숫자만 추출
+                    string str = "seatNo = " + TblMember.seatNo;
+                    DataSet ds = sql.Query_Select_DataSet("status", str, "TBL_SEAT");
+                    if (ds.Tables[0].Rows.ToString() == "1")
+                    {
+                        seatButton.BackColor = Color.FromArgb(255, 128, 0);
+                        seatButton.Enabled = false;
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("알 수 없는 문제가 발생했습니다.");
                 }
             }
         }
@@ -130,6 +114,15 @@ namespace StudyRoomKiosk
         private void button_goHome_Click(object sender, EventArgs e)
         {
             FormMembersEnt form = new FormMembersEnt();
+            this.Visible = false;
+            form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            form.ShowDialog();
+            Process.GetCurrentProcess().Kill();
+        }
+
+        private void button_goJoin_Click(object sender, EventArgs e)
+        {
+            FormMembersJoin form = new FormMembersJoin();
             this.Visible = false;
             form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             form.ShowDialog();
