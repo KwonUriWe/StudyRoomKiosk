@@ -1,7 +1,7 @@
 USE [StudyRoomKiosk]
 GO
 
-/****** Object:  Table [dbo].[TBL_MEMBER]    Script Date: 2020-05-15 오후 2:04:31 ******/
+/****** Object:  Table [dbo].[TBL_MEMBER]    Script Date: 2020-05-18 오후 1:48:21 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -17,10 +17,11 @@ CREATE TABLE [dbo].[TBL_MEMBER](
 	[dateBirth] [varchar](6) NULL,
 	[gender] [varchar](6) NULL,
 	[newsAgency] [varchar](10) NULL,
-	[phoneNum] [varchar](13) NULL,
+	[phoneNum] [varchar](20) NULL,
 	[expiredTime] [datetime] NULL,
-	[seatNo] [varchar](2) NULL,
+	[seatNo] [int] NULL,
 	[checkInDate] [datetime] NULL,
+	[whether] [bit] NULL,
  CONSTRAINT [PK_TBL_MEMBER] PRIMARY KEY CLUSTERED 
 (
 	[memberNo] ASC

@@ -1,0 +1,25 @@
+USE [StudyRoomKiosk]
+GO
+
+/****** Object:  Table [dbo].[TBL_IMG]    Script Date: 2020-05-18 오후 1:46:15 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[TBL_IMG](
+	[imgName] [varchar](45) NULL,
+	[index] [int] NULL,
+	[date] [timestamp] NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
