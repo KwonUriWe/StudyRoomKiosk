@@ -91,7 +91,7 @@ namespace StudyRoomKiosk
 
                     MessageBox.Show(phonenum); // 입력한 전화번호 확인용 메세지 - 추후 삭제
 
-                    string str = "phonenum = " + phonenum;
+                    string str = "phonenum = '" + phonenum+"'";
                     bool check = sql.Query_Select_Bool("tbl_member", str);
 
                     MessageBox.Show(check.ToString()); // 불값 참인지 확인용 메세지 - 추후 삭제
