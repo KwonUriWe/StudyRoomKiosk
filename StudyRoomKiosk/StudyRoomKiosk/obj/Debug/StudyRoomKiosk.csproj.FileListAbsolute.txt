@@ -97,3 +97,15 @@ C:\Users\USER\Documents\GitHub\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\
 C:\Users\USER\Documents\GitHub\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.csproj.CoreCompileInputs.cache
 C:\Users\USER\Documents\GitHub\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.exe
 C:\Users\USER\Documents\GitHub\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.pdb
+C:\Users\KB\Desktop\스터디카페 키오스크\StudyRoomKiosk_git\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\bin\Debug\StudyRoomKiosk.exe.config
+C:\Users\KB\Desktop\스터디카페 키오스크\StudyRoomKiosk_git\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\bin\Debug\StudyRoomKiosk.exe
+C:\Users\KB\Desktop\스터디카페 키오스크\StudyRoomKiosk_git\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\bin\Debug\StudyRoomKiosk.pdb
+C:\Users\KB\Desktop\스터디카페 키오스크\StudyRoomKiosk_git\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.csprojAssemblyReference.cache
+C:\Users\KB\Desktop\스터디카페 키오스크\StudyRoomKiosk_git\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.FormMembersJoin.resources
+C:\Users\KB\Desktop\스터디카페 키오스크\StudyRoomKiosk_git\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.FormHome.resources
+C:\Users\KB\Desktop\스터디카페 키오스크\StudyRoomKiosk_git\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.FormMembersEnt.resources
+C:\Users\KB\Desktop\스터디카페 키오스크\StudyRoomKiosk_git\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.Properties.Resources.resources
+C:\Users\KB\Desktop\스터디카페 키오스크\StudyRoomKiosk_git\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.FormSelectSeatTime.resources
+C:\Users\KB\Desktop\스터디카페 키오스크\StudyRoomKiosk_git\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.csproj.GenerateResource.cache
+C:\Users\KB\Desktop\스터디카페 키오스크\StudyRoomKiosk_git\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.exe
+C:\Users\KB\Desktop\스터디카페 키오스크\StudyRoomKiosk_git\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.pdb

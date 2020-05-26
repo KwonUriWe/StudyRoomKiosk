@@ -64,7 +64,7 @@
             this.textBox_name.Location = new System.Drawing.Point(6, 60);
             this.textBox_name.Name = "textBox_name";
             this.textBox_name.Size = new System.Drawing.Size(388, 43);
-            this.textBox_name.TabIndex = 2;
+            this.textBox_name.TabIndex = 1;
             // 
             // label_name
             // 
@@ -120,7 +120,7 @@
             this.textBox_phoneNum.Location = new System.Drawing.Point(6, 427);
             this.textBox_phoneNum.Name = "textBox_phoneNum";
             this.textBox_phoneNum.Size = new System.Drawing.Size(265, 43);
-            this.textBox_phoneNum.TabIndex = 2;
+            this.textBox_phoneNum.TabIndex = 5;
             // 
             // textBox_crt
             // 
@@ -128,7 +128,7 @@
             this.textBox_crt.Location = new System.Drawing.Point(6, 487);
             this.textBox_crt.Name = "textBox_crt";
             this.textBox_crt.Size = new System.Drawing.Size(388, 43);
-            this.textBox_crt.TabIndex = 2;
+            this.textBox_crt.TabIndex = 6;
             // 
             // label_phoneNum
             // 
@@ -148,7 +148,7 @@
             this.button_getCrt.Location = new System.Drawing.Point(277, 424);
             this.button_getCrt.Name = "button_getCrt";
             this.button_getCrt.Size = new System.Drawing.Size(117, 50);
-            this.button_getCrt.TabIndex = 4;
+            this.button_getCrt.TabIndex = 10;
             this.button_getCrt.Text = "인증번호 받기";
             this.button_getCrt.UseVisualStyleBackColor = false;
             // 
@@ -159,7 +159,7 @@
             this.button_join.Location = new System.Drawing.Point(9, 545);
             this.button_join.Name = "button_join";
             this.button_join.Size = new System.Drawing.Size(385, 50);
-            this.button_join.TabIndex = 5;
+            this.button_join.TabIndex = 10;
             this.button_join.Text = "가입하기";
             this.button_join.UseVisualStyleBackColor = false;
             this.button_join.Click += new System.EventHandler(this.button_join_Click);
@@ -176,7 +176,7 @@
             this.comboBox_newsAgency.Location = new System.Drawing.Point(9, 337);
             this.comboBox_newsAgency.Name = "comboBox_newsAgency";
             this.comboBox_newsAgency.Size = new System.Drawing.Size(385, 45);
-            this.comboBox_newsAgency.TabIndex = 6;
+            this.comboBox_newsAgency.TabIndex = 4;
             // 
             // comboBox_gender
             // 
@@ -188,7 +188,7 @@
             this.comboBox_gender.Location = new System.Drawing.Point(9, 241);
             this.comboBox_gender.Name = "comboBox_gender";
             this.comboBox_gender.Size = new System.Drawing.Size(385, 45);
-            this.comboBox_gender.TabIndex = 7;
+            this.comboBox_gender.TabIndex = 3;
             // 
             // groupBox_getInfo
             // 

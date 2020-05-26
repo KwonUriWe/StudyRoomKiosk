@@ -59,7 +59,6 @@
             this.button_num4.TabIndex = 1;
             this.button_num4.Text = "4";
             this.button_num4.UseVisualStyleBackColor = false;
-            this.button_num4.Click += new System.EventHandler(this.button_num4_Click);
             // 
             // groupBox_numPad
             // 
@@ -119,7 +118,6 @@
             this.button_num0.TabIndex = 1;
             this.button_num0.Text = "0";
             this.button_num0.UseVisualStyleBackColor = false;
-            this.button_num0.Click += new System.EventHandler(this.button_num0_Click);
             // 
             // button_backspace
             // 
@@ -143,7 +141,6 @@
             this.button_num8.TabIndex = 1;
             this.button_num8.Text = "8";
             this.button_num8.UseVisualStyleBackColor = false;
-            this.button_num8.Click += new System.EventHandler(this.button_num8_Click);
             // 
             // button_num9
             // 
@@ -155,7 +152,6 @@
             this.button_num9.TabIndex = 1;
             this.button_num9.Text = "9";
             this.button_num9.UseVisualStyleBackColor = false;
-            this.button_num9.Click += new System.EventHandler(this.button_num9_Click);
             // 
             // button_num2
             // 
@@ -167,7 +163,6 @@
             this.button_num2.TabIndex = 1;
             this.button_num2.Text = "2";
             this.button_num2.UseVisualStyleBackColor = false;
-            this.button_num2.Click += new System.EventHandler(this.button_num2_Click);
             // 
             // button_reEnter
             // 
@@ -191,7 +186,6 @@
             this.button_num3.TabIndex = 1;
             this.button_num3.Text = "3";
             this.button_num3.UseVisualStyleBackColor = false;
-            this.button_num3.Click += new System.EventHandler(this.button_num3_Click);
             // 
             // button_num7
             // 
@@ -203,7 +197,6 @@
             this.button_num7.TabIndex = 1;
             this.button_num7.Text = "7";
             this.button_num7.UseVisualStyleBackColor = false;
-            this.button_num7.Click += new System.EventHandler(this.button_num7_Click);
             // 
             // button_num5
             // 
@@ -215,7 +208,6 @@
             this.button_num5.TabIndex = 1;
             this.button_num5.Text = "5";
             this.button_num5.UseVisualStyleBackColor = false;
-            this.button_num5.Click += new System.EventHandler(this.button_num5_Click);
             // 
             // button_num1
             // 
@@ -227,7 +219,6 @@
             this.button_num1.TabIndex = 1;
             this.button_num1.Text = "1";
             this.button_num1.UseVisualStyleBackColor = false;
-            this.button_num1.Click += new System.EventHandler(this.button_num1_Click);
             // 
             // button_num6
             // 
@@ -239,7 +230,6 @@
             this.button_num6.TabIndex = 1;
             this.button_num6.Text = "6";
             this.button_num6.UseVisualStyleBackColor = false;
-            this.button_num6.Click += new System.EventHandler(this.button_num6_Click);
             // 
             // button_goHome
             // 
