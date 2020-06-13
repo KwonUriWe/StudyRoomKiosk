@@ -31,6 +31,7 @@ namespace StudyRoomKiosk
 
         private void button_membersEnt_Click(object sender, EventArgs e)
         {
+            Sql.pageType = 0;
             FormMembersEnt form = new FormMembersEnt();
             this.Visible = false;
             form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -38,6 +39,34 @@ namespace StudyRoomKiosk
             Process.GetCurrentProcess().Kill();
         }
 
-        
+        private void button_nonMembersEnt_Click(object sender, EventArgs e)
+        {
+            Sql.pageType = 1;
+            FormMembersEnt form = new FormMembersEnt();
+            this.Visible = false;
+            form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            form.ShowDialog();
+            Process.GetCurrentProcess().Kill();
+        }
+
+        private void button_changeSeat_Click(object sender, EventArgs e)
+        {
+            Sql.pageType = 2;
+            FormMembersEnt form = new FormMembersEnt();
+            this.Visible = false;
+            form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            form.ShowDialog();
+            Process.GetCurrentProcess().Kill();
+        }
+
+        private void button_exit_Click(object sender, EventArgs e)
+        {
+            Sql.pageType = 3;
+            FormMembersEnt form = new FormMembersEnt();
+            this.Visible = false;
+            form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            form.ShowDialog();
+            Process.GetCurrentProcess().Kill();
+        }
     }
 }

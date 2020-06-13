@@ -9,8 +9,14 @@ using System.Windows.Forms;
 
 namespace StudyRoomKiosk
 {
+    
+
     class Sql
-    {//가용성 좋게 만들었습니당.
+    {
+        //홈에서 회원입장 비회원입장 자리이동 퇴살하기 버튼 클릭시 값을 다르게 줘서 페이지 구분
+        public static int pageType;
+
+        //가용성 좋게 만들었습니당.
         public SqlConnection conn = new SqlConnection();
         public SqlCommand cmd = new SqlCommand();
         public SqlDataAdapter da;

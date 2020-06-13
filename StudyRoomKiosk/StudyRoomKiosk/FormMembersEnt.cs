@@ -18,6 +18,18 @@ namespace StudyRoomKiosk
         {
             InitializeComponent();
 
+            if (Sql.pageType == 1)
+            {
+                this.Text = "비회원 입장";
+            }else if(Sql.pageType == 2)
+            {
+                this.Text = "자리이동";
+            }else if(Sql.pageType == 3)
+            {
+                this.Text = "퇴실하기";
+            }
+
+
             //groupBox_seat 내 모든 버튼에 대한 클릭 이벤트 설정
             foreach (Button numButton in groupBox_numPad.Controls.OfType<Button>())
             {
@@ -66,49 +78,61 @@ namespace StudyRoomKiosk
 
         private void button_check_Click(object sender, EventArgs e)
         {
-            //번호를 다 입력하지 입력하지 않으면 창이 안넘어가게 if문 사용
-            if (textBox_numRight.TextLength < 4)
+            if (Sql.pageType == 2)
             {
-                MessageBox.Show("번호를 정확히 입력해주세요");
+                //자리이동 페이지
+            }else if (Sql.pageType == 3)
+            {
+                //퇴장하기
             }
             else
             {
-                try
+                //회원입장 비회원 입장
+                //번호를 다 입력하지 입력하지 않으면 창이 안넘어가게 if문 사용
+                if (textBox_numRight.TextLength < 4)
                 {
-                    string phonenum = "";
-                    phonenum += textBox_numLeft.Text;
-                    phonenum += textBox_numCenter.Text;
-                    phonenum += textBox_numRight.Text;
-
-                    TblMember.phoneNum = phonenum;  //TblMember클래스의 phoneNum에 텍스트박스에 입력된 번호 set
-
-                    MessageBox.Show(phonenum); // 입력한 전화번호 확인용 메세지 - 추후 삭제
-
-                    string str = "phonenum = " + phonenum;
-                    bool check = sql.Query_Select_Bool("tbl_member", str);
-
-                    MessageBox.Show(check.ToString()); // 불값 참인지 확인용 메세지 - 추후 삭제
-
-                    if (check)
-                    {
-                        DataSet ds = sql.Query_Select_DataSet("memberNo, phoneNum", "", "TBL_MEMBER");
-                        TblMember.memberNo = ds.Tables[0].Rows[0]["memberNo"].ToString();                     
-                        TblMember.phoneNum = ds.Tables[0].Rows[0]["phonenum"].ToString();
-                       
-
-                        FormSelectSeatTime form = new FormSelectSeatTime(); // 에러! catch문으로 빠짐 
-                        this.Visible = false;
-                        form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-                        form.ShowDialog();
-                        Process.GetCurrentProcess().Kill();
-                    }
-                    else
-                    {
-                        MessageBox.Show("일치하는 번호가 없습니다.");
-                    }
+                    MessageBox.Show("번호를 정확히 입력해주세요");
                 }
-                catch (Exception) {
-                    MessageBox.Show("알 수 없는 문제가 발생했습니다.");
+                else
+                {
+                    try
+                    {
+                        string phonenum = "";
+                        phonenum += textBox_numLeft.Text;
+                        phonenum += textBox_numCenter.Text;
+                        phonenum += textBox_numRight.Text;
+
+                        TblMember.phoneNum = phonenum;  //TblMember클래스의 phoneNum에 텍스트박스에 입력된 번호 set
+
+                        MessageBox.Show(phonenum); // 입력한 전화번호 확인용 메세지 - 추후 삭제
+
+                        string str = "phonenum = " + phonenum;
+                        bool check = sql.Query_Select_Bool("tbl_member", str);
+
+                        MessageBox.Show(check.ToString()); // 불값 참인지 확인용 메세지 - 추후 삭제
+
+                        if (check)
+                        {
+                            DataSet ds = sql.Query_Select_DataSet("memberNo, phoneNum", "", "TBL_MEMBER");
+                            TblMember.memberNo = ds.Tables[0].Rows[0]["memberNo"].ToString();
+                            TblMember.phoneNum = ds.Tables[0].Rows[0]["phonenum"].ToString();
+
+
+                            FormSelectSeatTime form = new FormSelectSeatTime(); // 에러! catch문으로 빠짐 
+                            this.Visible = false;
+                            form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+                            form.ShowDialog();
+                            Process.GetCurrentProcess().Kill();
+                        }
+                        else
+                        {
+                            MessageBox.Show("일치하는 번호가 없습니다.");
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("알 수 없는 문제가 발생했습니다.");
+                    }
                 }
             }
         }

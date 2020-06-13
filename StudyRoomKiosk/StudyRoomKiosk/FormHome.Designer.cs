@@ -57,6 +57,7 @@
             this.button_changeSeat.TabIndex = 0;
             this.button_changeSeat.Text = "자리이동";
             this.button_changeSeat.UseVisualStyleBackColor = false;
+            this.button_changeSeat.Click += new System.EventHandler(this.button_changeSeat_Click);
             // 
             // button_exit
             // 
@@ -68,6 +69,7 @@
             this.button_exit.TabIndex = 0;
             this.button_exit.Text = "퇴실";
             this.button_exit.UseVisualStyleBackColor = false;
+            this.button_exit.Click += new System.EventHandler(this.button_exit_Click);
             // 
             // button3_admin
             // 
@@ -114,6 +116,7 @@
             this.button_nonMembersEnt.TabIndex = 0;
             this.button_nonMembersEnt.Text = "비회원입장";
             this.button_nonMembersEnt.UseVisualStyleBackColor = false;
+            this.button_nonMembersEnt.Click += new System.EventHandler(this.button_nonMembersEnt_Click);
             // 
             // FormHome
             // 
