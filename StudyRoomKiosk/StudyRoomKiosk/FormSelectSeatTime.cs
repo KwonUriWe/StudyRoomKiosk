@@ -13,6 +13,7 @@ namespace StudyRoomKiosk
 {
     public partial class FormSelectSeatTime : Form
     {
+        Sql sql = new Sql();
         string selectSeat = null;
         string selectTime = null;
         string spanTime = null;
@@ -22,6 +23,22 @@ namespace StudyRoomKiosk
             InitializeComponent();
             //whoIs();
             //seatStatus();
+            DataSet ds = sql.Query_Select_DataSet("seatNo", " Where seatNo is not null", "TBL_MEMBER");
+            int count = int.Parse(ds.Tables[0].Rows.Count.ToString());
+            String[] seatNo = new String[count];
+            DateTime[] Time = new DateTime[count];
+            for (int i = 0; i < count; i++)
+            {
+                // selec해서 카운트만큼 돌린다.
+                ds = sql.Query_Select_DataSet("seatNo,expiredTime", " Where seatNo is not null", "TBL_MEMBER ");
+                seatNo[i] = ds.Tables[0].Rows[i]["seatNo"].ToString();
+                // expiredTime[i]  = (ds.Tables[0].Rows[i]["expiredTime"].ToString()).Substring(13, 5);
+                DateTime time = Convert.ToDateTime(ds.Tables[0].Rows[i]["expiredTime"].ToString());
+                DateTime eTime = DateTime.Now;
+                // 시간 차이 구함
+                TimeSpan gapTime2 = time - eTime;
+                Time[i] = eTime;
+            }
 
             //groupBox_seat 내 모든 버튼에 대한 클릭 이벤트 설정
             foreach (Button seatButton in groupBox_seat.Controls.OfType<Button>())
