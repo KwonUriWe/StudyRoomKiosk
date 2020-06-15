@@ -163,7 +163,25 @@ namespace StudyRoomKiosk
         //결제하기 버튼 클릭시 결제 진행
         private void button_payment_Click(object sender, EventArgs e)
         {
-            //we_ selectTime에 클릭한 라디오버튼의 텍스트값 저장
+            foreach (RadioButton radioButton in groupBox_longTime.Controls.OfType<RadioButton>())
+            {
+                if (radioButton.Checked)
+                {
+                    selectTime = radioButton.Text;
+
+                }
+            }
+
+            foreach (RadioButton radioButton in groupBox_today.Controls.OfType<RadioButton>())
+            {
+                if (radioButton.Checked)
+                {
+                    selectTime = radioButton.Text;
+
+                }
+            }
+
+            //we_selectTime에 클릭한 라디오버튼의 텍스트값 저장___해결
             if (TblMember.seatNo == null || selectTime == null)
             {
                 MessageBox.Show("시간과 좌석 모두 선택해야 합니다.");
