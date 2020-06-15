@@ -14,7 +14,6 @@ namespace StudyRoomKiosk
     public partial class FormSelectSeatTime : Form
     {
         Sql sql = new Sql();
-        string selectSeat = null;
         string selectTime = null;
         string spanTime = null;
 
@@ -23,6 +22,9 @@ namespace StudyRoomKiosk
             InitializeComponent();
             //whoIs();
             //seatStatus();
+
+            //we_ TBL_TIME에 저장된 데이터를 불러와서 라디오버튼의 텍스트로 대입하도록 수정 필요.. 추후 데이터 수정시 용이하도록.
+
             DataSet ds = sql.Query_Select_DataSet("seatNo", " Where seatNo is not null", "TBL_MEMBER");
             int count = int.Parse(ds.Tables[0].Rows.Count.ToString());
             String[] seatNo = new String[count];
@@ -45,10 +47,8 @@ namespace StudyRoomKiosk
             {
                 seatButton.Click += seat_Click;
             }
-
             button_goJoin.Visible = false;
         }
-
 
         //자리 선택 시 수행될 메소드
         private void seat_Click(object sender, EventArgs e)
@@ -64,7 +64,7 @@ namespace StudyRoomKiosk
             }
             //선택한 자리 색상 변경
             clickedButton.BackColor = Color.FromArgb(255, 220, 0);
-            selectSeat = clickedButton.Text;  //선택한 자리번호 저장
+            TblMember.seatNo = clickedButton.Text;  //선택한 자리번호 저장
         }
 
         //자리의 상태를 확인 후 출력하는 메소드
@@ -93,7 +93,6 @@ namespace StudyRoomKiosk
                 }
             }
         }
-
 
         //시간은 당일과 장기 이용권 중 하나만 선택 되어야 하므로 클릭시 다른 그룹박스의 클릭 해제
         private void groupBox_longTime_Enter(object sender, EventArgs e)
@@ -130,10 +129,6 @@ namespace StudyRoomKiosk
                     longTimeRButton.Enabled = false;
                 }
             }
-            else
-            {
-                //정회원 입장일 경우 수행할 내용
-            }
             groupBox_longTime.Click += unableClick;
         }
 
@@ -150,22 +145,37 @@ namespace StudyRoomKiosk
             }
         }
 
+        private string EndTime()
+        {
+            string time = DateTime.Now.ToString("yyyy-MM-dd-HH-mm");
+            //we_ time += (클릭한 라디오버튼의 시간값)
+            return time;
+        }
+
+        private void updateMember()
+        {
+            Sql sql = new Sql();
+            
+            //we_결제 후 DB에 결제내용 저장기능 구현 필요
+            sql.Query_Modify("UPDATE TBL_MEMBER SET seatNo="+ TblMember.seatNo + "expiredTime=");
+        }
+
         //결제하기 버튼 클릭시 결제 진행
         private void button_payment_Click(object sender, EventArgs e)
         {
-            //we_selectTime에 클릭한 라디오버튼의 텍스트값 저장
-            if (selectSeat == null || selectTime == null)
+            //we_ selectTime에 클릭한 라디오버튼의 텍스트값 저장
+            if (TblMember.seatNo == null || selectTime == null)
             {
                 MessageBox.Show("시간과 좌석 모두 선택해야 합니다.");
             }
             else
             {
-                string str = "좌석 : " + selectSeat + "\n시간 : " + selectTime + "\n결제하시겠습니까?";
+                string str = "좌석 : " + TblMember.seatNo + "\n시간 : " + selectTime + "\n결제하시겠습니까?";
                 if (MessageBox.Show(str, "결제정보", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     //we_결제기능 추후 구현 필요
-                    //we_결제 후 DB에 결제내용 저장기능 구현 필요
                     MessageBox.Show("결제되었습니다.\n입장하십시오.");
+                    updateMember();
                 }
                 else
                 {
@@ -174,7 +184,6 @@ namespace StudyRoomKiosk
             }
         }
 
-        
         //처음으로 버튼 클릭시 해당 폼으로 이동
         private void button_goHome_Click(object sender, EventArgs e)
         {
