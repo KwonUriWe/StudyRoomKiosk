@@ -18,3 +18,8 @@
 ![슬라이드8](https://user-images.githubusercontent.com/59382990/84610686-6e10bd00-aef6-11ea-8b87-b6c22673597a.JPG)
    
 ![슬라이드9](https://user-images.githubusercontent.com/59382990/84610687-6f41ea00-aef6-11ea-8326-3cb7f97777ae.JPG)
+
+#### 요구사항 수정사항
+- 관리자 화면 추가
+   - 관리자 화면에서 첫 화면의 독서실 로고 이미지, 독서실 이용방법에 대한 문구를 수정할 수 있다.
+   - 장기 미접속자(6개월)의 가입정보를 삭제할 수 있다.
