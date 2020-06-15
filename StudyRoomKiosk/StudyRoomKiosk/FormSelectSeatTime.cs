@@ -13,6 +13,10 @@ namespace StudyRoomKiosk
 {
     public partial class FormSelectSeatTime : Form
     {
+        string selectSeat = null;
+        string selectTime = null;
+        string spanTime = null;
+
         public FormSelectSeatTime()
         {
             InitializeComponent();
@@ -28,7 +32,8 @@ namespace StudyRoomKiosk
             button_goJoin.Visible = false;
         }
 
-        //자리 선택 시 색상 변경되는 이벤트
+
+        //자리 선택 시 수행될 메소드
         private void seat_Click(object sender, EventArgs e)
         {
             Button clickedButton = sender as Button;
@@ -42,30 +47,72 @@ namespace StudyRoomKiosk
             }
             //선택한 자리 색상 변경
             clickedButton.BackColor = Color.FromArgb(255, 220, 0);
-            TblMember.seatNo = clickedButton.Text;  //선택한 자리번호 저장
+            selectSeat = clickedButton.Text;  //선택한 자리번호 저장
+        }
+
+        //자리의 상태를 확인 후 출력하는 메소드
+        private void seatStatus()
+        {
+            foreach (Button seatButton in groupBox_seat.Controls.OfType<Button>())
+            {
+                try
+                {
+                    Sql sql = new Sql();
+                    string seatNumber = seatButton.Text.Substring(11);  //모든 버튼의 숫자만 추출
+                    string str = "where seatNo = " + TblMember.seatNo;
+                    string endTime = "";
+                    
+                    DataSet ds = sql.Query_Select_DataSet("status", str, "TBL_SEAT");
+                    if (ds.Tables[0].Rows.ToString() == "1")
+                    {
+                        seatButton.BackColor = Color.FromArgb(255, 128, 0);
+                        seatButton.Enabled = false;
+                        //we_흘러가는 잔여시간 출력하는 코드 추가하기
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("알 수 없는 문제가 발생했습니다.");
+                }
+            }
+        }
+
+
+        //시간은 당일과 장기 이용권 중 하나만 선택 되어야 하므로 클릭시 다른 그룹박스의 클릭 해제
+        private void groupBox_longTime_Enter(object sender, EventArgs e)
+        {
+            foreach (RadioButton todayRButton in groupBox_today.Controls.OfType<RadioButton>())
+            {
+                todayRButton.Checked = false;
+            }
+        }
+
+        //시간은 당일과 장기 이용권 중 하나만 선택 되어야 하므로 클릭시 다른 그룹박스의 클릭 해제
+        private void groupBox_today_Enter(object sender, EventArgs e)
+        {
+            foreach (RadioButton longTimeRButton in groupBox_longTime.Controls.OfType<RadioButton>())
+            {
+                longTimeRButton.Checked = false;
+            }
         }
 
         //비회원 입장시 장기이용권 결제 못하도록 하는 메소드
         private void whoIs()
         {
-            Sql sql = new Sql();
-            
-            string str = "where phonenum = " + TblMember.phoneNum;
-            DataSet ds = sql.Query_Select_DataSet("memberno", str, "tbl_member");
             //비회원 입장일 경우
             //장기 이용권 그룹박스 텍스트 내용 변경, 박스 내 라디오 버튼 클릭 비활성화, 클릭 시 가입여부 팝업 이벤트 호출
-            if (ds.Tables[0].Rows.ToString().Substring(0, 3) == "000")
+            if (Sql.pageType == 1)
             {
                 button_goJoin.Visible = true;
                 groupBox_longTime.Text = "장기 이용권 _ 정회원만 선택 가능합니다.";
 
                 //groupBox_longTime 내 모든 라디오 버튼에 대해 비활성화.
                 //그룹박스 자체를 비활성화 하면 혹시라도 클릭시 메시지박스가 팝업되도록 할 수 없으므로 아래와 같이 처리
-                foreach (RadioButton longTimeRadioButton in groupBox_longTime.Controls.OfType<RadioButton>())
+                foreach (RadioButton longTimeRButton in groupBox_longTime.Controls.OfType<RadioButton>())
                 {
-                    longTimeRadioButton.Enabled = false;
+                    longTimeRButton.Enabled = false;
                 }
-            } 
+            }
             else
             {
                 //정회원 입장일 경우 수행할 내용
@@ -76,7 +123,7 @@ namespace StudyRoomKiosk
         //비회원 입장 후 장기이용권 클릭 시 가입여부 팝업 이벤트
         private void unableClick(object sender, EventArgs e)
         {
-            if (MessageBox.Show("장기 이용권은 정회원만 선택 가능합니다. 회원가입 하시겠습니까?", "YesOrNo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("장기 이용권은 정회원만 선택 가능합니다. \n회원가입 하시겠습니까?", "장기 이용권 안내", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 FormMembersJoin form = new FormMembersJoin();
                 this.Visible = false;
@@ -86,31 +133,32 @@ namespace StudyRoomKiosk
             }
         }
 
-        //자리의 상태에 따라 색상 변경, 선택 불가하도록 하는 메소드
-        private void seatStatus()
+        //결제하기 버튼 클릭시 결제 진행
+        private void button_payment_Click(object sender, EventArgs e)
         {
-            foreach (Button seatButton in groupBox_seat.Controls.OfType<Button>())
+            //we_selectTime에 클릭한 라디오버튼의 텍스트값 저장
+            if (selectSeat == null || selectTime == null)
             {
-                try
+                MessageBox.Show("시간과 좌석 모두 선택해야 합니다.");
+            }
+            else
+            {
+                string str = "좌석 : " + selectSeat + "\n시간 : " + selectTime + "\n결제하시겠습니까?";
+                if (MessageBox.Show(str, "결제정보", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    Sql sql = new Sql();
-                    string seatNumber = seatButton.Text.Substring(11);  //모든 버튼의 숫자만 추출
-                    string str = "seatNo = " + TblMember.seatNo;
-                    DataSet ds = sql.Query_Select_DataSet("status", str, "TBL_SEAT");
-                    if (ds.Tables[0].Rows.ToString() == "1")
-                    {
-                        seatButton.BackColor = Color.FromArgb(255, 128, 0);
-                        seatButton.Enabled = false;
-                    }
+                    //we_결제기능 추후 구현 필요
+                    //we_결제 후 DB에 결제내용 저장기능 구현 필요
+                    MessageBox.Show("결제되었습니다.\n입장하십시오.");
                 }
-                catch (Exception e)
+                else
                 {
-                    MessageBox.Show("알 수 없는 문제가 발생했습니다.");
+                    MessageBox.Show("결제가 취소되었습니다.");
                 }
             }
         }
 
-        //처음으로 버튼 클릭 이벤트
+        
+        //처음으로 버튼 클릭시 해당 폼으로 이동
         private void button_goHome_Click(object sender, EventArgs e)
         {
             FormMembersEnt form = new FormMembersEnt();
@@ -120,6 +168,7 @@ namespace StudyRoomKiosk
             Process.GetCurrentProcess().Kill();
         }
 
+        //회원가입 버튼 클릭시 해당 폼으로 이동
         private void button_goJoin_Click(object sender, EventArgs e)
         {
             FormMembersJoin form = new FormMembersJoin();
