@@ -81,7 +81,7 @@ namespace StudyRoomKiosk
             if (Sql.pageType == 2)
             {
                 //자리이동 페이지
-            }else if (Sql.pageType == 3)
+            }else if (Sql.pageType == 3)  
             {
                 //퇴장하기
             }
@@ -98,39 +98,74 @@ namespace StudyRoomKiosk
                     try
                     {
                         string phonenum = "";
-                        phonenum += textBox_numLeft.Text;
-                        phonenum += textBox_numCenter.Text;
+                        phonenum += textBox_numLeft.Text+"-";
+                        phonenum += textBox_numCenter.Text+"-";
                         phonenum += textBox_numRight.Text;
-
                         TblMember.phoneNum = phonenum;  //TblMember클래스의 phoneNum에 텍스트박스에 입력된 번호 set
+
 
                         MessageBox.Show(phonenum); // 입력한 전화번호 확인용 메세지 - 추후 삭제
 
-                        string str = "phonenum = " + phonenum;
+                        string str = "phonenum = '" + phonenum+"'";
                         bool check = sql.Query_Select_Bool("tbl_member", str);
 
                         MessageBox.Show(check.ToString()); // 불값 참인지 확인용 메세지 - 추후 삭제
-
-                        if (check)
+                        //회원입장
+                        if (Sql.pageType == 0)
                         {
-                            DataSet ds = sql.Query_Select_DataSet("memberNo, phoneNum", "", "TBL_MEMBER");
-                            TblMember.memberNo = ds.Tables[0].Rows[0]["memberNo"].ToString();
-                            TblMember.phoneNum = ds.Tables[0].Rows[0]["phonenum"].ToString();
+                            if (check)
+                            {
+                                DataSet ds = sql.Query_Select_DataSet("memberNo, phoneNum", "", "TBL_MEMBER");
+                                TblMember.memberNo = ds.Tables[0].Rows[0]["memberNo"].ToString();
+                                TblMember.phoneNum = ds.Tables[0].Rows[0]["phonenum"].ToString();
 
 
-                            FormSelectSeatTime form = new FormSelectSeatTime(); // 에러! catch문으로 빠짐 
-                            this.Visible = false;
-                            form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-                            form.ShowDialog();
-                            Process.GetCurrentProcess().Kill();
+                                FormSelectSeatTime form = new FormSelectSeatTime(); 
+                                this.Visible = false;
+                                form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+                                form.ShowDialog();
+                                Process.GetCurrentProcess().Kill();
+                            }
+                            else
+                            {
+                                DialogResult result = MessageBox.Show("일치하는 번호가 없습니다. 회원가입으로 이동하시겠습니까?", "이동알림창",MessageBoxButtons.YesNo);
+                                if(result== DialogResult.Yes)
+                                {
+                                    FormMembersJoin form = new FormMembersJoin();
+                                    this.Visible = false;
+                                    form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+                                    form.ShowDialog();
+                                    Process.GetCurrentProcess().Kill();
+
+                                }
+                            }
                         }
+                        //비회원입장
                         else
                         {
-                            MessageBox.Show("일치하는 번호가 없습니다.");
+                            if (check)
+                            {
+                                DialogResult result = MessageBox.Show("이미 가입된 번호 입니다. 회원 입장으로 이동하시겠습니까?", "이동알림창", MessageBoxButtons.YesNo);
+                                if (result == DialogResult.Yes)
+                                {
+                                    Sql.pageType = 0;
+                                    this.Text = "회원 입장";
+                                }
+                            }
+                            else
+                            {
+                                FormSelectSeatTime form = new FormSelectSeatTime();
+                                this.Visible = false;
+                                form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+                                form.ShowDialog();
+                                Process.GetCurrentProcess().Kill();
+
+                            }
                         }
                     }
                     catch (Exception)
                     {
+                        
                         MessageBox.Show("알 수 없는 문제가 발생했습니다.");
                     }
                 }
