@@ -56,7 +56,7 @@
             this.button_num4.Location = new System.Drawing.Point(6, 183);
             this.button_num4.Name = "button_num4";
             this.button_num4.Size = new System.Drawing.Size(100, 100);
-            this.button_num4.TabIndex = 1;
+            this.button_num4.TabIndex = 8;
             this.button_num4.Text = "4";
             this.button_num4.UseVisualStyleBackColor = false;
             // 
@@ -88,25 +88,31 @@
             // 
             this.textBox_numRight.Font = new System.Drawing.Font("맑은 고딕", 20F);
             this.textBox_numRight.Location = new System.Drawing.Point(274, 18);
+            this.textBox_numRight.MaxLength = 4;
             this.textBox_numRight.Name = "textBox_numRight";
             this.textBox_numRight.Size = new System.Drawing.Size(120, 43);
             this.textBox_numRight.TabIndex = 2;
+            this.textBox_numRight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Textbox_KeyPress);
             // 
             // textBox_numCenter
             // 
             this.textBox_numCenter.Font = new System.Drawing.Font("맑은 고딕", 20F);
             this.textBox_numCenter.Location = new System.Drawing.Point(141, 18);
+            this.textBox_numCenter.MaxLength = 4;
             this.textBox_numCenter.Name = "textBox_numCenter";
             this.textBox_numCenter.Size = new System.Drawing.Size(120, 43);
-            this.textBox_numCenter.TabIndex = 2;
+            this.textBox_numCenter.TabIndex = 1;
+            this.textBox_numCenter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Textbox_KeyPress);
             // 
             // textBox_numLeft
             // 
             this.textBox_numLeft.Font = new System.Drawing.Font("맑은 고딕", 20F);
             this.textBox_numLeft.Location = new System.Drawing.Point(6, 18);
+            this.textBox_numLeft.MaxLength = 3;
             this.textBox_numLeft.Name = "textBox_numLeft";
             this.textBox_numLeft.Size = new System.Drawing.Size(120, 43);
-            this.textBox_numLeft.TabIndex = 2;
+            this.textBox_numLeft.TabIndex = 0;
+            this.textBox_numLeft.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Textbox_KeyPress);
             // 
             // button_num0
             // 
@@ -115,7 +121,7 @@
             this.button_num0.Location = new System.Drawing.Point(149, 395);
             this.button_num0.Name = "button_num0";
             this.button_num0.Size = new System.Drawing.Size(100, 100);
-            this.button_num0.TabIndex = 1;
+            this.button_num0.TabIndex = 14;
             this.button_num0.Text = "0";
             this.button_num0.UseVisualStyleBackColor = false;
             // 
@@ -126,7 +132,7 @@
             this.button_backspace.Location = new System.Drawing.Point(294, 395);
             this.button_backspace.Name = "button_backspace";
             this.button_backspace.Size = new System.Drawing.Size(100, 100);
-            this.button_backspace.TabIndex = 1;
+            this.button_backspace.TabIndex = 16;
             this.button_backspace.Text = "backspace";
             this.button_backspace.UseVisualStyleBackColor = false;
             this.button_backspace.Click += new System.EventHandler(this.button_backspace_Click);
@@ -138,7 +144,7 @@
             this.button_num8.Location = new System.Drawing.Point(149, 289);
             this.button_num8.Name = "button_num8";
             this.button_num8.Size = new System.Drawing.Size(100, 100);
-            this.button_num8.TabIndex = 1;
+            this.button_num8.TabIndex = 12;
             this.button_num8.Text = "8";
             this.button_num8.UseVisualStyleBackColor = false;
             // 
@@ -149,7 +155,7 @@
             this.button_num9.Location = new System.Drawing.Point(294, 289);
             this.button_num9.Name = "button_num9";
             this.button_num9.Size = new System.Drawing.Size(100, 100);
-            this.button_num9.TabIndex = 1;
+            this.button_num9.TabIndex = 13;
             this.button_num9.Text = "9";
             this.button_num9.UseVisualStyleBackColor = false;
             // 
@@ -160,7 +166,7 @@
             this.button_num2.Location = new System.Drawing.Point(149, 77);
             this.button_num2.Name = "button_num2";
             this.button_num2.Size = new System.Drawing.Size(100, 100);
-            this.button_num2.TabIndex = 1;
+            this.button_num2.TabIndex = 6;
             this.button_num2.Text = "2";
             this.button_num2.UseVisualStyleBackColor = false;
             // 
@@ -171,7 +177,7 @@
             this.button_reEnter.Location = new System.Drawing.Point(6, 395);
             this.button_reEnter.Name = "button_reEnter";
             this.button_reEnter.Size = new System.Drawing.Size(100, 100);
-            this.button_reEnter.TabIndex = 1;
+            this.button_reEnter.TabIndex = 15;
             this.button_reEnter.Text = "재입력";
             this.button_reEnter.UseVisualStyleBackColor = false;
             this.button_reEnter.Click += new System.EventHandler(this.button_reEnter_Click);
@@ -183,7 +189,7 @@
             this.button_num3.Location = new System.Drawing.Point(294, 77);
             this.button_num3.Name = "button_num3";
             this.button_num3.Size = new System.Drawing.Size(100, 100);
-            this.button_num3.TabIndex = 1;
+            this.button_num3.TabIndex = 7;
             this.button_num3.Text = "3";
             this.button_num3.UseVisualStyleBackColor = false;
             // 
@@ -194,7 +200,7 @@
             this.button_num7.Location = new System.Drawing.Point(6, 289);
             this.button_num7.Name = "button_num7";
             this.button_num7.Size = new System.Drawing.Size(100, 100);
-            this.button_num7.TabIndex = 1;
+            this.button_num7.TabIndex = 11;
             this.button_num7.Text = "7";
             this.button_num7.UseVisualStyleBackColor = false;
             // 
@@ -205,7 +211,7 @@
             this.button_num5.Location = new System.Drawing.Point(149, 183);
             this.button_num5.Name = "button_num5";
             this.button_num5.Size = new System.Drawing.Size(100, 100);
-            this.button_num5.TabIndex = 1;
+            this.button_num5.TabIndex = 9;
             this.button_num5.Text = "5";
             this.button_num5.UseVisualStyleBackColor = false;
             // 
@@ -216,7 +222,7 @@
             this.button_num1.Location = new System.Drawing.Point(6, 77);
             this.button_num1.Name = "button_num1";
             this.button_num1.Size = new System.Drawing.Size(100, 100);
-            this.button_num1.TabIndex = 1;
+            this.button_num1.TabIndex = 5;
             this.button_num1.Text = "1";
             this.button_num1.UseVisualStyleBackColor = false;
             // 
@@ -227,7 +233,7 @@
             this.button_num6.Location = new System.Drawing.Point(294, 183);
             this.button_num6.Name = "button_num6";
             this.button_num6.Size = new System.Drawing.Size(100, 100);
-            this.button_num6.TabIndex = 1;
+            this.button_num6.TabIndex = 10;
             this.button_num6.Text = "6";
             this.button_num6.UseVisualStyleBackColor = false;
             // 
@@ -238,7 +244,7 @@
             this.button_goHome.Location = new System.Drawing.Point(440, 398);
             this.button_goHome.Name = "button_goHome";
             this.button_goHome.Size = new System.Drawing.Size(132, 42);
-            this.button_goHome.TabIndex = 5;
+            this.button_goHome.TabIndex = 4;
             this.button_goHome.Text = "처음으로";
             this.button_goHome.UseVisualStyleBackColor = false;
             this.button_goHome.Click += new System.EventHandler(this.button_goHome_Click);
@@ -250,7 +256,7 @@
             this.button_check.Location = new System.Drawing.Point(302, 398);
             this.button_check.Name = "button_check";
             this.button_check.Size = new System.Drawing.Size(132, 42);
-            this.button_check.TabIndex = 6;
+            this.button_check.TabIndex = 3;
             this.button_check.Text = "완료";
             this.button_check.UseVisualStyleBackColor = false;
             this.button_check.Click += new System.EventHandler(this.button_check_Click);

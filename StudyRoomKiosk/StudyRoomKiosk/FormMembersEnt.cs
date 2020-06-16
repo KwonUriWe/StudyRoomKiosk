@@ -21,14 +21,15 @@ namespace StudyRoomKiosk
             if (Sql.pageType == 1)
             {
                 this.Text = "비회원 입장";
-            }else if(Sql.pageType == 2)
+            }
+            else if (Sql.pageType == 2)
             {
                 this.Text = "자리이동";
-            }else if(Sql.pageType == 3)
+            }
+            else if (Sql.pageType == 3)
             {
                 this.Text = "퇴실하기";
             }
-
 
             //groupBox_seat 내 모든 버튼에 대한 클릭 이벤트 설정
             foreach (Button numButton in groupBox_numPad.Controls.OfType<Button>())
@@ -36,94 +37,111 @@ namespace StudyRoomKiosk
                 numButton.Click += numPad_Click;
             }
         }
+        
+        
 
-        //groupBox_seat 내 번호버튼 클릭시 텍스트박스에 값 입력되는 이벤트.
-        //텍스트박스에 입력된 숫자 수에 따라 포커스 자동 넘김
-        private void numPad_Click(object sender, EventArgs e)
-        {
-            Button clickedButton = sender as Button;
-            string keyNum = "";
-
-            if (clickedButton.Text == "1" || clickedButton.Text == "2" || clickedButton.Text == "3" || clickedButton.Text == "4" ||
-                clickedButton.Text == "5" || clickedButton.Text == "6" || clickedButton.Text == "7" || clickedButton.Text == "8" ||
-                clickedButton.Text == "9" || clickedButton.Text == "0")
-            {
-                keyNum = clickedButton.Text;
-                if (textBox_numLeft.Text.Length != 3)
-                {
-                    textBox_numLeft.Focus();
-                    SendKeys.Send(keyNum);
-                }
-                else if (textBox_numCenter.Text.Length != 4)
-                {
-                    textBox_numCenter.Focus();
-                    SendKeys.Send(keyNum);
-                }
-                else if (textBox_numRight.Text.Length != 4)
-                {
-                    textBox_numRight.Focus();
-                    SendKeys.Send(keyNum);
-                }              
-            }               
-        }
-
-        private void button_goHome_Click(object sender, EventArgs e)
-        {
-            FormHome form = new FormHome();
-            this.Visible = false;
-            form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            form.ShowDialog();
-            Process.GetCurrentProcess().Kill();
-        }
-
+        //완료 버튼
         private void button_check_Click(object sender, EventArgs e)
         {
-            if (Sql.pageType == 2)
+            //번호를 다 입력하지 입력하지 않으면 창이 안넘어가게 if문 사용
+            if (textBox_numRight.TextLength < 4)
             {
-                //자리이동 페이지
-            }else if (Sql.pageType == 3)  
-            {
-                //퇴장하기
+                MessageBox.Show("번호를 정확히 입력해주세요");
             }
             else
             {
-                //회원입장 비회원 입장
-                //번호를 다 입력하지 입력하지 않으면 창이 안넘어가게 if문 사용
-                if (textBox_numRight.TextLength < 4)
+                //번호 입력
+                string phonenum = "";
+                phonenum += textBox_numLeft.Text + "-";
+                phonenum += textBox_numCenter.Text + "-";
+                phonenum += textBox_numRight.Text;
+                TblMember.phoneNum = phonenum;  //TblMember클래스의 phoneNum에 텍스트박스에 입력된 번호 set
+                MessageBox.Show(phonenum); // 입력한 전화번호 확인용 메세지 - 추후 삭제
+
+                //DB에 번호 있는지 없는지 확인
+                string checkPhonenumStr = "phonenum = '" + phonenum + "'";
+                bool phoneNumcheck = sql.Query_Select_Bool("tbl_member", checkPhonenumStr);
+
+                //DB에 이용 중인 자리 있는지 없는지 확인
+                string checkSeatStr = "seatNo is not null and phoneNum = '" + phonenum + "'";
+                bool checkSeat = sql.Query_Select_Bool("tbl_member", checkSeatStr);
+                //자리이동 페이지
+                if (Sql.pageType == 2)
                 {
-                    MessageBox.Show("번호를 정확히 입력해주세요");
-                }
-                else
-                {
-                    try
+                    //DB에 저장된 번호가 있고 이용 중인 자리가 있을 경우                
+                    if (phoneNumcheck&&checkSeat)
                     {
-                        string phonenum = "";
-                        phonenum += textBox_numLeft.Text+"-";
-                        phonenum += textBox_numCenter.Text+"-";
-                        phonenum += textBox_numRight.Text;
-                        TblMember.phoneNum = phonenum;  //TblMember클래스의 phoneNum에 텍스트박스에 입력된 번호 set
+                        FormSelectSeatTime form = new FormSelectSeatTime();
+                        this.Visible = false;
+                        form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+                        form.ShowDialog();
+                        Process.GetCurrentProcess().Kill();
+                    }
+                    else
+                    {
+                        MessageBox.Show("이용 중인 사용자가 아닙니다.");
+                    }
+                }
+                //퇴장하기
+                else if (Sql.pageType == 3)
+                {
+                    //비회원 퇴장
+                    bool checkNoMember = sql.Query_Select_Bool("tbl_member", checkPhonenumStr + " and  memberbool = 0");
+                    if (checkNoMember)
+                    {
+                        sql.Query_Modify("delete  from tbl_member where phoneNum = '" + phonenum + "' and memberBool = 0");
+                        DialogResult result = MessageBox.Show("퇴실 처리 되었습니다.");
+                        if ( result==DialogResult.OK) { //5초 지나면 넘어가게 해야함
+                            FormHome formHome = new FormHome();
+                            this.Visible = false;
+                            formHome.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+                            formHome.ShowDialog();
+                            Process.GetCurrentProcess().Kill();
+                        }
+                    }
 
-                        MessageBox.Show(phonenum); // 입력한 전화번호 확인용 메세지 - 추후 삭제
+                    //회원 퇴장
 
-                        string str = "phonenum = '" + phonenum+"'";
-                        bool check = sql.Query_Select_Bool("tbl_member", str);
-
-                        MessageBox.Show(check.ToString()); // 불값 참인지 확인용 메세지 - 추후 삭제
+                 
+                }
+                //회원입장 비회원 입장
+                else
+                {                 
+                    try
+                    {                                      
+                        MessageBox.Show(phoneNumcheck.ToString()); // 불값 참인지 확인용 메세지 - 추후 삭제
                         //회원입장
                         if (Sql.pageType == 0)
                         {
-                            if (check)
+                            if (phoneNumcheck)
                             {
-                                FormSelectSeatTime form = new FormSelectSeatTime(); 
-                                this.Visible = false;
-                                form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-                                form.ShowDialog();
-                                Process.GetCurrentProcess().Kill();
+                                //이용 중 자리가 있는 경우 바로 입장                              
+                                if (checkSeat)
+                                {
+                                    DataSet ds = sql.Query_Select_DataSet("*", " where " + checkSeatStr, "TBL_MEMBER");
+                                    TblMember.seatNo = ds.Tables[0].Rows[0]["seatNo"].ToString();
+                                    MessageBox.Show(TblMember.seatNo + "로입장하십시오.");
+                                    FormHome formHome = new FormHome();
+                                    this.Visible = false;
+                                    formHome.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+                                    formHome.ShowDialog();
+                                    Process.GetCurrentProcess().Kill();
+                                }
+                                //이용 중 자리가 없는 경우 결제 자리 선택으로 이동
+                                else
+                                {
+                                    FormSelectSeatTime form = new FormSelectSeatTime();
+                                    this.Visible = false;
+                                    form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+                                    form.ShowDialog();
+                                    Process.GetCurrentProcess().Kill();
+                                }
                             }
+                            //회원입장 실패 시
                             else
                             {
-                                DialogResult result = MessageBox.Show("일치하는 번호가 없습니다. 회원가입으로 이동하시겠습니까?", "이동알림창",MessageBoxButtons.YesNo);
-                                if(result== DialogResult.Yes)
+                                DialogResult result = MessageBox.Show("일치하는 번호가 없습니다. 회원가입으로 이동하시겠습니까?", "이동알림창", MessageBoxButtons.YesNo);
+                                if (result == DialogResult.Yes)
                                 {
                                     FormMembersJoin form = new FormMembersJoin();
                                     this.Visible = false;
@@ -137,7 +155,8 @@ namespace StudyRoomKiosk
                         //비회원입장
                         else
                         {
-                            if (check)
+                            //회원인데 비회원으로 입장하여 실패 시
+                            if (phoneNumcheck)
                             {
                                 DialogResult result = MessageBox.Show("이미 가입된 번호 입니다. 회원 입장으로 이동하시겠습니까?", "이동알림창", MessageBoxButtons.YesNo);
                                 if (result == DialogResult.Yes)
@@ -146,6 +165,7 @@ namespace StudyRoomKiosk
                                     this.Text = "회원 입장";
                                 }
                             }
+                            //비회원 입장
                             else
                             {
                                 FormSelectSeatTime form = new FormSelectSeatTime();
@@ -159,7 +179,7 @@ namespace StudyRoomKiosk
                     }
                     catch (Exception)
                     {
-                        
+
                         MessageBox.Show("알 수 없는 문제가 발생했습니다.");
                     }
                 }
@@ -167,7 +187,28 @@ namespace StudyRoomKiosk
         }
 
 
-    
+        //처음으로 가기 버튼
+        private void button_goHome_Click(object sender, EventArgs e)
+        {
+            FormHome form = new FormHome();
+            this.Visible = false;
+            form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            form.ShowDialog();
+            Process.GetCurrentProcess().Kill();
+        }
+
+
+
+
+        //텍스트박스 문자 입력 제한
+        private void Textbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!(e.KeyChar >= 48 && e.KeyChar <= 57) && e.KeyChar != Convert.ToChar(Keys.Back))
+                e.Handled = true;
+        }
+
+
         //재입력
         private void button_reEnter_Click(object sender, EventArgs e)
         {
@@ -202,5 +243,42 @@ namespace StudyRoomKiosk
                 }
             }
         }
+
+
+        //groupBox_seat 내 번호버튼 클릭시 텍스트박스에 값 입력되는 이벤트.
+        //텍스트박스에 입력된 숫자 수에 따라 포커스 자동 넘김
+        private void numPad_Click(object sender, EventArgs e)
+        {
+            Button clickedButton = sender as Button;
+            string keyNum = "";
+
+            if (clickedButton.Text == "1" || clickedButton.Text == "2" || clickedButton.Text == "3" || clickedButton.Text == "4" ||
+                clickedButton.Text == "5" || clickedButton.Text == "6" || clickedButton.Text == "7" || clickedButton.Text == "8" ||
+                clickedButton.Text == "9" || clickedButton.Text == "0")
+            {
+                keyNum = clickedButton.Text;
+                if (textBox_numLeft.Text.Length != 3)
+                {
+                    textBox_numLeft.Focus();
+                    SendKeys.Send(keyNum);
+                }
+                else if (textBox_numCenter.Text.Length != 4)
+                {
+                    textBox_numCenter.Focus();
+                    SendKeys.Send(keyNum);
+                }
+                else if (textBox_numRight.Text.Length != 4)
+                {
+                    textBox_numRight.Focus();
+                    SendKeys.Send(keyNum);
+                }
+            }
+        }
+
+        
     }
 }
+      
+
+
+
