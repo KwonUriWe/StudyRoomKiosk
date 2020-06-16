@@ -17,6 +17,18 @@ namespace StudyRoomKiosk
         {
             InitializeComponent();
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+
+            seats();
+        }
+
+        private void seats()
+        {
+            Sql sql = new Sql();
+            DataSet dsEmpty = sql.Query_Select_DataSet("seatNo", " Where state is null", "TBL_SEAT");
+            label_empty.Text += dsEmpty.Tables[0].Rows.Count.ToString();
+
+            DataSet dsTotal = sql.Query_Select_DataSet("seatNo", "", "TBL_SEAT");
+            label_total.Text += dsTotal.Tables[0].Rows.Count.ToString();
         }
 
         private void button_membersJoin_Click(object sender, EventArgs e)

@@ -146,3 +146,15 @@ Z:\git_UJI\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk
 Z:\git_UJI\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.csproj.CoreCompileInputs.cache
 Z:\git_UJI\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.exe
 Z:\git_UJI\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.pdb
+C:\Users\KB\Desktop\작업\포트폴리오\StudyRoomKiosk\StudyRoomKiosk\bin\Debug\StudyRoomKiosk.exe.config
+C:\Users\KB\Desktop\작업\포트폴리오\StudyRoomKiosk\StudyRoomKiosk\bin\Debug\StudyRoomKiosk.exe
+C:\Users\KB\Desktop\작업\포트폴리오\StudyRoomKiosk\StudyRoomKiosk\bin\Debug\StudyRoomKiosk.pdb
+C:\Users\KB\Desktop\작업\포트폴리오\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.csprojAssemblyReference.cache
+C:\Users\KB\Desktop\작업\포트폴리오\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.FormMembersJoin.resources
+C:\Users\KB\Desktop\작업\포트폴리오\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.FormHome.resources
+C:\Users\KB\Desktop\작업\포트폴리오\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.FormMembersEnt.resources
+C:\Users\KB\Desktop\작업\포트폴리오\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.Properties.Resources.resources
+C:\Users\KB\Desktop\작업\포트폴리오\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.FormSelectSeatTime.resources
+C:\Users\KB\Desktop\작업\포트폴리오\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.csproj.GenerateResource.cache
+C:\Users\KB\Desktop\작업\포트폴리오\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.exe
+C:\Users\KB\Desktop\작업\포트폴리오\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.pdb

@@ -35,6 +35,8 @@
             this.button_membersJoin = new System.Windows.Forms.Button();
             this.button_membersEnt = new System.Windows.Forms.Button();
             this.button_nonMembersEnt = new System.Windows.Forms.Button();
+            this.label_total = new System.Windows.Forms.Label();
+            this.label_empty = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label3
@@ -118,12 +120,34 @@
             this.button_nonMembersEnt.UseVisualStyleBackColor = false;
             this.button_nonMembersEnt.Click += new System.EventHandler(this.button_nonMembersEnt_Click);
             // 
+            // label_total
+            // 
+            this.label_total.AutoSize = true;
+            this.label_total.Font = new System.Drawing.Font("돋움", 20F);
+            this.label_total.Location = new System.Drawing.Point(12, 682);
+            this.label_total.Name = "label_total";
+            this.label_total.Size = new System.Drawing.Size(192, 27);
+            this.label_total.TabIndex = 2;
+            this.label_total.Text = "전체 좌석 수 : ";
+            // 
+            // label_empty
+            // 
+            this.label_empty.AutoSize = true;
+            this.label_empty.Font = new System.Drawing.Font("돋움", 20F);
+            this.label_empty.Location = new System.Drawing.Point(12, 720);
+            this.label_empty.Name = "label_empty";
+            this.label_empty.Size = new System.Drawing.Size(192, 27);
+            this.label_empty.TabIndex = 3;
+            this.label_empty.Text = "남은 좌석 수 : ";
+            // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(584, 962);
+            this.Controls.Add(this.label_empty);
+            this.Controls.Add(this.label_total);
             this.Controls.Add(this.button_nonMembersEnt);
             this.Controls.Add(this.button_membersEnt);
             this.Controls.Add(this.button3_admin);
@@ -147,5 +171,7 @@
         private System.Windows.Forms.Button button_membersJoin;
         private System.Windows.Forms.Button button_membersEnt;
         private System.Windows.Forms.Button button_nonMembersEnt;
+        private System.Windows.Forms.Label label_total;
+        private System.Windows.Forms.Label label_empty;
     }
 }

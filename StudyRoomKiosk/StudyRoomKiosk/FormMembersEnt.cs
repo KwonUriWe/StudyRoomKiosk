@@ -103,7 +103,6 @@ namespace StudyRoomKiosk
                         phonenum += textBox_numRight.Text;
                         TblMember.phoneNum = phonenum;  //TblMember클래스의 phoneNum에 텍스트박스에 입력된 번호 set
 
-
                         MessageBox.Show(phonenum); // 입력한 전화번호 확인용 메세지 - 추후 삭제
 
                         string str = "phonenum = '" + phonenum+"'";
@@ -115,11 +114,6 @@ namespace StudyRoomKiosk
                         {
                             if (check)
                             {
-                                DataSet ds = sql.Query_Select_DataSet("memberNo, phoneNum", "", "TBL_MEMBER");
-                                TblMember.memberNo = ds.Tables[0].Rows[0]["memberNo"].ToString();
-                                TblMember.phoneNum = ds.Tables[0].Rows[0]["phonenum"].ToString();
-
-
                                 FormSelectSeatTime form = new FormSelectSeatTime(); 
                                 this.Visible = false;
                                 form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

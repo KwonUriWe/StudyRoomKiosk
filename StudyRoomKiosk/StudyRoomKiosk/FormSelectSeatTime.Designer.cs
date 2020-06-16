@@ -88,25 +88,11 @@
             this.button_seat1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button_payment = new System.Windows.Forms.Button();
-            this.groupBox_longTime = new System.Windows.Forms.GroupBox();
-            this.radioButton_8Weeks = new System.Windows.Forms.RadioButton();
-            this.radioButton_2Weeks = new System.Windows.Forms.RadioButton();
-            this.radioButton_5Days = new System.Windows.Forms.RadioButton();
-            this.radioButton_4Weeks = new System.Windows.Forms.RadioButton();
-            this.radioButton_1Weeks = new System.Windows.Forms.RadioButton();
-            this.radioButton_3Days = new System.Windows.Forms.RadioButton();
+            this.groupBox_long = new System.Windows.Forms.GroupBox();
             this.groupBox_today = new System.Windows.Forms.GroupBox();
-            this.radioButton_allDay = new System.Windows.Forms.RadioButton();
-            this.radioButton_9Hours = new System.Windows.Forms.RadioButton();
-            this.radioButton_7Hours = new System.Windows.Forms.RadioButton();
-            this.radioButton_5Hours = new System.Windows.Forms.RadioButton();
-            this.radioButton_3Hours = new System.Windows.Forms.RadioButton();
-            this.radioButton_2Hours = new System.Windows.Forms.RadioButton();
             this.groupBox_time = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox_seat.SuspendLayout();
-            this.groupBox_longTime.SuspendLayout();
-            this.groupBox_today.SuspendLayout();
             this.groupBox_time.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -181,6 +167,7 @@
             // groupBox_seat
             // 
             this.groupBox_seat.BackColor = System.Drawing.Color.White;
+            this.groupBox_seat.Controls.Add(this.label4);
             this.groupBox_seat.Controls.Add(this.label_time5);
             this.groupBox_seat.Controls.Add(this.label5);
             this.groupBox_seat.Controls.Add(this.label_time24);
@@ -243,7 +230,7 @@
             // label_time5
             // 
             this.label_time5.AutoSize = true;
-            this.label_time5.Location = new System.Drawing.Point(410, 103);
+            this.label_time5.Location = new System.Drawing.Point(392, 84);
             this.label_time5.Name = "label_time5";
             this.label_time5.Size = new System.Drawing.Size(43, 13);
             this.label_time5.TabIndex = 53;
@@ -253,7 +240,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 640);
+            this.label5.Location = new System.Drawing.Point(13, 626);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 13);
             this.label5.TabIndex = 54;
@@ -263,7 +250,7 @@
             // label_time24
             // 
             this.label_time24.AutoSize = true;
-            this.label_time24.Location = new System.Drawing.Point(299, 517);
+            this.label_time24.Location = new System.Drawing.Point(288, 498);
             this.label_time24.Name = "label_time24";
             this.label_time24.Size = new System.Drawing.Size(43, 13);
             this.label_time24.TabIndex = 52;
@@ -273,7 +260,7 @@
             // label_time23
             // 
             this.label_time23.AutoSize = true;
-            this.label_time23.Location = new System.Drawing.Point(209, 517);
+            this.label_time23.Location = new System.Drawing.Point(200, 498);
             this.label_time23.Name = "label_time23";
             this.label_time23.Size = new System.Drawing.Size(43, 13);
             this.label_time23.TabIndex = 51;
@@ -283,7 +270,7 @@
             // label_time21
             // 
             this.label_time21.AutoSize = true;
-            this.label_time21.Location = new System.Drawing.Point(135, 429);
+            this.label_time21.Location = new System.Drawing.Point(122, 410);
             this.label_time21.Name = "label_time21";
             this.label_time21.Size = new System.Drawing.Size(43, 13);
             this.label_time21.TabIndex = 50;
@@ -293,7 +280,7 @@
             // label_time19
             // 
             this.label_time19.AutoSize = true;
-            this.label_time19.Location = new System.Drawing.Point(135, 322);
+            this.label_time19.Location = new System.Drawing.Point(122, 303);
             this.label_time19.Name = "label_time19";
             this.label_time19.Size = new System.Drawing.Size(43, 13);
             this.label_time19.TabIndex = 49;
@@ -303,7 +290,7 @@
             // label_time20
             // 
             this.label_time20.AutoSize = true;
-            this.label_time20.Location = new System.Drawing.Point(380, 322);
+            this.label_time20.Location = new System.Drawing.Point(367, 303);
             this.label_time20.Name = "label_time20";
             this.label_time20.Size = new System.Drawing.Size(43, 13);
             this.label_time20.TabIndex = 48;
@@ -313,7 +300,7 @@
             // label_time18
             // 
             this.label_time18.AutoSize = true;
-            this.label_time18.Location = new System.Drawing.Point(299, 234);
+            this.label_time18.Location = new System.Drawing.Point(288, 215);
             this.label_time18.Name = "label_time18";
             this.label_time18.Size = new System.Drawing.Size(43, 13);
             this.label_time18.TabIndex = 46;
@@ -323,7 +310,7 @@
             // label_time22
             // 
             this.label_time22.AutoSize = true;
-            this.label_time22.Location = new System.Drawing.Point(380, 429);
+            this.label_time22.Location = new System.Drawing.Point(367, 410);
             this.label_time22.Name = "label_time22";
             this.label_time22.Size = new System.Drawing.Size(43, 13);
             this.label_time22.TabIndex = 47;
@@ -333,7 +320,7 @@
             // label_time17
             // 
             this.label_time17.AutoSize = true;
-            this.label_time17.Location = new System.Drawing.Point(209, 234);
+            this.label_time17.Location = new System.Drawing.Point(200, 215);
             this.label_time17.Name = "label_time17";
             this.label_time17.Size = new System.Drawing.Size(43, 13);
             this.label_time17.TabIndex = 45;
@@ -343,7 +330,7 @@
             // label_time10
             // 
             this.label_time10.AutoSize = true;
-            this.label_time10.Location = new System.Drawing.Point(22, 537);
+            this.label_time10.Location = new System.Drawing.Point(13, 518);
             this.label_time10.Name = "label_time10";
             this.label_time10.Size = new System.Drawing.Size(43, 13);
             this.label_time10.TabIndex = 43;
@@ -353,7 +340,7 @@
             // label_time9
             // 
             this.label_time9.AutoSize = true;
-            this.label_time9.Location = new System.Drawing.Point(22, 429);
+            this.label_time9.Location = new System.Drawing.Point(13, 410);
             this.label_time9.Name = "label_time9";
             this.label_time9.Size = new System.Drawing.Size(43, 13);
             this.label_time9.TabIndex = 42;
@@ -363,7 +350,7 @@
             // label_time8
             // 
             this.label_time8.AutoSize = true;
-            this.label_time8.Location = new System.Drawing.Point(22, 322);
+            this.label_time8.Location = new System.Drawing.Point(13, 303);
             this.label_time8.Name = "label_time8";
             this.label_time8.Size = new System.Drawing.Size(43, 13);
             this.label_time8.TabIndex = 41;
@@ -373,7 +360,7 @@
             // label_time7
             // 
             this.label_time7.AutoSize = true;
-            this.label_time7.Location = new System.Drawing.Point(22, 215);
+            this.label_time7.Location = new System.Drawing.Point(13, 196);
             this.label_time7.Name = "label_time7";
             this.label_time7.Size = new System.Drawing.Size(43, 13);
             this.label_time7.TabIndex = 40;
@@ -383,7 +370,7 @@
             // label_time4
             // 
             this.label_time4.AutoSize = true;
-            this.label_time4.Location = new System.Drawing.Point(318, 103);
+            this.label_time4.Location = new System.Drawing.Point(306, 84);
             this.label_time4.Name = "label_time4";
             this.label_time4.Size = new System.Drawing.Size(43, 13);
             this.label_time4.TabIndex = 39;
@@ -393,7 +380,7 @@
             // label_time2
             // 
             this.label_time2.AutoSize = true;
-            this.label_time2.Location = new System.Drawing.Point(115, 103);
+            this.label_time2.Location = new System.Drawing.Point(96, 84);
             this.label_time2.Name = "label_time2";
             this.label_time2.Size = new System.Drawing.Size(43, 13);
             this.label_time2.TabIndex = 38;
@@ -403,7 +390,7 @@
             // label_time3
             // 
             this.label_time3.AutoSize = true;
-            this.label_time3.Location = new System.Drawing.Point(193, 103);
+            this.label_time3.Location = new System.Drawing.Point(182, 84);
             this.label_time3.Name = "label_time3";
             this.label_time3.Size = new System.Drawing.Size(43, 13);
             this.label_time3.TabIndex = 37;
@@ -413,7 +400,7 @@
             // label_time1
             // 
             this.label_time1.AutoSize = true;
-            this.label_time1.Location = new System.Drawing.Point(22, 103);
+            this.label_time1.Location = new System.Drawing.Point(13, 84);
             this.label_time1.Name = "label_time1";
             this.label_time1.Size = new System.Drawing.Size(43, 13);
             this.label_time1.TabIndex = 36;
@@ -443,7 +430,7 @@
             // label_time15
             // 
             this.label_time15.AutoSize = true;
-            this.label_time15.Location = new System.Drawing.Point(492, 539);
+            this.label_time15.Location = new System.Drawing.Point(479, 518);
             this.label_time15.Name = "label_time15";
             this.label_time15.Size = new System.Drawing.Size(43, 13);
             this.label_time15.TabIndex = 34;
@@ -453,7 +440,7 @@
             // label_time14
             // 
             this.label_time14.AutoSize = true;
-            this.label_time14.Location = new System.Drawing.Point(491, 431);
+            this.label_time14.Location = new System.Drawing.Point(478, 410);
             this.label_time14.Name = "label_time14";
             this.label_time14.Size = new System.Drawing.Size(43, 13);
             this.label_time14.TabIndex = 33;
@@ -463,7 +450,7 @@
             // label_time13
             // 
             this.label_time13.AutoSize = true;
-            this.label_time13.Location = new System.Drawing.Point(492, 324);
+            this.label_time13.Location = new System.Drawing.Point(479, 303);
             this.label_time13.Name = "label_time13";
             this.label_time13.Size = new System.Drawing.Size(43, 13);
             this.label_time13.TabIndex = 32;
@@ -473,7 +460,7 @@
             // label_time12
             // 
             this.label_time12.AutoSize = true;
-            this.label_time12.Location = new System.Drawing.Point(492, 215);
+            this.label_time12.Location = new System.Drawing.Point(479, 194);
             this.label_time12.Name = "label_time12";
             this.label_time12.Size = new System.Drawing.Size(43, 13);
             this.label_time12.TabIndex = 31;
@@ -483,7 +470,7 @@
             // label_time6
             // 
             this.label_time6.AutoSize = true;
-            this.label_time6.Location = new System.Drawing.Point(492, 105);
+            this.label_time6.Location = new System.Drawing.Point(478, 84);
             this.label_time6.Name = "label_time6";
             this.label_time6.Size = new System.Drawing.Size(43, 13);
             this.label_time6.TabIndex = 30;
@@ -498,7 +485,7 @@
             this.button_seat11.Location = new System.Drawing.Point(6, 561);
             this.button_seat11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_seat11.Name = "button_seat11";
-            this.button_seat11.Size = new System.Drawing.Size(80, 80);
+            this.button_seat11.Size = new System.Drawing.Size(80, 61);
             this.button_seat11.TabIndex = 0;
             this.button_seat11.Text = "11";
             this.button_seat11.UseVisualStyleBackColor = false;
@@ -510,7 +497,7 @@
             this.button_seat16.Location = new System.Drawing.Point(474, 561);
             this.button_seat16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_seat16.Name = "button_seat16";
-            this.button_seat16.Size = new System.Drawing.Size(80, 80);
+            this.button_seat16.Size = new System.Drawing.Size(80, 61);
             this.button_seat16.TabIndex = 0;
             this.button_seat16.Text = "16";
             this.button_seat16.UseVisualStyleBackColor = false;
@@ -523,7 +510,7 @@
             this.button_seat7.Location = new System.Drawing.Point(6, 131);
             this.button_seat7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_seat7.Name = "button_seat7";
-            this.button_seat7.Size = new System.Drawing.Size(80, 80);
+            this.button_seat7.Size = new System.Drawing.Size(80, 61);
             this.button_seat7.TabIndex = 0;
             this.button_seat7.Text = "7";
             this.button_seat7.UseVisualStyleBackColor = false;
@@ -535,7 +522,7 @@
             this.button_seat12.Location = new System.Drawing.Point(474, 131);
             this.button_seat12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_seat12.Name = "button_seat12";
-            this.button_seat12.Size = new System.Drawing.Size(80, 80);
+            this.button_seat12.Size = new System.Drawing.Size(80, 61);
             this.button_seat12.TabIndex = 0;
             this.button_seat12.Text = "12";
             this.button_seat12.UseVisualStyleBackColor = false;
@@ -547,7 +534,7 @@
             this.button_seat21.Location = new System.Drawing.Point(118, 345);
             this.button_seat21.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_seat21.Name = "button_seat21";
-            this.button_seat21.Size = new System.Drawing.Size(80, 80);
+            this.button_seat21.Size = new System.Drawing.Size(80, 61);
             this.button_seat21.TabIndex = 0;
             this.button_seat21.Text = "21";
             this.button_seat21.UseVisualStyleBackColor = false;
@@ -559,7 +546,7 @@
             this.button_seat22.Location = new System.Drawing.Point(363, 345);
             this.button_seat22.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_seat22.Name = "button_seat22";
-            this.button_seat22.Size = new System.Drawing.Size(80, 80);
+            this.button_seat22.Size = new System.Drawing.Size(80, 61);
             this.button_seat22.TabIndex = 0;
             this.button_seat22.Text = "22";
             this.button_seat22.UseVisualStyleBackColor = false;
@@ -571,7 +558,7 @@
             this.button_seat19.Location = new System.Drawing.Point(118, 238);
             this.button_seat19.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_seat19.Name = "button_seat19";
-            this.button_seat19.Size = new System.Drawing.Size(80, 80);
+            this.button_seat19.Size = new System.Drawing.Size(80, 61);
             this.button_seat19.TabIndex = 0;
             this.button_seat19.Text = "19";
             this.button_seat19.UseVisualStyleBackColor = false;
@@ -583,7 +570,7 @@
             this.button_seat20.Location = new System.Drawing.Point(363, 238);
             this.button_seat20.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_seat20.Name = "button_seat20";
-            this.button_seat20.Size = new System.Drawing.Size(80, 80);
+            this.button_seat20.Size = new System.Drawing.Size(80, 61);
             this.button_seat20.TabIndex = 0;
             this.button_seat20.Text = "20";
             this.button_seat20.UseVisualStyleBackColor = false;
@@ -596,7 +583,7 @@
             this.button_seat8.Location = new System.Drawing.Point(6, 238);
             this.button_seat8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_seat8.Name = "button_seat8";
-            this.button_seat8.Size = new System.Drawing.Size(80, 80);
+            this.button_seat8.Size = new System.Drawing.Size(80, 61);
             this.button_seat8.TabIndex = 0;
             this.button_seat8.Text = "8";
             this.button_seat8.UseVisualStyleBackColor = false;
@@ -608,7 +595,7 @@
             this.button_seat13.Location = new System.Drawing.Point(474, 238);
             this.button_seat13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_seat13.Name = "button_seat13";
-            this.button_seat13.Size = new System.Drawing.Size(80, 80);
+            this.button_seat13.Size = new System.Drawing.Size(80, 61);
             this.button_seat13.TabIndex = 0;
             this.button_seat13.Text = "13";
             this.button_seat13.UseVisualStyleBackColor = false;
@@ -621,7 +608,7 @@
             this.button_seat9.Location = new System.Drawing.Point(6, 345);
             this.button_seat9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_seat9.Name = "button_seat9";
-            this.button_seat9.Size = new System.Drawing.Size(80, 80);
+            this.button_seat9.Size = new System.Drawing.Size(80, 61);
             this.button_seat9.TabIndex = 0;
             this.button_seat9.Text = "9";
             this.button_seat9.UseVisualStyleBackColor = false;
@@ -633,7 +620,7 @@
             this.button_seat14.Location = new System.Drawing.Point(474, 345);
             this.button_seat14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_seat14.Name = "button_seat14";
-            this.button_seat14.Size = new System.Drawing.Size(80, 80);
+            this.button_seat14.Size = new System.Drawing.Size(80, 61);
             this.button_seat14.TabIndex = 0;
             this.button_seat14.Text = "14";
             this.button_seat14.UseVisualStyleBackColor = false;
@@ -646,7 +633,7 @@
             this.button_seat10.Location = new System.Drawing.Point(6, 453);
             this.button_seat10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_seat10.Name = "button_seat10";
-            this.button_seat10.Size = new System.Drawing.Size(80, 80);
+            this.button_seat10.Size = new System.Drawing.Size(80, 61);
             this.button_seat10.TabIndex = 0;
             this.button_seat10.Text = "10";
             this.button_seat10.UseVisualStyleBackColor = false;
@@ -658,7 +645,7 @@
             this.button_seat15.Location = new System.Drawing.Point(474, 453);
             this.button_seat15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_seat15.Name = "button_seat15";
-            this.button_seat15.Size = new System.Drawing.Size(80, 80);
+            this.button_seat15.Size = new System.Drawing.Size(80, 61);
             this.button_seat15.TabIndex = 0;
             this.button_seat15.Text = "15";
             this.button_seat15.UseVisualStyleBackColor = false;
@@ -670,7 +657,7 @@
             this.button_seat6.Location = new System.Drawing.Point(474, 19);
             this.button_seat6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_seat6.Name = "button_seat6";
-            this.button_seat6.Size = new System.Drawing.Size(80, 80);
+            this.button_seat6.Size = new System.Drawing.Size(80, 61);
             this.button_seat6.TabIndex = 0;
             this.button_seat6.Text = "6";
             this.button_seat6.UseVisualStyleBackColor = false;
@@ -682,7 +669,7 @@
             this.button_seat5.Location = new System.Drawing.Point(388, 19);
             this.button_seat5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_seat5.Name = "button_seat5";
-            this.button_seat5.Size = new System.Drawing.Size(80, 80);
+            this.button_seat5.Size = new System.Drawing.Size(80, 61);
             this.button_seat5.TabIndex = 0;
             this.button_seat5.Text = "5";
             this.button_seat5.UseVisualStyleBackColor = false;
@@ -694,7 +681,7 @@
             this.button_seat17.Location = new System.Drawing.Point(196, 150);
             this.button_seat17.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_seat17.Name = "button_seat17";
-            this.button_seat17.Size = new System.Drawing.Size(80, 80);
+            this.button_seat17.Size = new System.Drawing.Size(80, 61);
             this.button_seat17.TabIndex = 0;
             this.button_seat17.Text = "17";
             this.button_seat17.UseVisualStyleBackColor = false;
@@ -706,7 +693,7 @@
             this.button_seat23.Location = new System.Drawing.Point(196, 433);
             this.button_seat23.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_seat23.Name = "button_seat23";
-            this.button_seat23.Size = new System.Drawing.Size(80, 80);
+            this.button_seat23.Size = new System.Drawing.Size(80, 61);
             this.button_seat23.TabIndex = 0;
             this.button_seat23.Text = "23";
             this.button_seat23.UseVisualStyleBackColor = false;
@@ -718,7 +705,7 @@
             this.button_seat24.Location = new System.Drawing.Point(284, 433);
             this.button_seat24.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_seat24.Name = "button_seat24";
-            this.button_seat24.Size = new System.Drawing.Size(80, 80);
+            this.button_seat24.Size = new System.Drawing.Size(80, 61);
             this.button_seat24.TabIndex = 0;
             this.button_seat24.Text = "24";
             this.button_seat24.UseVisualStyleBackColor = false;
@@ -730,7 +717,7 @@
             this.button_seat18.Location = new System.Drawing.Point(284, 150);
             this.button_seat18.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_seat18.Name = "button_seat18";
-            this.button_seat18.Size = new System.Drawing.Size(80, 80);
+            this.button_seat18.Size = new System.Drawing.Size(80, 61);
             this.button_seat18.TabIndex = 0;
             this.button_seat18.Text = "18";
             this.button_seat18.UseVisualStyleBackColor = false;
@@ -742,7 +729,7 @@
             this.button_seat4.Location = new System.Drawing.Point(302, 19);
             this.button_seat4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_seat4.Name = "button_seat4";
-            this.button_seat4.Size = new System.Drawing.Size(80, 80);
+            this.button_seat4.Size = new System.Drawing.Size(80, 61);
             this.button_seat4.TabIndex = 0;
             this.button_seat4.Text = "4";
             this.button_seat4.UseVisualStyleBackColor = false;
@@ -754,7 +741,7 @@
             this.button_seat3.Location = new System.Drawing.Point(178, 19);
             this.button_seat3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_seat3.Name = "button_seat3";
-            this.button_seat3.Size = new System.Drawing.Size(80, 80);
+            this.button_seat3.Size = new System.Drawing.Size(80, 61);
             this.button_seat3.TabIndex = 0;
             this.button_seat3.Text = "3";
             this.button_seat3.UseVisualStyleBackColor = false;
@@ -766,7 +753,7 @@
             this.button_seat2.Location = new System.Drawing.Point(92, 19);
             this.button_seat2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_seat2.Name = "button_seat2";
-            this.button_seat2.Size = new System.Drawing.Size(80, 80);
+            this.button_seat2.Size = new System.Drawing.Size(80, 61);
             this.button_seat2.TabIndex = 0;
             this.button_seat2.Text = "2";
             this.button_seat2.UseVisualStyleBackColor = false;
@@ -779,7 +766,7 @@
             this.button_seat1.Location = new System.Drawing.Point(6, 19);
             this.button_seat1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_seat1.Name = "button_seat1";
-            this.button_seat1.Size = new System.Drawing.Size(80, 80);
+            this.button_seat1.Size = new System.Drawing.Size(80, 61);
             this.button_seat1.TabIndex = 0;
             this.button_seat1.Text = "1";
             this.button_seat1.UseVisualStyleBackColor = false;
@@ -788,7 +775,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.label1.Location = new System.Drawing.Point(250, 624);
+            this.label1.Location = new System.Drawing.Point(253, 626);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 21);
             this.label1.TabIndex = 0;
@@ -807,113 +794,22 @@
             this.button_payment.UseVisualStyleBackColor = false;
             this.button_payment.Click += new System.EventHandler(this.button_payment_Click);
             // 
-            // groupBox_longTime
+            // groupBox_long
             // 
-            this.groupBox_longTime.AccessibleRole = System.Windows.Forms.AccessibleRole.ProgressBar;
-            this.groupBox_longTime.Controls.Add(this.radioButton_8Weeks);
-            this.groupBox_longTime.Controls.Add(this.radioButton_2Weeks);
-            this.groupBox_longTime.Controls.Add(this.radioButton_5Days);
-            this.groupBox_longTime.Controls.Add(this.radioButton_4Weeks);
-            this.groupBox_longTime.Controls.Add(this.radioButton_1Weeks);
-            this.groupBox_longTime.Controls.Add(this.radioButton_3Days);
-            this.groupBox_longTime.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.groupBox_longTime.Location = new System.Drawing.Point(6, 88);
-            this.groupBox_longTime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox_longTime.Name = "groupBox_longTime";
-            this.groupBox_longTime.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox_longTime.Size = new System.Drawing.Size(548, 80);
-            this.groupBox_longTime.TabIndex = 2;
-            this.groupBox_longTime.TabStop = false;
-            this.groupBox_longTime.Text = "장기 이용권";
-            this.groupBox_longTime.Enter += new System.EventHandler(this.groupBox_longTime_Enter);
-            // 
-            // radioButton_8Weeks
-            // 
-            this.radioButton_8Weeks.AutoSize = true;
-            this.radioButton_8Weeks.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.radioButton_8Weeks.Location = new System.Drawing.Point(377, 49);
-            this.radioButton_8Weeks.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.radioButton_8Weeks.Name = "radioButton_8Weeks";
-            this.radioButton_8Weeks.Size = new System.Drawing.Size(168, 23);
-            this.radioButton_8Weeks.TabIndex = 0;
-            this.radioButton_8Weeks.TabStop = true;
-            this.radioButton_8Weeks.Text = "8주(56일) - 240,000원";
-            this.radioButton_8Weeks.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_2Weeks
-            // 
-            this.radioButton_2Weeks.AutoSize = true;
-            this.radioButton_2Weeks.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.radioButton_2Weeks.Location = new System.Drawing.Point(9, 50);
-            this.radioButton_2Weeks.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.radioButton_2Weeks.Name = "radioButton_2Weeks";
-            this.radioButton_2Weeks.Size = new System.Drawing.Size(160, 23);
-            this.radioButton_2Weeks.TabIndex = 0;
-            this.radioButton_2Weeks.TabStop = true;
-            this.radioButton_2Weeks.Text = "2주(14일) - 84,000원";
-            this.radioButton_2Weeks.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton_2Weeks.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_5Days
-            // 
-            this.radioButton_5Days.AutoSize = true;
-            this.radioButton_5Days.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.radioButton_5Days.Location = new System.Drawing.Point(193, 23);
-            this.radioButton_5Days.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.radioButton_5Days.Name = "radioButton_5Days";
-            this.radioButton_5Days.Size = new System.Drawing.Size(122, 23);
-            this.radioButton_5Days.TabIndex = 0;
-            this.radioButton_5Days.TabStop = true;
-            this.radioButton_5Days.Text = "5일 - 43,000원";
-            this.radioButton_5Days.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_4Weeks
-            // 
-            this.radioButton_4Weeks.AutoSize = true;
-            this.radioButton_4Weeks.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.radioButton_4Weeks.Location = new System.Drawing.Point(193, 49);
-            this.radioButton_4Weeks.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.radioButton_4Weeks.Name = "radioButton_4Weeks";
-            this.radioButton_4Weeks.Size = new System.Drawing.Size(168, 23);
-            this.radioButton_4Weeks.TabIndex = 0;
-            this.radioButton_4Weeks.TabStop = true;
-            this.radioButton_4Weeks.Text = "4주(28일) - 130,000원";
-            this.radioButton_4Weeks.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_1Weeks
-            // 
-            this.radioButton_1Weeks.AutoSize = true;
-            this.radioButton_1Weeks.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.radioButton_1Weeks.Location = new System.Drawing.Point(377, 23);
-            this.radioButton_1Weeks.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.radioButton_1Weeks.Name = "radioButton_1Weeks";
-            this.radioButton_1Weeks.Size = new System.Drawing.Size(152, 23);
-            this.radioButton_1Weeks.TabIndex = 0;
-            this.radioButton_1Weeks.TabStop = true;
-            this.radioButton_1Weeks.Text = "1주(7일) - 56,000원";
-            this.radioButton_1Weeks.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_3Days
-            // 
-            this.radioButton_3Days.AutoSize = true;
-            this.radioButton_3Days.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.radioButton_3Days.Location = new System.Drawing.Point(9, 24);
-            this.radioButton_3Days.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.radioButton_3Days.Name = "radioButton_3Days";
-            this.radioButton_3Days.Size = new System.Drawing.Size(122, 23);
-            this.radioButton_3Days.TabIndex = 0;
-            this.radioButton_3Days.TabStop = true;
-            this.radioButton_3Days.Text = "3일 - 27,000원";
-            this.radioButton_3Days.UseVisualStyleBackColor = true;
+            this.groupBox_long.AccessibleRole = System.Windows.Forms.AccessibleRole.ProgressBar;
+            this.groupBox_long.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.groupBox_long.Location = new System.Drawing.Point(6, 88);
+            this.groupBox_long.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox_long.Name = "groupBox_long";
+            this.groupBox_long.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox_long.Size = new System.Drawing.Size(548, 80);
+            this.groupBox_long.TabIndex = 2;
+            this.groupBox_long.TabStop = false;
+            this.groupBox_long.Text = "장기 이용권";
+            this.groupBox_long.Enter += new System.EventHandler(this.groupBox_longTime_Enter);
             // 
             // groupBox_today
             // 
-            this.groupBox_today.Controls.Add(this.radioButton_allDay);
-            this.groupBox_today.Controls.Add(this.radioButton_9Hours);
-            this.groupBox_today.Controls.Add(this.radioButton_7Hours);
-            this.groupBox_today.Controls.Add(this.radioButton_5Hours);
-            this.groupBox_today.Controls.Add(this.radioButton_3Hours);
-            this.groupBox_today.Controls.Add(this.radioButton_2Hours);
             this.groupBox_today.Font = new System.Drawing.Font("맑은 고딕", 10F);
             this.groupBox_today.Location = new System.Drawing.Point(6, 10);
             this.groupBox_today.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -925,88 +821,10 @@
             this.groupBox_today.Text = "당일이용권";
             this.groupBox_today.Enter += new System.EventHandler(this.groupBox_today_Enter);
             // 
-            // radioButton_allDay
-            // 
-            this.radioButton_allDay.AutoSize = true;
-            this.radioButton_allDay.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.radioButton_allDay.Location = new System.Drawing.Point(377, 47);
-            this.radioButton_allDay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.radioButton_allDay.Name = "radioButton_allDay";
-            this.radioButton_allDay.Size = new System.Drawing.Size(128, 23);
-            this.radioButton_allDay.TabIndex = 0;
-            this.radioButton_allDay.TabStop = true;
-            this.radioButton_allDay.Text = "종일 - 12,000원";
-            this.radioButton_allDay.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_9Hours
-            // 
-            this.radioButton_9Hours.AutoSize = true;
-            this.radioButton_9Hours.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.radioButton_9Hours.Location = new System.Drawing.Point(193, 47);
-            this.radioButton_9Hours.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.radioButton_9Hours.Name = "radioButton_9Hours";
-            this.radioButton_9Hours.Size = new System.Drawing.Size(136, 23);
-            this.radioButton_9Hours.TabIndex = 0;
-            this.radioButton_9Hours.TabStop = true;
-            this.radioButton_9Hours.Text = "9시간 - 10,000원";
-            this.radioButton_9Hours.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_7Hours
-            // 
-            this.radioButton_7Hours.AutoSize = true;
-            this.radioButton_7Hours.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.radioButton_7Hours.Location = new System.Drawing.Point(6, 47);
-            this.radioButton_7Hours.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.radioButton_7Hours.Name = "radioButton_7Hours";
-            this.radioButton_7Hours.Size = new System.Drawing.Size(128, 23);
-            this.radioButton_7Hours.TabIndex = 0;
-            this.radioButton_7Hours.TabStop = true;
-            this.radioButton_7Hours.Text = "7시간 - 8,000원";
-            this.radioButton_7Hours.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_5Hours
-            // 
-            this.radioButton_5Hours.AutoSize = true;
-            this.radioButton_5Hours.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.radioButton_5Hours.Location = new System.Drawing.Point(377, 22);
-            this.radioButton_5Hours.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.radioButton_5Hours.Name = "radioButton_5Hours";
-            this.radioButton_5Hours.Size = new System.Drawing.Size(128, 23);
-            this.radioButton_5Hours.TabIndex = 0;
-            this.radioButton_5Hours.TabStop = true;
-            this.radioButton_5Hours.Text = "5시간 - 6,000원";
-            this.radioButton_5Hours.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_3Hours
-            // 
-            this.radioButton_3Hours.AutoSize = true;
-            this.radioButton_3Hours.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.radioButton_3Hours.Location = new System.Drawing.Point(193, 22);
-            this.radioButton_3Hours.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.radioButton_3Hours.Name = "radioButton_3Hours";
-            this.radioButton_3Hours.Size = new System.Drawing.Size(128, 23);
-            this.radioButton_3Hours.TabIndex = 0;
-            this.radioButton_3Hours.TabStop = true;
-            this.radioButton_3Hours.Text = "3시간 - 4,000원";
-            this.radioButton_3Hours.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_2Hours
-            // 
-            this.radioButton_2Hours.AutoSize = true;
-            this.radioButton_2Hours.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.radioButton_2Hours.Location = new System.Drawing.Point(6, 22);
-            this.radioButton_2Hours.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.radioButton_2Hours.Name = "radioButton_2Hours";
-            this.radioButton_2Hours.Size = new System.Drawing.Size(128, 23);
-            this.radioButton_2Hours.TabIndex = 0;
-            this.radioButton_2Hours.TabStop = true;
-            this.radioButton_2Hours.Text = "2시간 - 3,000원";
-            this.radioButton_2Hours.UseVisualStyleBackColor = true;
-            // 
             // groupBox_time
             // 
             this.groupBox_time.Controls.Add(this.groupBox_today);
-            this.groupBox_time.Controls.Add(this.groupBox_longTime);
+            this.groupBox_time.Controls.Add(this.groupBox_long);
             this.groupBox_time.Location = new System.Drawing.Point(12, 80);
             this.groupBox_time.Name = "groupBox_time";
             this.groupBox_time.Size = new System.Drawing.Size(560, 175);
@@ -1016,9 +834,9 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(504, 940);
+            this.label4.Location = new System.Drawing.Point(479, 626);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 15);
+            this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 55;
             this.label4.Text = "label_t";
             this.label4.Visible = false;
@@ -1029,7 +847,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(584, 962);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox_time);
             this.Controls.Add(this.button_payment);
             this.Controls.Add(this.groupBox_seat);
@@ -1045,10 +862,6 @@
             this.Text = "자리선택";
             this.groupBox_seat.ResumeLayout(false);
             this.groupBox_seat.PerformLayout();
-            this.groupBox_longTime.ResumeLayout(false);
-            this.groupBox_longTime.PerformLayout();
-            this.groupBox_today.ResumeLayout(false);
-            this.groupBox_today.PerformLayout();
             this.groupBox_time.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1090,20 +903,8 @@
         private System.Windows.Forms.Button button_seat1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_payment;
-        private System.Windows.Forms.GroupBox groupBox_longTime;
-        private System.Windows.Forms.RadioButton radioButton_8Weeks;
-        private System.Windows.Forms.RadioButton radioButton_2Weeks;
-        private System.Windows.Forms.RadioButton radioButton_5Days;
-        private System.Windows.Forms.RadioButton radioButton_4Weeks;
-        private System.Windows.Forms.RadioButton radioButton_1Weeks;
-        private System.Windows.Forms.RadioButton radioButton_3Days;
+        private System.Windows.Forms.GroupBox groupBox_long;
         private System.Windows.Forms.GroupBox groupBox_today;
-        private System.Windows.Forms.RadioButton radioButton_allDay;
-        private System.Windows.Forms.RadioButton radioButton_9Hours;
-        private System.Windows.Forms.RadioButton radioButton_7Hours;
-        private System.Windows.Forms.RadioButton radioButton_5Hours;
-        private System.Windows.Forms.RadioButton radioButton_3Hours;
-        private System.Windows.Forms.RadioButton radioButton_2Hours;
         private System.Windows.Forms.GroupBox groupBox_time;
         private System.Windows.Forms.Label label_time5;
         private System.Windows.Forms.Label label5;

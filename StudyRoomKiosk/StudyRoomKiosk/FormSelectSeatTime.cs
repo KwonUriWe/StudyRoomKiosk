@@ -15,7 +15,6 @@ namespace StudyRoomKiosk
     {
         Sql sql = new Sql();
         string selectTime = null;
-        string spanTime = null;
         String[] seatNo;
         DateTime[] time;
         DateTime[] timEnd;
@@ -23,9 +22,11 @@ namespace StudyRoomKiosk
         public FormSelectSeatTime()
         {
             InitializeComponent();
+            rbText();
             //whoIs();
             //seatStatus();
-            SeatNoTime();
+            //SeatNoTime();
+
             //we_ TBL_TIME에 저장된 데이터를 불러와서 라디오버튼의 텍스트로 대입하도록 수정 필요.. 추후 데이터 수정시 용이하도록.
             //groupBox_seat 내 모든 버튼에 대한 클릭 이벤트 설정
             foreach (Button seatButton in groupBox_seat.Controls.OfType<Button>())
@@ -34,6 +35,35 @@ namespace StudyRoomKiosk
             }
             button_goJoin.Visible = false;
         }
+
+        //time테이블에 저장된 시간과 가격 값을 가져와 라디오버튼의 텍스트값에 대입.
+        private void rbText()
+        {
+            DataSet ds = sql.Query_Select_DataSet("*", "", "TBL_TIME");
+            RadioButton[] todayRbtn = new RadioButton[6];
+            RadioButton[] longRbtn = new RadioButton[6];
+            int todayP = 0;
+            int longP = 0;
+
+            for (int i = 0; i < 6; i++)
+            {
+                todayRbtn[i] = new RadioButton();
+                todayP = int.Parse(ds.Tables[0].Rows[i]["amount"].ToString());
+                todayRbtn[i].Text = ds.Tables[0].Rows[i]["timeUse"].ToString() + " / " + string.Format("{0:n0}", todayP);
+                todayRbtn[i].Size = new Size(178, 25);
+                todayRbtn[i].Location = new Point(7 + i % 3 * todayRbtn[i].Width, 23 + i / 3 * todayRbtn[i].Height);
+
+                longRbtn[i] = new RadioButton();
+                longP = int.Parse(ds.Tables[0].Rows[i + 6]["amount"].ToString());
+                longRbtn[i].Text = ds.Tables[0].Rows[i + 6]["timeUse"].ToString() + " / " + string.Format("{0:n0}", longP);
+                longRbtn[i].Size = new Size(178, 25);
+                longRbtn[i].Location = new Point(7 + i % 3 * todayRbtn[i].Width, 23 + i / 3 * todayRbtn[i].Height);
+
+                groupBox_today.Controls.Add(todayRbtn[i]);
+                groupBox_long.Controls.Add(longRbtn[i]);
+            }
+        }
+
         //남은 시간 구하는 메소드
         private void SeatNoTime()
         {
@@ -245,33 +275,6 @@ namespace StudyRoomKiosk
             TblMember.seatNo = clickedButton.Text;  //선택한 자리번호 저장
         }
 
-        //자리의 상태를 확인 후 출력하는 메소드
-        private void seatStatus()
-        {
-            foreach (Button seatButton in groupBox_seat.Controls.OfType<Button>())
-            {
-                try
-                {
-                    Sql sql = new Sql();
-                    string seatNumber = seatButton.Text.Substring(11);  //모든 버튼의 숫자만 추출
-                    string str = "where seatNo = " + TblMember.seatNo;
-                    string endTime = "";
-                    
-                    DataSet ds = sql.Query_Select_DataSet("status", str, "TBL_SEAT");
-                    if (ds.Tables[0].Rows.ToString() == "1")
-                    {
-                        seatButton.BackColor = Color.FromArgb(255, 128, 0);
-                        seatButton.Enabled = false;
-                        //we_흘러가는 잔여시간 출력하는 코드 추가하기
-                    }
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show("알 수 없는 문제가 발생했습니다.");
-                }
-            }
-        }
-
         //시간은 당일과 장기 이용권 중 하나만 선택 되어야 하므로 클릭시 다른 그룹박스의 클릭 해제
         private void groupBox_longTime_Enter(object sender, EventArgs e)
         {
@@ -284,7 +287,7 @@ namespace StudyRoomKiosk
         //시간은 당일과 장기 이용권 중 하나만 선택 되어야 하므로 클릭시 다른 그룹박스의 클릭 해제
         private void groupBox_today_Enter(object sender, EventArgs e)
         {
-            foreach (RadioButton longTimeRButton in groupBox_longTime.Controls.OfType<RadioButton>())
+            foreach (RadioButton longTimeRButton in groupBox_long.Controls.OfType<RadioButton>())
             {
                 longTimeRButton.Checked = false;
             }
@@ -298,16 +301,16 @@ namespace StudyRoomKiosk
             if (Sql.pageType == 1)
             {
                 button_goJoin.Visible = true;
-                groupBox_longTime.Text = "장기 이용권 _ 정회원만 선택 가능합니다.";
+                groupBox_long.Text = "장기 이용권 _ 정회원만 선택 가능합니다.";
 
                 //groupBox_longTime 내 모든 라디오 버튼에 대해 비활성화.
                 //그룹박스 자체를 비활성화 하면 혹시라도 클릭시 메시지박스가 팝업되도록 할 수 없으므로 아래와 같이 처리
-                foreach (RadioButton longTimeRButton in groupBox_longTime.Controls.OfType<RadioButton>())
+                foreach (RadioButton longTimeRButton in groupBox_long.Controls.OfType<RadioButton>())
                 {
                     longTimeRButton.Enabled = false;
                 }
             }
-            groupBox_longTime.Click += unableClick;
+            groupBox_long.Click += unableClick;
         }
 
         //비회원 입장 후 장기이용권 클릭 시 가입여부 팝업 이벤트
@@ -325,28 +328,64 @@ namespace StudyRoomKiosk
 
         private string EndTime()
         {
-            string time = DateTime.Now.ToString("yyyy-MM-dd-HH-mm");
-            //we_ time += (클릭한 라디오버튼의 시간값)
-            return time;
+            DateTime time = DateTime.Now;
+            double t = 0;
+            if (selectTime == "종일")
+            {
+                time.AddDays(1);
+            }
+            else if (selectTime.Contains("시간"))
+            {
+                t = Convert.ToDouble(selectTime.Substring(0, 1));
+                time.AddHours(t);
+            }
+            else if (selectTime.Contains("일"))
+            {
+                t = Convert.ToDouble(selectTime.Substring(0, 1));
+                time.AddDays(t);
+            }
+            else if (selectTime.Contains("주"))
+            {
+                t = Convert.ToDouble(selectTime.Substring(0, 1)) * 7;
+                time.AddDays(t);
+            }
+            return time.ToString("yyyy-MM-dd HH:mm");
         }
 
+        //결제 후 DB에 데이터 저장
         private void updateMember()
         {
-            Sql sql = new Sql();
-            
-            //we_결제 후 DB에 결제내용 저장기능 구현 필요
-            sql.Query_Modify("UPDATE TBL_MEMBER SET seatNo="+ TblMember.seatNo + "expiredTime=");
+            //TBL_MEMBER에 데이터 저장
+            if (Sql.pageType == 0)   //회원 입장
+            {
+                sql.Query_Modify("UPDATE TBL_MEMBER SET seatNo = " + TblMember.seatNo + "expiredTime = " + EndTime() +
+                                 "where phoneNum = " + TblMember.phoneNum);
+            }
+            if (Sql.pageType == 1)   //비회원 입장
+            {
+                if (sql.Query_Select_Bool("TBL_MEMBER", "memberNo > 0"))
+                {
+                    int maxNum = int.Parse(sql.Query_Select_DataSet("MAX(memberNo) as MAX", "", "TBL_MEMBER").Tables[0].Rows[0]["MAX"].ToString());
+                    maxNum += 1;
+                    sql.Query_Modify("INSERT INTO TBL_MEMBER ( memberNo, phoneNum, memberbool) VALUES (" + maxNum + ",'" + TblMember.phoneNum + "','" + false + "')");
+                }
+                else
+                {
+                    sql.Query_Modify("INSERT INTO TBL_MEMBER ( memberNo, phoneNum, memberbool) VALUES (1,'" + TblMember.phoneNum + "','" + false + "')");
+                }
+            }
+            //TBL_SEAT에 데이터 저장
+            sql.Query_Modify("UPDATE TBL_SEAT SET state = 1 where seatNo = " + TblMember.seatNo);
         }
 
         //결제하기 버튼 클릭시 결제 진행
         private void button_payment_Click(object sender, EventArgs e)
         {
-            foreach (RadioButton radioButton in groupBox_longTime.Controls.OfType<RadioButton>())
+            foreach (RadioButton radioButton in groupBox_long.Controls.OfType<RadioButton>())
             {
                 if (radioButton.Checked)
                 {
                     selectTime = radioButton.Text;
-
                 }
             }
 
@@ -355,7 +394,6 @@ namespace StudyRoomKiosk
                 if (radioButton.Checked)
                 {
                     selectTime = radioButton.Text;
-
                 }
             }
 
@@ -372,6 +410,12 @@ namespace StudyRoomKiosk
                     //we_결제기능 추후 구현 필요
                     MessageBox.Show("결제되었습니다.\n입장하십시오.");
                     updateMember();
+
+                    FormMembersEnt form = new FormMembersEnt();
+                    this.Visible = false;
+                    form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+                    form.ShowDialog();
+                    Process.GetCurrentProcess().Kill();
                 }
                 else
                 {
