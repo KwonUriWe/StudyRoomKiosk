@@ -24,7 +24,7 @@ namespace StudyRoomKiosk
         private void seats()
         {
             Sql sql = new Sql();
-            DataSet dsEmpty = sql.Query_Select_DataSet("seatNo", " Where status is null", "TBL_SEAT");
+            DataSet dsEmpty = sql.Query_Select_DataSet("seatNo", " Where status = 0 ", "TBL_SEAT");
             label_empty.Text += dsEmpty.Tables[0].Rows.Count.ToString();
 
             DataSet dsTotal = sql.Query_Select_DataSet("seatNo", "", "TBL_SEAT");

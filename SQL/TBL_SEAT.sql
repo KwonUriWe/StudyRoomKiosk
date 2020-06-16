@@ -26,3 +26,16 @@ SET ANSI_PADDING OFF
 GO
 
 
+--좌석 추가 반복문
+DECLARE @i INT
+SET @i = 1
+
+WHILE @i<= 24
+    BEGIN
+        INSERT INTO [StudyRoomKiosk].[dbo].[TBL_SEAT] VALUES(
+            @i,
+            0
+        )
+        SET @i = @i + 1
+   END
+

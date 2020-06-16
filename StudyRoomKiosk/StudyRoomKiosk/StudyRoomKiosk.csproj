@@ -47,8 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TblTime.cs" />
-    <Compile Include="TblSeat.cs" />
     <Compile Include="TblMember.cs" />
     <Compile Include="FormMembersJoin.cs">
       <SubType>Form</SubType>

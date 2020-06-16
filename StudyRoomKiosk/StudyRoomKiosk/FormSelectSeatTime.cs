@@ -19,15 +19,14 @@ namespace StudyRoomKiosk
         DateTime[] time;
         DateTime[] timEnd;
         int count;
+
         public FormSelectSeatTime()
         {
             InitializeComponent();
             rbText();
-            //whoIs();
-            //seatStatus();
+            whoIs();
             //SeatNoTime();
 
-            //we_ TBL_TIME에 저장된 데이터를 불러와서 라디오버튼의 텍스트로 대입하도록 수정 필요.. 추후 데이터 수정시 용이하도록.
             //groupBox_seat 내 모든 버튼에 대한 클릭 이벤트 설정
             foreach (Button seatButton in groupBox_seat.Controls.OfType<Button>())
             {
@@ -39,7 +38,7 @@ namespace StudyRoomKiosk
         //time테이블에 저장된 시간과 가격 값을 가져와 라디오버튼의 텍스트값에 대입.
         private void rbText()
         {
-            DataSet ds = sql.Query_Select_DataSet("*", "", "TBL_TIME");
+            DataSet ds = sql.Query_Select_DataSet("*", " ORDER BY AMOUNT", "TBL_TIME");
             RadioButton[] todayRbtn = new RadioButton[6];
             RadioButton[] longRbtn = new RadioButton[6];
             int todayP = 0;
@@ -49,13 +48,13 @@ namespace StudyRoomKiosk
             {
                 todayRbtn[i] = new RadioButton();
                 todayP = int.Parse(ds.Tables[0].Rows[i]["amount"].ToString());
-                todayRbtn[i].Text = ds.Tables[0].Rows[i]["timeUse"].ToString() + " / " + string.Format("{0:n0}", todayP);
+                todayRbtn[i].Text = ds.Tables[0].Rows[i]["timeUse"].ToString() + " / " + string.Format("{0:n0}", todayP) + "원";
                 todayRbtn[i].Size = new Size(178, 25);
                 todayRbtn[i].Location = new Point(7 + i % 3 * todayRbtn[i].Width, 23 + i / 3 * todayRbtn[i].Height);
 
                 longRbtn[i] = new RadioButton();
                 longP = int.Parse(ds.Tables[0].Rows[i + 6]["amount"].ToString());
-                longRbtn[i].Text = ds.Tables[0].Rows[i + 6]["timeUse"].ToString() + " / " + string.Format("{0:n0}", longP);
+                longRbtn[i].Text = ds.Tables[0].Rows[i + 6]["timeUse"].ToString() + " / " + string.Format("{0:n0}", longP) + "원";
                 longRbtn[i].Size = new Size(178, 25);
                 longRbtn[i].Location = new Point(7 + i % 3 * todayRbtn[i].Width, 23 + i / 3 * todayRbtn[i].Height);
 
@@ -326,30 +325,31 @@ namespace StudyRoomKiosk
             }
         }
 
+        //DB에 데이터 저장시 사용할 종료시간 구하는 메소드
         private string EndTime()
         {
-            DateTime time = DateTime.Now;
-            double t = 0;
-            if (selectTime == "종일")
-            {
-                time.AddDays(1);
+            string t = null;
+            DataSet ds = null;
+
+            if (selectTime.Contains("종일"))
+            {   
+                return "DATEADD(HH, 24, GETDATE())";
             }
             else if (selectTime.Contains("시간"))
             {
-                t = Convert.ToDouble(selectTime.Substring(0, 1));
-                time.AddHours(t);
+                t = selectTime.Substring(0, 1);
+                return "DATEADD(HH, " + t + ", GETDATE())";
             }
             else if (selectTime.Contains("일"))
             {
-                t = Convert.ToDouble(selectTime.Substring(0, 1));
-                time.AddDays(t);
+                t = selectTime.Substring(0, 1);
+                return "DATEADD(dd, " + t + ", GETDATE())";
             }
-            else if (selectTime.Contains("주"))
+            else
             {
-                t = Convert.ToDouble(selectTime.Substring(0, 1)) * 7;
-                time.AddDays(t);
+                int tt = int.Parse(selectTime.Substring(0, 1)) * 7;
+                return "DATEADD(dd, " + tt + ", GETDATE())";
             }
-            return time.ToString("yyyy-MM-dd HH:mm");
         }
 
         //결제 후 DB에 데이터 저장
@@ -358,8 +358,7 @@ namespace StudyRoomKiosk
             //TBL_MEMBER에 데이터 저장
             if (Sql.pageType == 0)   //회원 입장
             {
-                sql.Query_Modify("UPDATE TBL_MEMBER SET seatNo = " + TblMember.seatNo + "expiredTime = " + EndTime() +
-                                 "where phoneNum = " + TblMember.phoneNum);
+                sql.Query_Modify("UPDATE TBL_MEMBER SET seatNo = '" + TblMember.seatNo + "', expiredTime = " + EndTime() + " where phoneNum = '" + TblMember.phoneNum + "'");
             }
             if (Sql.pageType == 1)   //비회원 입장
             {
@@ -367,11 +366,11 @@ namespace StudyRoomKiosk
                 {
                     int maxNum = int.Parse(sql.Query_Select_DataSet("MAX(memberNo) as MAX", "", "TBL_MEMBER").Tables[0].Rows[0]["MAX"].ToString());
                     maxNum += 1;
-                    sql.Query_Modify("INSERT INTO TBL_MEMBER ( memberNo, phoneNum, memberbool) VALUES (" + maxNum + ",'" + TblMember.phoneNum + "','" + false + "')");
+                    sql.Query_Modify("INSERT INTO TBL_MEMBER ( memberNo, phoneNum, seatNo, expiredTime, memberbool) VALUES (" + maxNum + ", '" + TblMember.phoneNum + "', '" + TblMember.seatNo + "', " + EndTime() + ", 0)");
                 }
                 else
                 {
-                    sql.Query_Modify("INSERT INTO TBL_MEMBER ( memberNo, phoneNum, memberbool) VALUES (1,'" + TblMember.phoneNum + "','" + false + "')");
+                    sql.Query_Modify("INSERT INTO TBL_MEMBER ( memberNo, phoneNum, seatNo, expiredTime, memberbool) VALUES (1,'" + TblMember.phoneNum + "', '" + TblMember.seatNo + "', " + EndTime() + ", 0)");
                 }
             }
             //TBL_SEAT에 데이터 저장
@@ -397,7 +396,6 @@ namespace StudyRoomKiosk
                 }
             }
 
-            //we_selectTime에 클릭한 라디오버튼의 텍스트값 저장___해결
             if (TblMember.seatNo == null || selectTime == null)
             {
                 MessageBox.Show("시간과 좌석 모두 선택해야 합니다.");
@@ -419,7 +417,8 @@ namespace StudyRoomKiosk
                 }
                 else
                 {
-                    MessageBox.Show("결제가 취소되었습니다.");
+                    //MessageBox.Show("결제가 취소되었습니다.");
+                    MessageBox.Show(EndTime());
                 }
             }
         }
@@ -443,6 +442,7 @@ namespace StudyRoomKiosk
             form.ShowDialog();
             Process.GetCurrentProcess().Kill();
         }
+
         //1분 마다 발생 되는 이벤트
         private void timer_Tick(object sender, EventArgs e)
         {
@@ -457,7 +457,5 @@ namespace StudyRoomKiosk
                 }
             }
         }
-
-       
     }
 }

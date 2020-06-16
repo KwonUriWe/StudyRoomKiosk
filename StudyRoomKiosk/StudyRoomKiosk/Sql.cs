@@ -91,6 +91,19 @@ namespace StudyRoomKiosk
             conn.Close();
             return ds;
         }
+
+        public DataSet Query_Select_Dual(string columnStr)
+        {//오라클의 Dual과 같은 가상 테이블 사용하기
+            ConnectDB();
+            cmd.Connection = conn;
+            cmd.CommandText = "SELECT " + columnStr + " A";
+            da = new SqlDataAdapter(cmd);
+            ds = new DataSet();
+            da.Fill(ds);
+            conn.Close();
+            return ds;
+        }
+
         public void Query_Modify(string sqlcommand)
         {//update delete insert 등
          //자주 쓸만한 DML문은 따로 Overloading을 하여만드시면 됩니다.
@@ -121,7 +134,6 @@ namespace StudyRoomKiosk
             {
                 return true;
             }
-
         }
     }
 }
