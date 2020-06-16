@@ -37,6 +37,31 @@
             this.button_goHome = new System.Windows.Forms.Button();
             this.button_goJoin = new System.Windows.Forms.Button();
             this.groupBox_seat = new System.Windows.Forms.GroupBox();
+            this.label_time5 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label_time24 = new System.Windows.Forms.Label();
+            this.label_time23 = new System.Windows.Forms.Label();
+            this.label_time21 = new System.Windows.Forms.Label();
+            this.label_time19 = new System.Windows.Forms.Label();
+            this.label_time20 = new System.Windows.Forms.Label();
+            this.label_time18 = new System.Windows.Forms.Label();
+            this.label_time22 = new System.Windows.Forms.Label();
+            this.label_time17 = new System.Windows.Forms.Label();
+            this.label_time10 = new System.Windows.Forms.Label();
+            this.label_time9 = new System.Windows.Forms.Label();
+            this.label_time8 = new System.Windows.Forms.Label();
+            this.label_time7 = new System.Windows.Forms.Label();
+            this.label_time4 = new System.Windows.Forms.Label();
+            this.label_time2 = new System.Windows.Forms.Label();
+            this.label_time3 = new System.Windows.Forms.Label();
+            this.label_time1 = new System.Windows.Forms.Label();
+            this.label_time11 = new System.Windows.Forms.Label();
+            this.label_time16 = new System.Windows.Forms.Label();
+            this.label_time15 = new System.Windows.Forms.Label();
+            this.label_time14 = new System.Windows.Forms.Label();
+            this.label_time13 = new System.Windows.Forms.Label();
+            this.label_time12 = new System.Windows.Forms.Label();
+            this.label_time6 = new System.Windows.Forms.Label();
             this.button_seat11 = new System.Windows.Forms.Button();
             this.button_seat16 = new System.Windows.Forms.Button();
             this.button_seat7 = new System.Windows.Forms.Button();
@@ -78,11 +103,16 @@
             this.radioButton_3Hours = new System.Windows.Forms.RadioButton();
             this.radioButton_2Hours = new System.Windows.Forms.RadioButton();
             this.groupBox_time = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox_seat.SuspendLayout();
             this.groupBox_longTime.SuspendLayout();
             this.groupBox_today.SuspendLayout();
             this.groupBox_time.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // label3
             // 
@@ -151,6 +181,31 @@
             // groupBox_seat
             // 
             this.groupBox_seat.BackColor = System.Drawing.Color.White;
+            this.groupBox_seat.Controls.Add(this.label_time5);
+            this.groupBox_seat.Controls.Add(this.label5);
+            this.groupBox_seat.Controls.Add(this.label_time24);
+            this.groupBox_seat.Controls.Add(this.label_time23);
+            this.groupBox_seat.Controls.Add(this.label_time21);
+            this.groupBox_seat.Controls.Add(this.label_time19);
+            this.groupBox_seat.Controls.Add(this.label_time20);
+            this.groupBox_seat.Controls.Add(this.label_time18);
+            this.groupBox_seat.Controls.Add(this.label_time22);
+            this.groupBox_seat.Controls.Add(this.label_time17);
+            this.groupBox_seat.Controls.Add(this.label_time10);
+            this.groupBox_seat.Controls.Add(this.label_time9);
+            this.groupBox_seat.Controls.Add(this.label_time8);
+            this.groupBox_seat.Controls.Add(this.label_time7);
+            this.groupBox_seat.Controls.Add(this.label_time4);
+            this.groupBox_seat.Controls.Add(this.label_time2);
+            this.groupBox_seat.Controls.Add(this.label_time3);
+            this.groupBox_seat.Controls.Add(this.label_time1);
+            this.groupBox_seat.Controls.Add(this.label_time11);
+            this.groupBox_seat.Controls.Add(this.label_time16);
+            this.groupBox_seat.Controls.Add(this.label_time15);
+            this.groupBox_seat.Controls.Add(this.label_time14);
+            this.groupBox_seat.Controls.Add(this.label_time13);
+            this.groupBox_seat.Controls.Add(this.label_time12);
+            this.groupBox_seat.Controls.Add(this.label_time6);
             this.groupBox_seat.Controls.Add(this.button_seat11);
             this.groupBox_seat.Controls.Add(this.button_seat16);
             this.groupBox_seat.Controls.Add(this.button_seat7);
@@ -184,6 +239,256 @@
             this.groupBox_seat.Size = new System.Drawing.Size(560, 651);
             this.groupBox_seat.TabIndex = 11;
             this.groupBox_seat.TabStop = false;
+            // 
+            // label_time5
+            // 
+            this.label_time5.AutoSize = true;
+            this.label_time5.Location = new System.Drawing.Point(410, 103);
+            this.label_time5.Name = "label_time5";
+            this.label_time5.Size = new System.Drawing.Size(43, 13);
+            this.label_time5.TabIndex = 53;
+            this.label_time5.Text = "label_t";
+            this.label_time5.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(24, 640);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 13);
+            this.label5.TabIndex = 54;
+            this.label5.Text = "label_t";
+            this.label5.Visible = false;
+            // 
+            // label_time24
+            // 
+            this.label_time24.AutoSize = true;
+            this.label_time24.Location = new System.Drawing.Point(299, 517);
+            this.label_time24.Name = "label_time24";
+            this.label_time24.Size = new System.Drawing.Size(43, 13);
+            this.label_time24.TabIndex = 52;
+            this.label_time24.Text = "label_t";
+            this.label_time24.Visible = false;
+            // 
+            // label_time23
+            // 
+            this.label_time23.AutoSize = true;
+            this.label_time23.Location = new System.Drawing.Point(209, 517);
+            this.label_time23.Name = "label_time23";
+            this.label_time23.Size = new System.Drawing.Size(43, 13);
+            this.label_time23.TabIndex = 51;
+            this.label_time23.Text = "label_t";
+            this.label_time23.Visible = false;
+            // 
+            // label_time21
+            // 
+            this.label_time21.AutoSize = true;
+            this.label_time21.Location = new System.Drawing.Point(135, 429);
+            this.label_time21.Name = "label_time21";
+            this.label_time21.Size = new System.Drawing.Size(43, 13);
+            this.label_time21.TabIndex = 50;
+            this.label_time21.Text = "label_t";
+            this.label_time21.Visible = false;
+            // 
+            // label_time19
+            // 
+            this.label_time19.AutoSize = true;
+            this.label_time19.Location = new System.Drawing.Point(135, 322);
+            this.label_time19.Name = "label_time19";
+            this.label_time19.Size = new System.Drawing.Size(43, 13);
+            this.label_time19.TabIndex = 49;
+            this.label_time19.Text = "label_t";
+            this.label_time19.Visible = false;
+            // 
+            // label_time20
+            // 
+            this.label_time20.AutoSize = true;
+            this.label_time20.Location = new System.Drawing.Point(380, 322);
+            this.label_time20.Name = "label_time20";
+            this.label_time20.Size = new System.Drawing.Size(43, 13);
+            this.label_time20.TabIndex = 48;
+            this.label_time20.Text = "label_t";
+            this.label_time20.Visible = false;
+            // 
+            // label_time18
+            // 
+            this.label_time18.AutoSize = true;
+            this.label_time18.Location = new System.Drawing.Point(299, 234);
+            this.label_time18.Name = "label_time18";
+            this.label_time18.Size = new System.Drawing.Size(43, 13);
+            this.label_time18.TabIndex = 46;
+            this.label_time18.Text = "label_t";
+            this.label_time18.Visible = false;
+            // 
+            // label_time22
+            // 
+            this.label_time22.AutoSize = true;
+            this.label_time22.Location = new System.Drawing.Point(380, 429);
+            this.label_time22.Name = "label_time22";
+            this.label_time22.Size = new System.Drawing.Size(43, 13);
+            this.label_time22.TabIndex = 47;
+            this.label_time22.Text = "label_t";
+            this.label_time22.Visible = false;
+            // 
+            // label_time17
+            // 
+            this.label_time17.AutoSize = true;
+            this.label_time17.Location = new System.Drawing.Point(209, 234);
+            this.label_time17.Name = "label_time17";
+            this.label_time17.Size = new System.Drawing.Size(43, 13);
+            this.label_time17.TabIndex = 45;
+            this.label_time17.Text = "label_t";
+            this.label_time17.Visible = false;
+            // 
+            // label_time10
+            // 
+            this.label_time10.AutoSize = true;
+            this.label_time10.Location = new System.Drawing.Point(22, 537);
+            this.label_time10.Name = "label_time10";
+            this.label_time10.Size = new System.Drawing.Size(43, 13);
+            this.label_time10.TabIndex = 43;
+            this.label_time10.Text = "label_t";
+            this.label_time10.Visible = false;
+            // 
+            // label_time9
+            // 
+            this.label_time9.AutoSize = true;
+            this.label_time9.Location = new System.Drawing.Point(22, 429);
+            this.label_time9.Name = "label_time9";
+            this.label_time9.Size = new System.Drawing.Size(43, 13);
+            this.label_time9.TabIndex = 42;
+            this.label_time9.Text = "label_t";
+            this.label_time9.Visible = false;
+            // 
+            // label_time8
+            // 
+            this.label_time8.AutoSize = true;
+            this.label_time8.Location = new System.Drawing.Point(22, 322);
+            this.label_time8.Name = "label_time8";
+            this.label_time8.Size = new System.Drawing.Size(43, 13);
+            this.label_time8.TabIndex = 41;
+            this.label_time8.Text = "label_t";
+            this.label_time8.Visible = false;
+            // 
+            // label_time7
+            // 
+            this.label_time7.AutoSize = true;
+            this.label_time7.Location = new System.Drawing.Point(22, 215);
+            this.label_time7.Name = "label_time7";
+            this.label_time7.Size = new System.Drawing.Size(43, 13);
+            this.label_time7.TabIndex = 40;
+            this.label_time7.Text = "label_t";
+            this.label_time7.Visible = false;
+            // 
+            // label_time4
+            // 
+            this.label_time4.AutoSize = true;
+            this.label_time4.Location = new System.Drawing.Point(318, 103);
+            this.label_time4.Name = "label_time4";
+            this.label_time4.Size = new System.Drawing.Size(43, 13);
+            this.label_time4.TabIndex = 39;
+            this.label_time4.Text = "label_t";
+            this.label_time4.Visible = false;
+            // 
+            // label_time2
+            // 
+            this.label_time2.AutoSize = true;
+            this.label_time2.Location = new System.Drawing.Point(115, 103);
+            this.label_time2.Name = "label_time2";
+            this.label_time2.Size = new System.Drawing.Size(43, 13);
+            this.label_time2.TabIndex = 38;
+            this.label_time2.Text = "label_t";
+            this.label_time2.Visible = false;
+            // 
+            // label_time3
+            // 
+            this.label_time3.AutoSize = true;
+            this.label_time3.Location = new System.Drawing.Point(193, 103);
+            this.label_time3.Name = "label_time3";
+            this.label_time3.Size = new System.Drawing.Size(43, 13);
+            this.label_time3.TabIndex = 37;
+            this.label_time3.Text = "label_t";
+            this.label_time3.Visible = false;
+            // 
+            // label_time1
+            // 
+            this.label_time1.AutoSize = true;
+            this.label_time1.Location = new System.Drawing.Point(22, 103);
+            this.label_time1.Name = "label_time1";
+            this.label_time1.Size = new System.Drawing.Size(43, 13);
+            this.label_time1.TabIndex = 36;
+            this.label_time1.Text = "label_t";
+            this.label_time1.Visible = false;
+            // 
+            // label_time11
+            // 
+            this.label_time11.AutoSize = true;
+            this.label_time11.Location = new System.Drawing.Point(34, 945);
+            this.label_time11.Name = "label_time11";
+            this.label_time11.Size = new System.Drawing.Size(43, 13);
+            this.label_time11.TabIndex = 44;
+            this.label_time11.Text = "label_t";
+            this.label_time11.Visible = false;
+            // 
+            // label_time16
+            // 
+            this.label_time16.AutoSize = true;
+            this.label_time16.Location = new System.Drawing.Point(503, 947);
+            this.label_time16.Name = "label_time16";
+            this.label_time16.Size = new System.Drawing.Size(43, 13);
+            this.label_time16.TabIndex = 35;
+            this.label_time16.Text = "label_t";
+            this.label_time16.Visible = false;
+            // 
+            // label_time15
+            // 
+            this.label_time15.AutoSize = true;
+            this.label_time15.Location = new System.Drawing.Point(492, 539);
+            this.label_time15.Name = "label_time15";
+            this.label_time15.Size = new System.Drawing.Size(43, 13);
+            this.label_time15.TabIndex = 34;
+            this.label_time15.Text = "label_t";
+            this.label_time15.Visible = false;
+            // 
+            // label_time14
+            // 
+            this.label_time14.AutoSize = true;
+            this.label_time14.Location = new System.Drawing.Point(491, 431);
+            this.label_time14.Name = "label_time14";
+            this.label_time14.Size = new System.Drawing.Size(43, 13);
+            this.label_time14.TabIndex = 33;
+            this.label_time14.Text = "label_t";
+            this.label_time14.Visible = false;
+            // 
+            // label_time13
+            // 
+            this.label_time13.AutoSize = true;
+            this.label_time13.Location = new System.Drawing.Point(492, 324);
+            this.label_time13.Name = "label_time13";
+            this.label_time13.Size = new System.Drawing.Size(43, 13);
+            this.label_time13.TabIndex = 32;
+            this.label_time13.Text = "label_t";
+            this.label_time13.Visible = false;
+            // 
+            // label_time12
+            // 
+            this.label_time12.AutoSize = true;
+            this.label_time12.Location = new System.Drawing.Point(492, 215);
+            this.label_time12.Name = "label_time12";
+            this.label_time12.Size = new System.Drawing.Size(43, 13);
+            this.label_time12.TabIndex = 31;
+            this.label_time12.Text = "label_t";
+            this.label_time12.Visible = false;
+            // 
+            // label_time6
+            // 
+            this.label_time6.AutoSize = true;
+            this.label_time6.Location = new System.Drawing.Point(492, 105);
+            this.label_time6.Name = "label_time6";
+            this.label_time6.Size = new System.Drawing.Size(43, 13);
+            this.label_time6.TabIndex = 30;
+            this.label_time6.Text = "label_t";
+            this.label_time6.Visible = false;
             // 
             // button_seat11
             // 
@@ -708,12 +1013,23 @@
             this.groupBox_time.TabIndex = 13;
             this.groupBox_time.TabStop = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(504, 940);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 15);
+            this.label4.TabIndex = 55;
+            this.label4.Text = "label_t";
+            this.label4.Visible = false;
+            // 
             // FormSelectSeatTime
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(584, 962);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox_time);
             this.Controls.Add(this.button_payment);
             this.Controls.Add(this.groupBox_seat);
@@ -789,5 +1105,31 @@
         private System.Windows.Forms.RadioButton radioButton_3Hours;
         private System.Windows.Forms.RadioButton radioButton_2Hours;
         private System.Windows.Forms.GroupBox groupBox_time;
+        private System.Windows.Forms.Label label_time5;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label_time24;
+        private System.Windows.Forms.Label label_time23;
+        private System.Windows.Forms.Label label_time21;
+        private System.Windows.Forms.Label label_time19;
+        private System.Windows.Forms.Label label_time20;
+        private System.Windows.Forms.Label label_time18;
+        private System.Windows.Forms.Label label_time22;
+        private System.Windows.Forms.Label label_time17;
+        private System.Windows.Forms.Label label_time10;
+        private System.Windows.Forms.Label label_time9;
+        private System.Windows.Forms.Label label_time8;
+        private System.Windows.Forms.Label label_time7;
+        private System.Windows.Forms.Label label_time4;
+        private System.Windows.Forms.Label label_time2;
+        private System.Windows.Forms.Label label_time3;
+        private System.Windows.Forms.Label label_time1;
+        private System.Windows.Forms.Label label_time11;
+        private System.Windows.Forms.Label label_time16;
+        private System.Windows.Forms.Label label_time15;
+        private System.Windows.Forms.Label label_time14;
+        private System.Windows.Forms.Label label_time13;
+        private System.Windows.Forms.Label label_time12;
+        private System.Windows.Forms.Label label_time6;
+        private System.Windows.Forms.Label label4;
     }
 }
