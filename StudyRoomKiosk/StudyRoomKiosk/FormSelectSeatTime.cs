@@ -93,9 +93,20 @@ namespace StudyRoomKiosk
                         // time[i] = Convert.ToDateTime((gapTime2.ToString()));
                         time[i] = gapTime2;
                     }
+                    else
+                    {
+                        if (sql.Query_Select_Bool("TBL_MEMBER", " seatNo = " + seatNo[i] + " and memberbool = 'true'"))
+                        {
+                            sql.Query_Modify("UPDATE TBL_MEMBER SET seatNo = NULL , expiredTime = NULL WHERE   seatNo = " + seatNo[i]);
+                        }
+                        else
+                        {
+                            sql.Query_Modify("DELETE FROM TBL_MEMBER WHERE   seatNo = " + seatNo[i] + " and memberbool = 'false'");
+                        }
+                        sql.Query_Modify("UPDATE TBL_SEAT SET status = 'FALSE' WHERE seatNo=" + seatNo[i]);
+                    }
                 }
                 label_time();
-                //   label_time1.Text = time[0].ToString().Substring(0, 5);
             }
 
         }
@@ -450,6 +461,7 @@ namespace StudyRoomKiosk
             form.ShowDialog();
             Process.GetCurrentProcess().Kill();
         }
+        //사용자가 폼을 이용하고 있을때 시간이 끝났을 경우 빈자리 상태로 만들어준다.
         private void Reset(int i)
         {
             switch (seatNo[i]) {

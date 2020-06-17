@@ -37,6 +37,7 @@
             this.button_goHome = new System.Windows.Forms.Button();
             this.button_goJoin = new System.Windows.Forms.Button();
             this.groupBox_seat = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label_time5 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label_time24 = new System.Windows.Forms.Label();
@@ -91,13 +92,14 @@
             this.groupBox_long = new System.Windows.Forms.GroupBox();
             this.groupBox_today = new System.Windows.Forms.GroupBox();
             this.groupBox_time = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox_seat.SuspendLayout();
             this.groupBox_time.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
             // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 3000;
             this.timer1.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // label3
@@ -106,7 +108,7 @@
             this.label3.Font = new System.Drawing.Font("맑은 고딕", 10F);
             this.label3.Location = new System.Drawing.Point(181, 272);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 19);
+            this.label3.Size = new System.Drawing.Size(78, 23);
             this.label3.TabIndex = 7;
             this.label3.Text = "사용가능";
             // 
@@ -116,7 +118,7 @@
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 10F);
             this.label2.Location = new System.Drawing.Point(63, 272);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 19);
+            this.label2.Size = new System.Drawing.Size(61, 23);
             this.label2.TabIndex = 8;
             this.label2.Text = "사용중";
             // 
@@ -227,12 +229,22 @@
             this.groupBox_seat.TabIndex = 11;
             this.groupBox_seat.TabStop = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(479, 626);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 17);
+            this.label4.TabIndex = 55;
+            this.label4.Text = "label_t";
+            this.label4.Visible = false;
+            // 
             // label_time5
             // 
             this.label_time5.AutoSize = true;
             this.label_time5.Location = new System.Drawing.Point(392, 84);
             this.label_time5.Name = "label_time5";
-            this.label_time5.Size = new System.Drawing.Size(43, 13);
+            this.label_time5.Size = new System.Drawing.Size(54, 17);
             this.label_time5.TabIndex = 53;
             this.label_time5.Text = "label_t";
             this.label_time5.Visible = false;
@@ -242,7 +254,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(13, 626);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 13);
+            this.label5.Size = new System.Drawing.Size(54, 17);
             this.label5.TabIndex = 54;
             this.label5.Text = "label_t";
             this.label5.Visible = false;
@@ -252,7 +264,7 @@
             this.label_time24.AutoSize = true;
             this.label_time24.Location = new System.Drawing.Point(288, 498);
             this.label_time24.Name = "label_time24";
-            this.label_time24.Size = new System.Drawing.Size(43, 13);
+            this.label_time24.Size = new System.Drawing.Size(54, 17);
             this.label_time24.TabIndex = 52;
             this.label_time24.Text = "label_t";
             this.label_time24.Visible = false;
@@ -262,7 +274,7 @@
             this.label_time23.AutoSize = true;
             this.label_time23.Location = new System.Drawing.Point(200, 498);
             this.label_time23.Name = "label_time23";
-            this.label_time23.Size = new System.Drawing.Size(43, 13);
+            this.label_time23.Size = new System.Drawing.Size(54, 17);
             this.label_time23.TabIndex = 51;
             this.label_time23.Text = "label_t";
             this.label_time23.Visible = false;
@@ -272,7 +284,7 @@
             this.label_time21.AutoSize = true;
             this.label_time21.Location = new System.Drawing.Point(122, 410);
             this.label_time21.Name = "label_time21";
-            this.label_time21.Size = new System.Drawing.Size(43, 13);
+            this.label_time21.Size = new System.Drawing.Size(54, 17);
             this.label_time21.TabIndex = 50;
             this.label_time21.Text = "label_t";
             this.label_time21.Visible = false;
@@ -282,7 +294,7 @@
             this.label_time19.AutoSize = true;
             this.label_time19.Location = new System.Drawing.Point(122, 303);
             this.label_time19.Name = "label_time19";
-            this.label_time19.Size = new System.Drawing.Size(43, 13);
+            this.label_time19.Size = new System.Drawing.Size(54, 17);
             this.label_time19.TabIndex = 49;
             this.label_time19.Text = "label_t";
             this.label_time19.Visible = false;
@@ -292,7 +304,7 @@
             this.label_time20.AutoSize = true;
             this.label_time20.Location = new System.Drawing.Point(367, 303);
             this.label_time20.Name = "label_time20";
-            this.label_time20.Size = new System.Drawing.Size(43, 13);
+            this.label_time20.Size = new System.Drawing.Size(54, 17);
             this.label_time20.TabIndex = 48;
             this.label_time20.Text = "label_t";
             this.label_time20.Visible = false;
@@ -302,7 +314,7 @@
             this.label_time18.AutoSize = true;
             this.label_time18.Location = new System.Drawing.Point(288, 215);
             this.label_time18.Name = "label_time18";
-            this.label_time18.Size = new System.Drawing.Size(43, 13);
+            this.label_time18.Size = new System.Drawing.Size(54, 17);
             this.label_time18.TabIndex = 46;
             this.label_time18.Text = "label_t";
             this.label_time18.Visible = false;
@@ -312,7 +324,7 @@
             this.label_time22.AutoSize = true;
             this.label_time22.Location = new System.Drawing.Point(367, 410);
             this.label_time22.Name = "label_time22";
-            this.label_time22.Size = new System.Drawing.Size(43, 13);
+            this.label_time22.Size = new System.Drawing.Size(54, 17);
             this.label_time22.TabIndex = 47;
             this.label_time22.Text = "label_t";
             this.label_time22.Visible = false;
@@ -322,7 +334,7 @@
             this.label_time17.AutoSize = true;
             this.label_time17.Location = new System.Drawing.Point(200, 215);
             this.label_time17.Name = "label_time17";
-            this.label_time17.Size = new System.Drawing.Size(43, 13);
+            this.label_time17.Size = new System.Drawing.Size(54, 17);
             this.label_time17.TabIndex = 45;
             this.label_time17.Text = "label_t";
             this.label_time17.Visible = false;
@@ -332,7 +344,7 @@
             this.label_time10.AutoSize = true;
             this.label_time10.Location = new System.Drawing.Point(13, 518);
             this.label_time10.Name = "label_time10";
-            this.label_time10.Size = new System.Drawing.Size(43, 13);
+            this.label_time10.Size = new System.Drawing.Size(54, 17);
             this.label_time10.TabIndex = 43;
             this.label_time10.Text = "label_t";
             this.label_time10.Visible = false;
@@ -342,7 +354,7 @@
             this.label_time9.AutoSize = true;
             this.label_time9.Location = new System.Drawing.Point(13, 410);
             this.label_time9.Name = "label_time9";
-            this.label_time9.Size = new System.Drawing.Size(43, 13);
+            this.label_time9.Size = new System.Drawing.Size(54, 17);
             this.label_time9.TabIndex = 42;
             this.label_time9.Text = "label_t";
             this.label_time9.Visible = false;
@@ -352,7 +364,7 @@
             this.label_time8.AutoSize = true;
             this.label_time8.Location = new System.Drawing.Point(13, 303);
             this.label_time8.Name = "label_time8";
-            this.label_time8.Size = new System.Drawing.Size(43, 13);
+            this.label_time8.Size = new System.Drawing.Size(54, 17);
             this.label_time8.TabIndex = 41;
             this.label_time8.Text = "label_t";
             this.label_time8.Visible = false;
@@ -362,7 +374,7 @@
             this.label_time7.AutoSize = true;
             this.label_time7.Location = new System.Drawing.Point(13, 196);
             this.label_time7.Name = "label_time7";
-            this.label_time7.Size = new System.Drawing.Size(43, 13);
+            this.label_time7.Size = new System.Drawing.Size(54, 17);
             this.label_time7.TabIndex = 40;
             this.label_time7.Text = "label_t";
             this.label_time7.Visible = false;
@@ -372,7 +384,7 @@
             this.label_time4.AutoSize = true;
             this.label_time4.Location = new System.Drawing.Point(306, 84);
             this.label_time4.Name = "label_time4";
-            this.label_time4.Size = new System.Drawing.Size(43, 13);
+            this.label_time4.Size = new System.Drawing.Size(54, 17);
             this.label_time4.TabIndex = 39;
             this.label_time4.Text = "label_t";
             this.label_time4.Visible = false;
@@ -382,7 +394,7 @@
             this.label_time2.AutoSize = true;
             this.label_time2.Location = new System.Drawing.Point(96, 84);
             this.label_time2.Name = "label_time2";
-            this.label_time2.Size = new System.Drawing.Size(43, 13);
+            this.label_time2.Size = new System.Drawing.Size(54, 17);
             this.label_time2.TabIndex = 38;
             this.label_time2.Text = "label_t";
             this.label_time2.Visible = false;
@@ -392,7 +404,7 @@
             this.label_time3.AutoSize = true;
             this.label_time3.Location = new System.Drawing.Point(182, 84);
             this.label_time3.Name = "label_time3";
-            this.label_time3.Size = new System.Drawing.Size(43, 13);
+            this.label_time3.Size = new System.Drawing.Size(54, 17);
             this.label_time3.TabIndex = 37;
             this.label_time3.Text = "label_t";
             this.label_time3.Visible = false;
@@ -402,7 +414,7 @@
             this.label_time1.AutoSize = true;
             this.label_time1.Location = new System.Drawing.Point(13, 84);
             this.label_time1.Name = "label_time1";
-            this.label_time1.Size = new System.Drawing.Size(43, 13);
+            this.label_time1.Size = new System.Drawing.Size(54, 17);
             this.label_time1.TabIndex = 36;
             this.label_time1.Text = "label_t";
             this.label_time1.Visible = false;
@@ -412,7 +424,7 @@
             this.label_time11.AutoSize = true;
             this.label_time11.Location = new System.Drawing.Point(34, 945);
             this.label_time11.Name = "label_time11";
-            this.label_time11.Size = new System.Drawing.Size(43, 13);
+            this.label_time11.Size = new System.Drawing.Size(54, 17);
             this.label_time11.TabIndex = 44;
             this.label_time11.Text = "label_t";
             this.label_time11.Visible = false;
@@ -422,7 +434,7 @@
             this.label_time16.AutoSize = true;
             this.label_time16.Location = new System.Drawing.Point(503, 947);
             this.label_time16.Name = "label_time16";
-            this.label_time16.Size = new System.Drawing.Size(43, 13);
+            this.label_time16.Size = new System.Drawing.Size(54, 17);
             this.label_time16.TabIndex = 35;
             this.label_time16.Text = "label_t";
             this.label_time16.Visible = false;
@@ -432,7 +444,7 @@
             this.label_time15.AutoSize = true;
             this.label_time15.Location = new System.Drawing.Point(479, 518);
             this.label_time15.Name = "label_time15";
-            this.label_time15.Size = new System.Drawing.Size(43, 13);
+            this.label_time15.Size = new System.Drawing.Size(54, 17);
             this.label_time15.TabIndex = 34;
             this.label_time15.Text = "label_t";
             this.label_time15.Visible = false;
@@ -442,7 +454,7 @@
             this.label_time14.AutoSize = true;
             this.label_time14.Location = new System.Drawing.Point(478, 410);
             this.label_time14.Name = "label_time14";
-            this.label_time14.Size = new System.Drawing.Size(43, 13);
+            this.label_time14.Size = new System.Drawing.Size(54, 17);
             this.label_time14.TabIndex = 33;
             this.label_time14.Text = "label_t";
             this.label_time14.Visible = false;
@@ -452,7 +464,7 @@
             this.label_time13.AutoSize = true;
             this.label_time13.Location = new System.Drawing.Point(479, 303);
             this.label_time13.Name = "label_time13";
-            this.label_time13.Size = new System.Drawing.Size(43, 13);
+            this.label_time13.Size = new System.Drawing.Size(54, 17);
             this.label_time13.TabIndex = 32;
             this.label_time13.Text = "label_t";
             this.label_time13.Visible = false;
@@ -462,7 +474,7 @@
             this.label_time12.AutoSize = true;
             this.label_time12.Location = new System.Drawing.Point(479, 194);
             this.label_time12.Name = "label_time12";
-            this.label_time12.Size = new System.Drawing.Size(43, 13);
+            this.label_time12.Size = new System.Drawing.Size(54, 17);
             this.label_time12.TabIndex = 31;
             this.label_time12.Text = "label_t";
             this.label_time12.Visible = false;
@@ -472,7 +484,7 @@
             this.label_time6.AutoSize = true;
             this.label_time6.Location = new System.Drawing.Point(478, 84);
             this.label_time6.Name = "label_time6";
-            this.label_time6.Size = new System.Drawing.Size(43, 13);
+            this.label_time6.Size = new System.Drawing.Size(54, 17);
             this.label_time6.TabIndex = 30;
             this.label_time6.Text = "label_t";
             this.label_time6.Visible = false;
@@ -777,7 +789,7 @@
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.label1.Location = new System.Drawing.Point(253, 626);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 21);
+            this.label1.Size = new System.Drawing.Size(72, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "출입문";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -831,19 +843,9 @@
             this.groupBox_time.TabIndex = 13;
             this.groupBox_time.TabStop = false;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(479, 626);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 13);
-            this.label4.TabIndex = 55;
-            this.label4.Text = "label_t";
-            this.label4.Visible = false;
-            // 
             // FormSelectSeatTime
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(584, 962);
