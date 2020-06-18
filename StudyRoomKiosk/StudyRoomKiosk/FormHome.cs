@@ -13,11 +13,41 @@ namespace StudyRoomKiosk
 {
     public partial class FormHome : Form
     {
+        Sql sql = new Sql();
+        String[] seatNo;
+        DateTime[] timEnd;
+        int count;
         public FormHome()
         {
             InitializeComponent();
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 
+            if (sql.Query_Select_Bool("TBL_MEMBER", " seatNo is not null"))
+            {
+                //사용중인 좌석 개수를 구한다.
+                DataSet ds = sql.Query_Select_DataSet("seatNo,expiredTime", " Where seatNo is not null", "TBL_MEMBER");
+                count = int.Parse(ds.Tables[0].Rows.Count.ToString());
+                seatNo = new String[count];
+                timEnd = new DateTime[count];
+                for (int i = 0; i < count; i++)
+                {
+                    seatNo[i] = ds.Tables[0].Rows[i]["seatNo"].ToString();
+                    timEnd[i] = Convert.ToDateTime(ds.Tables[0].Rows[i]["expiredTime"].ToString());
+                    DateTime timeNow = DateTime.Now;
+                    if (timEnd[i] < timeNow)
+                    {
+                        if (sql.Query_Select_Bool("TBL_MEMBER", " seatNo = " + seatNo[i] + " and memberbool = 'true'"))
+                        {
+                            sql.Query_Modify("UPDATE TBL_MEMBER SET seatNo = NULL , expiredTime = NULL WHERE   seatNo = " + seatNo[i]);
+                        }
+                        else
+                        {
+                            sql.Query_Modify("DELETE FROM TBL_MEMBER WHERE   seatNo = " + seatNo[i] + " and memberbool = 'false'");
+                        }
+                        sql.Query_Modify("UPDATE TBL_SEAT SET status = 'FALSE' WHERE seatNo=" + seatNo[i]);
+                    }
+                }
+            }
             seats();
         }
 

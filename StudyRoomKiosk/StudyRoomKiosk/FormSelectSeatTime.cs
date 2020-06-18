@@ -87,11 +87,10 @@ namespace StudyRoomKiosk
 
                     if (timEnd[i] > timeNow)
                     {
+                      
                         TimeSpan gapTime2 = timEnd[i] - timeNow;
-                        //TimeSpan gapTime2 = eTime - time;
-                        //계산한 남은 시간을 배열에 넣어준다.
-                        // time[i] = Convert.ToDateTime((gapTime2.ToString()));
                         time[i] = gapTime2;
+                        
                     }
                     else
                     {
@@ -107,175 +106,11 @@ namespace StudyRoomKiosk
                     }
                 }
                 label_time();
+                //   label_time1.Text = time[0].ToString().Substring(j, k);
             }
 
         }
-        //사용중인 자리 이벤트
-        private void label_time()
-        {
-            DateTime timeNow = DateTime.Now;
-            TimeSpan a = new TimeSpan(0, 0, 0);
-            for (int i = 0; i < count; i++)
-            {
-
-
-                if (timEnd[i] > timeNow)
-                {
-                   if( time[i] > a){
-
-                    
-                    switch (seatNo[i])
-                    {
-                        case "1":
-                            label_time1.Visible = true;
-                            label_time1.Text = time[i].ToString().Substring(0, 5);
-                            button_seat1.BackColor = Color.FromArgb(255, 128, 0);
-                            button_seat1.Enabled = false;
-                            break;
-                        case "2":
-                            label_time2.Visible = true;
-                            label_time2.Text = time[i].ToString().Substring(0, 5);
-                            button_seat2.BackColor = Color.FromArgb(255, 128, 0);
-                            button_seat2.Enabled = false;
-                            break;
-                        case "3":
-                            label_time3.Visible = true;
-                            label_time3.Text = time[i].ToString().Substring(0, 5);
-                            button_seat3.BackColor = Color.FromArgb(255, 128, 0);
-                            button_seat3.Enabled = false;
-                            break;
-                        case "4":
-                            label_time4.Visible = true;
-                            label_time4.Text = time[i].ToString().Substring(0, 5);
-                            button_seat4.BackColor = Color.FromArgb(255, 128, 0);
-                            button_seat4.Enabled = false;
-                            break;
-                        case "5":
-                            label_time5.Visible = true;
-                            label_time5.Text = time[i].ToString().Substring(0, 5);
-                            button_seat5.BackColor = Color.FromArgb(255, 128, 0);
-                            button_seat5.Enabled = false;
-                            break;
-                        case "6":
-                            label_time6.Visible = true;
-                            label_time6.Text = time[i].ToString().Substring(0, 5);
-                            button_seat6.BackColor = Color.FromArgb(255, 128, 0);
-                            button_seat6.Enabled = false;
-                            break;
-                        case "7":
-                            label_time7.Visible = true;
-                            label_time7.Text = time[i].ToString().Substring(0, 5);
-                            button_seat7.BackColor = Color.FromArgb(255, 128, 0);
-                            button_seat7.Enabled = false;
-                            break;
-                        case "8":
-                            label_time8.Visible = true;
-                            label_time8.Text = time[i].ToString().Substring(0, 5);
-                            button_seat8.BackColor = Color.FromArgb(255, 128, 0);
-                            button_seat8.Enabled = false;
-                            break;
-                        case "9":
-                            label_time9.Visible = true;
-                            label_time9.Text = time[i].ToString().Substring(0, 5);
-                            button_seat9.BackColor = Color.FromArgb(255, 128, 0);
-                            button_seat9.Enabled = false;
-                            break;
-                        case "10":
-                            label_time10.Visible = true;
-                            label_time10.Text = time[i].ToString().Substring(0, 5);
-                            button_seat10.BackColor = Color.FromArgb(255, 128, 0);
-                            button_seat10.Enabled = false;
-                            break;
-                        case "11":
-                            label_time11.Visible = true;
-                            label_time11.Text = time[i].ToString().Substring(0, 5);
-                            button_seat11.BackColor = Color.FromArgb(255, 128, 0);
-                            button_seat11.Enabled = false;
-                            break;
-                        case "12":
-                            label_time12.Visible = true;
-                            label_time12.Text = time[i].ToString().Substring(0, 5);
-                            button_seat12.BackColor = Color.FromArgb(255, 128, 0);
-                            button_seat12.Enabled = false;
-                            break;
-                        case "13":
-                            label_time13.Visible = true;
-                            label_time13.Text = time[i].ToString().Substring(0, 5);
-                            button_seat13.BackColor = Color.FromArgb(255, 128, 0);
-                            button_seat13.Enabled = false;
-                            break;
-                        case "14":
-                            label_time14.Visible = true;
-                            label_time14.Text = time[i].ToString().Substring(0, 5);
-                            button_seat14.BackColor = Color.FromArgb(255, 128, 0);
-                            button_seat14.Enabled = false;
-                            break;
-                        case "15":
-                            label_time15.Visible = true;
-                            label_time15.Text = time[i].ToString().Substring(0, 5);
-                            button_seat15.BackColor = Color.FromArgb(255, 128, 0);
-                            button_seat15.Enabled = false;
-                            break;
-                        case "16":
-                            label_time16.Visible = true;
-                            label_time16.Text = time[i].ToString().Substring(0, 5);
-                            button_seat16.BackColor = Color.FromArgb(255, 128, 0);
-                            button_seat16.Enabled = false;
-                            break;
-                        case "17":
-                            label_time17.Visible = true;
-                            label_time17.Text = time[i].ToString().Substring(0, 5);
-                            button_seat17.BackColor = Color.FromArgb(255, 128, 0);
-                            button_seat17.Enabled = false;
-                            break;
-                        case "18":
-                            label_time18.Visible = true;
-                            label_time18.Text = time[i].ToString().Substring(0, 5);
-                            button_seat18.BackColor = Color.FromArgb(255, 128, 0);
-                            button_seat18.Enabled = false;
-                            break;
-                        case "19":
-                            label_time19.Visible = true;
-                            label_time19.Text = time[i].ToString().Substring(0, 5);
-                            button_seat19.BackColor = Color.FromArgb(255, 128, 0);
-                            button_seat19.Enabled = false;
-                            break;
-                        case "20":
-                            label_time20.Visible = true;
-                            label_time20.Text = time[i].ToString().Substring(0, 5);
-                            button_seat20.BackColor = Color.FromArgb(255, 128, 0);
-                            button_seat20.Enabled = false;
-                            break;
-                        case "21":
-                            label_time21.Visible = true;
-                            label_time21.Text = time[i].ToString().Substring(0, 5);
-                            button_seat21.BackColor = Color.FromArgb(255, 128, 0);
-                            button_seat21.Enabled = false;
-                            break;
-                        case "22":
-                            label_time22.Visible = true;
-                            label_time22.Text = time[i].ToString().Substring(0, 5);
-                            button_seat22.BackColor = Color.FromArgb(255, 128, 0);
-                            button_seat22.Enabled = false;
-                            break;
-                        case "23":
-                            label_time23.Visible = true;
-                            label_time23.Text = time[i].ToString().Substring(0, 5);
-                            button_seat23.BackColor = Color.FromArgb(255, 128, 0);
-                            button_seat23.Enabled = false;
-                            break;
-                        case "24":
-                            label_time24.Visible = true;
-                            label_time24.Text = time[i].ToString().Substring(0, 5);
-                            button_seat24.BackColor = Color.FromArgb(255, 128, 0);
-                            button_seat24.Enabled = false;
-                            break;
-
-                    }
-                    }
-                }
-            }
-        }
+        
         //자리 선택 시 수행될 메소드
         private void seat_Click(object sender, EventArgs e)
         {
@@ -393,8 +228,9 @@ namespace StudyRoomKiosk
                 }
             }
             //TBL_SEAT에 데이터 저장
-            sql.Query_Modify("UPDATE TBL_SEAT SET state = 1 where seatNo = " + TblMember.seatNo);
-        }
+
+            sql.Query_Modify("UPDATE TBL_SEAT SET status = 1 where seatNo = " + TblMember.seatNo);
+    }
 
         //결제하기 버튼 클릭시 결제 진행
         private void button_payment_Click(object sender, EventArgs e)
@@ -565,7 +401,182 @@ namespace StudyRoomKiosk
 
             
         }
+        //사용중인 자리 이벤트
+        private void label_time()
+        {
+            DateTime timeNow = DateTime.Now;
+            TimeSpan a = new TimeSpan(0, 0, 0);
+            for (int i = 0; i < count; i++)
+            {
+                if (timEnd[i] > timeNow)
+                {
+                    if (time[i] > a)
+                    {
+                        TimeSpan longTime = new TimeSpan(25, 0, 0);
+                        if (longTime< time[i])
+                        {
+                            label_time(i, 0, 7);
+                        }
+                        else
+                        {
+                            label_time(i,0,5);
+                        }
+                    }
+                }
+            }
+        }
+        //사용중인 자리 이벤트 버튼 라벨 표시
+        private void label_time(int i,int j,int k)
+        {
+            switch (seatNo[i])
+            {
+                case "1":
+                    label_time1.Visible = true;
+                    label_time1.Text = time[i].ToString().Substring(j, k);
+                    button_seat1.BackColor = Color.FromArgb(255, 128, 0);
+                    button_seat1.Enabled = false;
+                    break;
+                case "2":
+                    label_time2.Visible = true;
+                    label_time2.Text = time[i].ToString().Substring(j, k);
+                    button_seat2.BackColor = Color.FromArgb(255, 128, 0);
+                    button_seat2.Enabled = false;
+                    break;
+                case "3":
+                    label_time3.Visible = true;
+                    label_time3.Text = time[i].ToString().Substring(j, k);
+                    button_seat3.BackColor = Color.FromArgb(255, 128, 0);
+                    button_seat3.Enabled = false;
+                    break;
+                case "4":
+                    label_time4.Visible = true;
+                    label_time4.Text = time[i].ToString().Substring(j, k);
+                    button_seat4.BackColor = Color.FromArgb(255, 128, 0);
+                    button_seat4.Enabled = false;
+                    break;
+                case "5":
+                    label_time5.Visible = true;
+                    label_time5.Text = time[i].ToString().Substring(j, k);
+                    button_seat5.BackColor = Color.FromArgb(255, 128, 0);
+                    button_seat5.Enabled = false;
+                    break;
+                case "6":
+                    label_time6.Visible = true;
+                    label_time6.Text = time[i].ToString().Substring(j, k);
+                    button_seat6.BackColor = Color.FromArgb(255, 128, 0);
+                    button_seat6.Enabled = false;
+                    break;
+                case "7":
+                    label_time7.Visible = true;
+                    label_time7.Text = time[i].ToString().Substring(j, k);
+                    button_seat7.BackColor = Color.FromArgb(255, 128, 0);
+                    button_seat7.Enabled = false;
+                    break;
+                case "8":
+                    label_time8.Visible = true;
+                    label_time8.Text = time[i].ToString().Substring(j, k);
+                    button_seat8.BackColor = Color.FromArgb(255, 128, 0);
+                    button_seat8.Enabled = false;
+                    break;
+                case "9":
+                    label_time9.Visible = true;
+                    label_time9.Text = time[i].ToString().Substring(j, k);
+                    button_seat9.BackColor = Color.FromArgb(255, 128, 0);
+                    button_seat9.Enabled = false;
+                    break;
+                case "10":
+                    label_time10.Visible = true;
+                    label_time10.Text = time[i].ToString().Substring(j, k);
+                    button_seat10.BackColor = Color.FromArgb(255, 128, 0);
+                    button_seat10.Enabled = false;
+                    break;
+                case "11":
+                    label_time11.Visible = true;
+                    label_time11.Text = time[i].ToString().Substring(j, k);
+                    button_seat11.BackColor = Color.FromArgb(255, 128, 0);
+                    button_seat11.Enabled = false;
+                    break;
+                case "12":
+                    label_time12.Visible = true;
+                    label_time12.Text = time[i].ToString().Substring(j, k);
+                    button_seat12.BackColor = Color.FromArgb(255, 128, 0);
+                    button_seat12.Enabled = false;
+                    break;
+                case "13":
+                    label_time13.Visible = true;
+                    label_time13.Text = time[i].ToString().Substring(j, k);
+                    button_seat13.BackColor = Color.FromArgb(255, 128, 0);
+                    button_seat13.Enabled = false;
+                    break;
+                case "14":
+                    label_time14.Visible = true;
+                    label_time14.Text = time[i].ToString().Substring(j, k);
+                    button_seat14.BackColor = Color.FromArgb(255, 128, 0);
+                    button_seat14.Enabled = false;
+                    break;
+                case "15":
+                    label_time15.Visible = true;
+                    label_time15.Text = time[i].ToString().Substring(j, k);
+                    button_seat15.BackColor = Color.FromArgb(255, 128, 0);
+                    button_seat15.Enabled = false;
+                    break;
+                case "16":
+                    label_time16.Visible = true;
+                    label_time16.Text = time[i].ToString().Substring(j, k);
+                    button_seat16.BackColor = Color.FromArgb(255, 128, 0);
+                    button_seat16.Enabled = false;
+                    break;
+                case "17":
+                    label_time17.Visible = true;
+                    label_time17.Text = time[i].ToString().Substring(j, k);
+                    button_seat17.BackColor = Color.FromArgb(255, 128, 0);
+                    button_seat17.Enabled = false;
+                    break;
+                case "18":
+                    label_time18.Visible = true;
+                    label_time18.Text = time[i].ToString().Substring(j, k);
+                    button_seat18.BackColor = Color.FromArgb(255, 128, 0);
+                    button_seat18.Enabled = false;
+                    break;
+                case "19":
+                    label_time19.Visible = true;
+                    label_time19.Text = time[i].ToString().Substring(j, k);
+                    button_seat19.BackColor = Color.FromArgb(255, 128, 0);
+                    button_seat19.Enabled = false;
+                    break;
+                case "20":
+                    label_time20.Visible = true;
+                    label_time20.Text = time[i].ToString().Substring(j, k);
+                    button_seat20.BackColor = Color.FromArgb(255, 128, 0);
+                    button_seat20.Enabled = false;
+                    break;
+                case "21":
+                    label_time21.Visible = true;
+                    label_time21.Text = time[i].ToString().Substring(j, k);
+                    button_seat21.BackColor = Color.FromArgb(255, 128, 0);
+                    button_seat21.Enabled = false;
+                    break;
+                case "22":
+                    label_time22.Visible = true;
+                    label_time22.Text = time[i].ToString().Substring(j, k);
+                    button_seat22.BackColor = Color.FromArgb(255, 128, 0);
+                    button_seat22.Enabled = false;
+                    break;
+                case "23":
+                    label_time23.Visible = true;
+                    label_time23.Text = time[i].ToString().Substring(j, k);
+                    button_seat23.BackColor = Color.FromArgb(255, 128, 0);
+                    button_seat23.Enabled = false;
+                    break;
+                case "24":
+                    label_time24.Visible = true;
+                    label_time24.Text = time[i].ToString().Substring(j, k);
+                    button_seat24.BackColor = Color.FromArgb(255, 128, 0);
+                    button_seat24.Enabled = false;
+                    break;
 
+            }
+        }
         //1분 마다 발생 되는 이벤트
         private void timer_Tick(object sender, EventArgs e)
         {
