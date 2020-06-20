@@ -85,24 +85,58 @@ namespace StudyRoomKiosk
                 //퇴장하기
                 else if (Sql.pageType == 3)
                 {
+                    //이용 중인 자리
+                    try
+                    {
+                        String seatNo;
+                        seatNo = sql.Query_Select_DataSet("seatNo", " where phonenum = '" + phonenum + "'", "tbl_member").Tables[0].Rows[0][0].ToString();
+                                    
                     //비회원 퇴장
                     bool checkNoMember = sql.Query_Select_Bool("tbl_member", checkPhonenumStr + " and  memberbool = 0");
                     if (checkNoMember)
                     {
+                        sql.Query_Modify("update tbl_seat set status = 0 where seatNo = " + seatNo);
                         sql.Query_Modify("delete  from tbl_member where phoneNum = '" + phonenum + "' and memberBool = 0");
+                        
                         DialogResult result = MessageBox.Show("퇴실 처리 되었습니다.");
                         if ( result==DialogResult.OK) { //5초 지나면 넘어가게 해야함
-                            FormHome formHome = new FormHome();
-                            this.Visible = false;
-                            formHome.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-                            formHome.ShowDialog();
-                            Process.GetCurrentProcess().Kill();
+                           
                         }
                     }
 
                     //회원 퇴장
+                    bool checkMember = sql.Query_Select_Bool("tbl_member", checkPhonenumStr + " and  memberbool = 1");
+                    if (checkMember)
+                    {
+                        DialogResult checkOut = MessageBox.Show("장기 이용 자인 경우 사용 중인 시간이 사라지게 됩니다. 정말 퇴실하겠습니까?", "확인", MessageBoxButtons.YesNo);
+                        if (checkOut == DialogResult.Yes)
+                        {
+                            sql.Query_Modify("update tbl_member set expiredtime = null, seatNo = null where seatNo = " + seatNo);
+                            sql.Query_Modify("update tbl_seat set status = 0 where seatNo = " + seatNo);
 
-                 
+                            DialogResult result = MessageBox.Show("퇴실 처리 되었습니다.");
+                            if (result == DialogResult.OK)
+                            { //5초 지나면 넘어가게 해야함
+
+                            }
+                        }                      
+                    }
+
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("이용중인 사용자가 아닙니다. 번호를 다시한번 확인해주세요");
+                    }
+
+
+
+                    FormHome formHome = new FormHome();
+                    this.Visible = false;
+                    formHome.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+                    formHome.ShowDialog();
+                    Process.GetCurrentProcess().Kill();
+
+
                 }
                 //회원입장 비회원 입장
                 else
