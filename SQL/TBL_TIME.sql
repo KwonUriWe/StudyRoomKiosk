@@ -9,7 +9,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [dbo].[TBL_TIME](
-	[timeUse] [string] NOT NULL,
+	[timeUse] [varchar](10) NOT NULL,
 	[amount] [int] NOT NULL,
  CONSTRAINT [PK_TBL_TIME] PRIMARY KEY CLUSTERED 
 (

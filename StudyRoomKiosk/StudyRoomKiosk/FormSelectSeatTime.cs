@@ -15,6 +15,7 @@ namespace StudyRoomKiosk
     {
         Sql sql = new Sql();
         string selectTime = null;
+        string selectedSeat = null;
         String[] seatNo;
         TimeSpan[] time;
         DateTime[] timEnd;
@@ -162,8 +163,17 @@ namespace StudyRoomKiosk
                 {
                     longTimeRButton.Enabled = false;
                 }
+                groupBox_long.Click += unableClick;
             }
-            groupBox_long.Click += unableClick;
+            //자리이동일 경우
+            //시간 선택 그룹박스, 회원가입 버튼 숨김. 결제하기 문구를 변경하기로 변경. 현재 내 자리 표시
+            else if(Sql.pageType == 2){
+                groupBox_time.Visible = false;
+                button_goJoin.Visible = false;
+                button_payment.Text = "변경하기";
+
+                selectedSeat = sql.Query_Select_DataSet("seatNo", " where phoneNum = '" + TblMember.phoneNum + "'", "TBL_MEMBER").Tables[0].Rows[0]["seatNo"].ToString();
+            }
         }
 
         //비회원 입장 후 장기이용권 클릭 시 가입여부 팝업 이벤트
@@ -227,53 +237,89 @@ namespace StudyRoomKiosk
                     sql.Query_Modify("INSERT INTO TBL_MEMBER ( memberNo, phoneNum, seatNo, expiredTime, memberbool) VALUES (1,'" + TblMember.phoneNum + "', '" + TblMember.seatNo + "', " + EndTime() + ", 0)");
                 }
             }
+            if (Sql.pageType == 2)  //자리이동
+            {
+                sql.Query_Modify("UPDATE TBL_MEMBER SET seatNo = '" + TblMember.seatNo + "' where phoneNum = '" + TblMember.phoneNum + "'");
+                sql.Query_Modify("UPDATE TBL_SEAT SET status = 0 where seatNo = " + selectedSeat);
+            }
             //TBL_SEAT에 데이터 저장
-
             sql.Query_Modify("UPDATE TBL_SEAT SET status = 1 where seatNo = " + TblMember.seatNo);
     }
 
-        //결제하기 버튼 클릭시 결제 진행
+        //결제하기/변경하기 버튼 클릭시 버튼 내용에 맞게 진행
         private void button_payment_Click(object sender, EventArgs e)
         {
-            foreach (RadioButton radioButton in groupBox_long.Controls.OfType<RadioButton>())
+            //자리이동 버튼으로 진입. 변경하기라고 표시된 버튼 클릭
+            if (Sql.pageType == 2)
             {
-                if (radioButton.Checked)
+                if (TblMember.seatNo == null)
                 {
-                    selectTime = radioButton.Text;
-                }
-            }
-
-            foreach (RadioButton radioButton in groupBox_today.Controls.OfType<RadioButton>())
-            {
-                if (radioButton.Checked)
-                {
-                    selectTime = radioButton.Text;
-                }
-            }
-
-            if (TblMember.seatNo == null || selectTime == null)
-            {
-                MessageBox.Show("시간과 좌석 모두 선택해야 합니다.");
-            }
-            else
-            {
-                string str = "좌석 : " + TblMember.seatNo + "\n시간 : " + selectTime + "\n결제하시겠습니까?";
-                if (MessageBox.Show(str, "결제정보", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    //we_결제기능 추후 구현 필요
-                    MessageBox.Show("결제되었습니다.\n입장하십시오.");
-                    updateMember();
-
-                    FormMembersEnt form = new FormMembersEnt();
-                    this.Visible = false;
-                    form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-                    form.ShowDialog();
-                    Process.GetCurrentProcess().Kill();
+                    MessageBox.Show("좌석을 선택해야 합니다.");
                 }
                 else
                 {
-                    //MessageBox.Show("결제가 취소되었습니다.");
-                    MessageBox.Show(EndTime());
+                    string str = "기존 좌석번호 : " + selectedSeat + "\n변경 좌석번호 : " + TblMember.seatNo + "\n이동하시겠습니까?";
+                    if (MessageBox.Show(str, "결제정보", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        MessageBox.Show("이동되었습니다.\n재입장하십시오.");
+                        updateMember();
+
+                        FormHome form = new FormHome();
+                        this.Visible = false;
+                        form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+                        form.ShowDialog();
+                        Process.GetCurrentProcess().Kill();
+                    }
+                    else
+                    {
+                        //MessageBox.Show("자리이동이 취소되었습니다.");
+                        MessageBox.Show(EndTime());
+                    }
+                }
+            }
+            //입장하기 버튼으로 진입. 결제하기라고 표시된 버튼 클릭
+            else
+            {
+                foreach (RadioButton radioButton in groupBox_long.Controls.OfType<RadioButton>())
+                {
+                    if (radioButton.Checked)
+                    {
+                        selectTime = radioButton.Text;
+                    }
+                }
+
+                foreach (RadioButton radioButton in groupBox_today.Controls.OfType<RadioButton>())
+                {
+                    if (radioButton.Checked)
+                    {
+                        selectTime = radioButton.Text;
+                    }
+                }
+
+                if (TblMember.seatNo == null || selectTime == null)
+                {
+                    MessageBox.Show("시간과 좌석 모두 선택해야 합니다.");
+                }
+                else
+                {
+                    string str = "좌석 : " + TblMember.seatNo + "\n시간 : " + selectTime + "\n결제하시겠습니까?";
+                    if (MessageBox.Show(str, "결제정보", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        //we_결제기능 추후 구현 필요
+                        MessageBox.Show("결제되었습니다.\n입장하십시오.");
+                        updateMember();
+
+                        FormHome form = new FormHome();
+                        this.Visible = false;
+                        form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+                        form.ShowDialog();
+                        Process.GetCurrentProcess().Kill();
+                    }
+                    else
+                    {
+                        //MessageBox.Show("결제가 취소되었습니다.");
+                        MessageBox.Show(EndTime());
+                    }
                 }
             }
         }
@@ -281,7 +327,7 @@ namespace StudyRoomKiosk
         //처음으로 버튼 클릭시 해당 폼으로 이동
         private void button_goHome_Click(object sender, EventArgs e)
         {
-            FormMembersEnt form = new FormMembersEnt();
+            FormHome form = new FormHome();
             this.Visible = false;
             form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             form.ShowDialog();
@@ -297,6 +343,7 @@ namespace StudyRoomKiosk
             form.ShowDialog();
             Process.GetCurrentProcess().Kill();
         }
+
         //사용자가 폼을 이용하고 있을때 시간이 끝났을 경우 빈자리 상태로 만들어준다.
         private void Reset(int i)
         {
@@ -401,6 +448,7 @@ namespace StudyRoomKiosk
 
             
         }
+
         //사용중인 자리 이벤트
         private void label_time()
         {
@@ -425,6 +473,7 @@ namespace StudyRoomKiosk
                 }
             }
         }
+
         //사용중인 자리 이벤트 버튼 라벨 표시
         private void label_time(int i,int j,int k)
         {
@@ -433,150 +482,318 @@ namespace StudyRoomKiosk
                 case "1":
                     label_time1.Visible = true;
                     label_time1.Text = time[i].ToString().Substring(j, k);
-                    button_seat1.BackColor = Color.FromArgb(255, 128, 0);
+                    if (selectedSeat == "1")
+                    {
+                        button_seat1.BackColor = Color.FromArgb(0, 171, 3);
+                    }
+                    else
+                    {
+                        button_seat1.BackColor = Color.FromArgb(255, 128, 0);
+                    }
                     button_seat1.Enabled = false;
                     break;
                 case "2":
                     label_time2.Visible = true;
                     label_time2.Text = time[i].ToString().Substring(j, k);
-                    button_seat2.BackColor = Color.FromArgb(255, 128, 0);
-                    button_seat2.Enabled = false;
+                    if (selectedSeat == "2")
+                    {
+                        button_seat2.BackColor = Color.FromArgb(0, 171, 3);
+                    }
+                    else
+                    {
+                        button_seat2.BackColor = Color.FromArgb(255, 128, 0);
+                    }
                     break;
                 case "3":
                     label_time3.Visible = true;
                     label_time3.Text = time[i].ToString().Substring(j, k);
-                    button_seat3.BackColor = Color.FromArgb(255, 128, 0);
+                    if (selectedSeat == "3")
+                    {
+                        button_seat3.BackColor = Color.FromArgb(0, 171, 3);
+                    }
+                    else
+                    {
+                        button_seat3.BackColor = Color.FromArgb(255, 128, 0);
+                    }
                     button_seat3.Enabled = false;
                     break;
                 case "4":
                     label_time4.Visible = true;
                     label_time4.Text = time[i].ToString().Substring(j, k);
-                    button_seat4.BackColor = Color.FromArgb(255, 128, 0);
+                    if (selectedSeat == "4")
+                    {
+                        button_seat4.BackColor = Color.FromArgb(0, 171, 3);
+                    }
+                    else
+                    {
+                        button_seat4.BackColor = Color.FromArgb(255, 128, 0);
+                    }
                     button_seat4.Enabled = false;
                     break;
                 case "5":
                     label_time5.Visible = true;
                     label_time5.Text = time[i].ToString().Substring(j, k);
-                    button_seat5.BackColor = Color.FromArgb(255, 128, 0);
+                    if (selectedSeat == "5")
+                    {
+                        button_seat5.BackColor = Color.FromArgb(0, 171, 3);
+                    }
+                    else
+                    {
+                        button_seat5.BackColor = Color.FromArgb(255, 128, 0);
+                    }
                     button_seat5.Enabled = false;
                     break;
                 case "6":
                     label_time6.Visible = true;
                     label_time6.Text = time[i].ToString().Substring(j, k);
-                    button_seat6.BackColor = Color.FromArgb(255, 128, 0);
+                    if (selectedSeat == "6")
+                    {
+                        button_seat6.BackColor = Color.FromArgb(0, 171, 3);
+                    }
+                    else
+                    {
+                        button_seat6.BackColor = Color.FromArgb(255, 128, 0);
+                    }
                     button_seat6.Enabled = false;
                     break;
                 case "7":
                     label_time7.Visible = true;
                     label_time7.Text = time[i].ToString().Substring(j, k);
-                    button_seat7.BackColor = Color.FromArgb(255, 128, 0);
+                    if (selectedSeat == "7")
+                    {
+                        button_seat7.BackColor = Color.FromArgb(0, 171, 3);
+                    }
+                    else
+                    {
+                        button_seat7.BackColor = Color.FromArgb(255, 128, 0);
+                    }
                     button_seat7.Enabled = false;
                     break;
                 case "8":
                     label_time8.Visible = true;
                     label_time8.Text = time[i].ToString().Substring(j, k);
-                    button_seat8.BackColor = Color.FromArgb(255, 128, 0);
+                    if (selectedSeat == "8")
+                    {
+                        button_seat8.BackColor = Color.FromArgb(0, 171, 3);
+                    }
+                    else
+                    {
+                        button_seat8.BackColor = Color.FromArgb(255, 128, 0);
+                    }
                     button_seat8.Enabled = false;
                     break;
                 case "9":
                     label_time9.Visible = true;
                     label_time9.Text = time[i].ToString().Substring(j, k);
-                    button_seat9.BackColor = Color.FromArgb(255, 128, 0);
+                    if (selectedSeat == "9")
+                    {
+                        button_seat9.BackColor = Color.FromArgb(0, 171, 3);
+                    }
+                    else
+                    {
+                        button_seat9.BackColor = Color.FromArgb(255, 128, 0);
+                    }
                     button_seat9.Enabled = false;
                     break;
                 case "10":
                     label_time10.Visible = true;
                     label_time10.Text = time[i].ToString().Substring(j, k);
-                    button_seat10.BackColor = Color.FromArgb(255, 128, 0);
+                    if (selectedSeat == "10")
+                    {
+                        button_seat10.BackColor = Color.FromArgb(0, 171, 3);
+                    }
+                    else
+                    {
+                        button_seat10.BackColor = Color.FromArgb(255, 128, 0);
+                    }
                     button_seat10.Enabled = false;
                     break;
                 case "11":
                     label_time11.Visible = true;
                     label_time11.Text = time[i].ToString().Substring(j, k);
-                    button_seat11.BackColor = Color.FromArgb(255, 128, 0);
+                    if (selectedSeat == "11")
+                    {
+                        button_seat11.BackColor = Color.FromArgb(0, 171, 3);
+                    }
+                    else
+                    {
+                        button_seat11.BackColor = Color.FromArgb(255, 128, 0);
+                    }
                     button_seat11.Enabled = false;
                     break;
                 case "12":
                     label_time12.Visible = true;
                     label_time12.Text = time[i].ToString().Substring(j, k);
-                    button_seat12.BackColor = Color.FromArgb(255, 128, 0);
+                    if (selectedSeat == "12")
+                    {
+                        button_seat12.BackColor = Color.FromArgb(0, 171, 3);
+                    }
+                    else
+                    {
+                        button_seat12.BackColor = Color.FromArgb(255, 128, 0);
+                    }
                     button_seat12.Enabled = false;
                     break;
                 case "13":
                     label_time13.Visible = true;
                     label_time13.Text = time[i].ToString().Substring(j, k);
-                    button_seat13.BackColor = Color.FromArgb(255, 128, 0);
+                    if (selectedSeat == "13")
+                    {
+                        button_seat13.BackColor = Color.FromArgb(0, 171, 3);
+                    }
+                    else
+                    {
+                        button_seat13.BackColor = Color.FromArgb(255, 128, 0);
+                    }
                     button_seat13.Enabled = false;
                     break;
                 case "14":
                     label_time14.Visible = true;
                     label_time14.Text = time[i].ToString().Substring(j, k);
-                    button_seat14.BackColor = Color.FromArgb(255, 128, 0);
+                    if (selectedSeat == "14")
+                    {
+                        button_seat14.BackColor = Color.FromArgb(0, 171, 3);
+                    }
+                    else
+                    {
+                        button_seat14.BackColor = Color.FromArgb(255, 128, 0);
+                    }
                     button_seat14.Enabled = false;
                     break;
                 case "15":
                     label_time15.Visible = true;
                     label_time15.Text = time[i].ToString().Substring(j, k);
-                    button_seat15.BackColor = Color.FromArgb(255, 128, 0);
+                    if (selectedSeat == "15")
+                    {
+                        button_seat15.BackColor = Color.FromArgb(0, 171, 3);
+                    }
+                    else
+                    {
+                        button_seat15.BackColor = Color.FromArgb(255, 128, 0);
+                    }
                     button_seat15.Enabled = false;
                     break;
                 case "16":
                     label_time16.Visible = true;
                     label_time16.Text = time[i].ToString().Substring(j, k);
-                    button_seat16.BackColor = Color.FromArgb(255, 128, 0);
+                    if (selectedSeat == "16")
+                    {
+                        button_seat16.BackColor = Color.FromArgb(0, 171, 3);
+                    }
+                    else
+                    {
+                        button_seat16.BackColor = Color.FromArgb(255, 128, 0);
+                    }
                     button_seat16.Enabled = false;
                     break;
                 case "17":
                     label_time17.Visible = true;
                     label_time17.Text = time[i].ToString().Substring(j, k);
-                    button_seat17.BackColor = Color.FromArgb(255, 128, 0);
+                    if (selectedSeat == "17")
+                    {
+                        button_seat17.BackColor = Color.FromArgb(0, 171, 3);
+                    }
+                    else
+                    {
+                        button_seat17.BackColor = Color.FromArgb(255, 128, 0);
+                    }
                     button_seat17.Enabled = false;
                     break;
                 case "18":
                     label_time18.Visible = true;
                     label_time18.Text = time[i].ToString().Substring(j, k);
-                    button_seat18.BackColor = Color.FromArgb(255, 128, 0);
+                    if (selectedSeat == "18")
+                    {
+                        button_seat18.BackColor = Color.FromArgb(0, 171, 3);
+                    }
+                    else
+                    {
+                        button_seat18.BackColor = Color.FromArgb(255, 128, 0);
+                    }
                     button_seat18.Enabled = false;
                     break;
                 case "19":
                     label_time19.Visible = true;
                     label_time19.Text = time[i].ToString().Substring(j, k);
-                    button_seat19.BackColor = Color.FromArgb(255, 128, 0);
+                    if (selectedSeat == "19")
+                    {
+                        button_seat19.BackColor = Color.FromArgb(0, 171, 3);
+                    }
+                    else
+                    {
+                        button_seat19.BackColor = Color.FromArgb(255, 128, 0);
+                    }
                     button_seat19.Enabled = false;
                     break;
                 case "20":
                     label_time20.Visible = true;
                     label_time20.Text = time[i].ToString().Substring(j, k);
-                    button_seat20.BackColor = Color.FromArgb(255, 128, 0);
+                    if (selectedSeat == "20")
+                    {
+                        button_seat20.BackColor = Color.FromArgb(0, 171, 3);
+                    }
+                    else
+                    {
+                        button_seat20.BackColor = Color.FromArgb(255, 128, 0);
+                    }
                     button_seat20.Enabled = false;
                     break;
                 case "21":
                     label_time21.Visible = true;
                     label_time21.Text = time[i].ToString().Substring(j, k);
-                    button_seat21.BackColor = Color.FromArgb(255, 128, 0);
+                    if (selectedSeat == "21")
+                    {
+                        button_seat21.BackColor = Color.FromArgb(0, 171, 3);
+                    }
+                    else
+                    {
+                        button_seat21.BackColor = Color.FromArgb(255, 128, 0);
+                    }
                     button_seat21.Enabled = false;
                     break;
                 case "22":
                     label_time22.Visible = true;
                     label_time22.Text = time[i].ToString().Substring(j, k);
-                    button_seat22.BackColor = Color.FromArgb(255, 128, 0);
+                    if (selectedSeat == "22")
+                    {
+                        button_seat22.BackColor = Color.FromArgb(0, 171, 3);
+                    }
+                    else
+                    {
+                        button_seat22.BackColor = Color.FromArgb(255, 128, 0);
+                    }
                     button_seat22.Enabled = false;
                     break;
                 case "23":
                     label_time23.Visible = true;
                     label_time23.Text = time[i].ToString().Substring(j, k);
-                    button_seat23.BackColor = Color.FromArgb(255, 128, 0);
+                    if (selectedSeat == "23")
+                    {
+                        button_seat23.BackColor = Color.FromArgb(0, 171, 3);
+                    }
+                    else
+                    {
+                        button_seat23.BackColor = Color.FromArgb(255, 128, 0);
+                    }
                     button_seat23.Enabled = false;
                     break;
                 case "24":
                     label_time24.Visible = true;
                     label_time24.Text = time[i].ToString().Substring(j, k);
-                    button_seat24.BackColor = Color.FromArgb(255, 128, 0);
+                    if (selectedSeat == "24")
+                    {
+                        button_seat24.BackColor = Color.FromArgb(0, 171, 3);
+                    }
+                    else
+                    {
+                        button_seat24.BackColor = Color.FromArgb(255, 128, 0);
+                    }
                     button_seat24.Enabled = false;
                     break;
 
             }
         }
+
         //1분 마다 발생 되는 이벤트
         private void timer_Tick(object sender, EventArgs e)
         {

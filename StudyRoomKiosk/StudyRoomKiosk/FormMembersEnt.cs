@@ -65,6 +65,7 @@ namespace StudyRoomKiosk
                 //DB에 이용 중인 자리 있는지 없는지 확인
                 string checkSeatStr = "seatNo is not null and phoneNum = '" + phonenum + "'";
                 bool checkSeat = sql.Query_Select_Bool("tbl_member", checkSeatStr);
+
                 //자리이동 페이지
                 if (Sql.pageType == 2)
                 {
