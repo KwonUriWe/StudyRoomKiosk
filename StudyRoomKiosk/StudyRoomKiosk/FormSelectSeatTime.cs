@@ -210,7 +210,7 @@ namespace StudyRoomKiosk
                 return "DATEADD(dd, " + t + ", GETDATE())";
             }
             else
-            {
+            {//몇주
                 int tt = int.Parse(selectTime.Substring(0, 1)) * 7;
                 return "DATEADD(dd, " + tt + ", GETDATE())";
             }
@@ -222,7 +222,7 @@ namespace StudyRoomKiosk
             //TBL_MEMBER에 데이터 저장
             if (Sql.pageType == 0)   //회원 입장
             {
-                sql.Query_Modify("UPDATE TBL_MEMBER SET seatNo = '" + TblMember.seatNo + "', expiredTime = " + EndTime() + " where phoneNum = '" + TblMember.phoneNum + "'");
+                sql.Query_Modify("UPDATE TBL_MEMBER SET seatNo = '" + TblMember.seatNo + "', expiredTime = " + EndTime() + ", checkInDate = GETDATE() where phoneNum = '" + TblMember.phoneNum + "'");
             }
             if (Sql.pageType == 1)   //비회원 입장
             {

@@ -133,19 +133,6 @@ C:\Users\KB\Desktop\스터디카페 키오스크\StudyRoomKiosk_git\StudyRoomKio
 C:\Users\KB\Desktop\스터디카페 키오스크\StudyRoomKiosk_git\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.csproj.GenerateResource.cache
 C:\Users\KB\Desktop\스터디카페 키오스크\StudyRoomKiosk_git\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.exe
 C:\Users\KB\Desktop\스터디카페 키오스크\StudyRoomKiosk_git\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.pdb
-Z:\git_UJI\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\bin\Debug\StudyRoomKiosk.exe.config
-Z:\git_UJI\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\bin\Debug\StudyRoomKiosk.exe
-Z:\git_UJI\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\bin\Debug\StudyRoomKiosk.pdb
-Z:\git_UJI\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.csprojAssemblyReference.cache
-Z:\git_UJI\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.FormMembersJoin.resources
-Z:\git_UJI\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.FormHome.resources
-Z:\git_UJI\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.FormMembersEnt.resources
-Z:\git_UJI\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.Properties.Resources.resources
-Z:\git_UJI\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.FormSelectSeatTime.resources
-Z:\git_UJI\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.csproj.GenerateResource.cache
-Z:\git_UJI\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.csproj.CoreCompileInputs.cache
-Z:\git_UJI\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.exe
-Z:\git_UJI\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\obj\Debug\StudyRoomKiosk.pdb
 C:\Users\KB\Desktop\작업\포트폴리오\StudyRoomKiosk\StudyRoomKiosk\bin\Debug\StudyRoomKiosk.exe.config
 C:\Users\KB\Desktop\작업\포트폴리오\StudyRoomKiosk\StudyRoomKiosk\bin\Debug\StudyRoomKiosk.exe
 C:\Users\KB\Desktop\작업\포트폴리오\StudyRoomKiosk\StudyRoomKiosk\bin\Debug\StudyRoomKiosk.pdb

@@ -51,6 +51,7 @@
             this.comboBox_newsAgency = new System.Windows.Forms.ComboBox();
             this.comboBox_gender = new System.Windows.Forms.ComboBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox_getInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,10 +59,9 @@
             // 
             this.button_goHome.BackColor = System.Drawing.SystemColors.Control;
             this.button_goHome.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.button_goHome.Location = new System.Drawing.Point(495, 232);
-            this.button_goHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button_goHome.Location = new System.Drawing.Point(433, 186);
             this.button_goHome.Name = "button_goHome";
-            this.button_goHome.Size = new System.Drawing.Size(151, 52);
+            this.button_goHome.Size = new System.Drawing.Size(132, 42);
             this.button_goHome.TabIndex = 4;
             this.button_goHome.Text = "처음으로";
             this.button_goHome.UseVisualStyleBackColor = false;
@@ -70,40 +70,38 @@
             // textBox_name
             // 
             this.textBox_name.Font = new System.Drawing.Font("맑은 고딕", 20F);
-            this.textBox_name.Location = new System.Drawing.Point(7, 75);
-            this.textBox_name.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox_name.Location = new System.Drawing.Point(6, 60);
             this.textBox_name.MaxLength = 6;
             this.textBox_name.Name = "textBox_name";
-            this.textBox_name.Size = new System.Drawing.Size(443, 52);
+            this.textBox_name.Size = new System.Drawing.Size(388, 43);
             this.textBox_name.TabIndex = 1;
             // 
             // label_name
             // 
             this.label_name.AutoSize = true;
             this.label_name.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.label_name.Location = new System.Drawing.Point(7, 41);
+            this.label_name.Location = new System.Drawing.Point(6, 33);
             this.label_name.Name = "label_name";
-            this.label_name.Size = new System.Drawing.Size(44, 23);
+            this.label_name.Size = new System.Drawing.Size(37, 19);
             this.label_name.TabIndex = 3;
             this.label_name.Text = "이름";
             // 
             // textBox_dateBirth
             // 
             this.textBox_dateBirth.Font = new System.Drawing.Font("맑은 고딕", 20F);
-            this.textBox_dateBirth.Location = new System.Drawing.Point(6, 168);
-            this.textBox_dateBirth.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox_dateBirth.Location = new System.Drawing.Point(5, 134);
             this.textBox_dateBirth.MaxLength = 6;
             this.textBox_dateBirth.Name = "textBox_dateBirth";
-            this.textBox_dateBirth.Size = new System.Drawing.Size(443, 52);
+            this.textBox_dateBirth.Size = new System.Drawing.Size(388, 43);
             this.textBox_dateBirth.TabIndex = 2;
             // 
             // label_dateBirth
             // 
             this.label_dateBirth.AutoSize = true;
             this.label_dateBirth.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.label_dateBirth.Location = new System.Drawing.Point(6, 134);
+            this.label_dateBirth.Location = new System.Drawing.Point(5, 107);
             this.label_dateBirth.Name = "label_dateBirth";
-            this.label_dateBirth.Size = new System.Drawing.Size(78, 23);
+            this.label_dateBirth.Size = new System.Drawing.Size(65, 19);
             this.label_dateBirth.TabIndex = 3;
             this.label_dateBirth.Text = "생년월일";
             // 
@@ -111,9 +109,9 @@
             // 
             this.label_gender.AutoSize = true;
             this.label_gender.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.label_gender.Location = new System.Drawing.Point(6, 229);
+            this.label_gender.Location = new System.Drawing.Point(5, 183);
             this.label_gender.Name = "label_gender";
-            this.label_gender.Size = new System.Drawing.Size(44, 23);
+            this.label_gender.Size = new System.Drawing.Size(37, 19);
             this.label_gender.TabIndex = 3;
             this.label_gender.Text = "성별";
             // 
@@ -121,28 +119,27 @@
             // 
             this.label_newsAgency.AutoSize = true;
             this.label_newsAgency.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.label_newsAgency.Location = new System.Drawing.Point(7, 331);
+            this.label_newsAgency.Location = new System.Drawing.Point(6, 265);
             this.label_newsAgency.Name = "label_newsAgency";
-            this.label_newsAgency.Size = new System.Drawing.Size(61, 23);
+            this.label_newsAgency.Size = new System.Drawing.Size(51, 19);
             this.label_newsAgency.TabIndex = 3;
             this.label_newsAgency.Text = "통신사";
             // 
             // textBox_crt
             // 
             this.textBox_crt.Font = new System.Drawing.Font("맑은 고딕", 20F);
-            this.textBox_crt.Location = new System.Drawing.Point(8, 614);
-            this.textBox_crt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox_crt.Location = new System.Drawing.Point(7, 491);
             this.textBox_crt.Name = "textBox_crt";
-            this.textBox_crt.Size = new System.Drawing.Size(438, 52);
+            this.textBox_crt.Size = new System.Drawing.Size(384, 43);
             this.textBox_crt.TabIndex = 6;
             // 
             // label_phoneNum
             // 
             this.label_phoneNum.AutoSize = true;
             this.label_phoneNum.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.label_phoneNum.Location = new System.Drawing.Point(6, 424);
+            this.label_phoneNum.Location = new System.Drawing.Point(5, 339);
             this.label_phoneNum.Name = "label_phoneNum";
-            this.label_phoneNum.Size = new System.Drawing.Size(78, 23);
+            this.label_phoneNum.Size = new System.Drawing.Size(65, 19);
             this.label_phoneNum.TabIndex = 3;
             this.label_phoneNum.Text = "휴대전화";
             // 
@@ -150,10 +147,9 @@
             // 
             this.button_join.BackColor = System.Drawing.SystemColors.Control;
             this.button_join.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.button_join.Location = new System.Drawing.Point(6, 678);
-            this.button_join.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button_join.Location = new System.Drawing.Point(5, 542);
             this.button_join.Name = "button_join";
-            this.button_join.Size = new System.Drawing.Size(440, 62);
+            this.button_join.Size = new System.Drawing.Size(385, 50);
             this.button_join.TabIndex = 10;
             this.button_join.Text = "가입하기";
             this.button_join.UseVisualStyleBackColor = false;
@@ -161,6 +157,7 @@
             // 
             // groupBox_getInfo
             // 
+            this.groupBox_getInfo.Controls.Add(this.label3);
             this.groupBox_getInfo.Controls.Add(this.button_getCrt);
             this.groupBox_getInfo.Controls.Add(this.linkLabel);
             this.groupBox_getInfo.Controls.Add(this.label4);
@@ -181,11 +178,9 @@
             this.groupBox_getInfo.Controls.Add(this.label_name);
             this.groupBox_getInfo.Controls.Add(this.textBox_name);
             this.groupBox_getInfo.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.groupBox_getInfo.Location = new System.Drawing.Point(81, 292);
-            this.groupBox_getInfo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox_getInfo.Location = new System.Drawing.Point(71, 234);
             this.groupBox_getInfo.Name = "groupBox_getInfo";
-            this.groupBox_getInfo.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox_getInfo.Size = new System.Drawing.Size(457, 748);
+            this.groupBox_getInfo.Size = new System.Drawing.Size(400, 598);
             this.groupBox_getInfo.TabIndex = 3;
             this.groupBox_getInfo.TabStop = false;
             // 
@@ -194,10 +189,9 @@
             this.button_getCrt.BackColor = System.Drawing.SystemColors.Control;
             this.button_getCrt.Font = new System.Drawing.Font("맑은 고딕", 10F);
             this.button_getCrt.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button_getCrt.Location = new System.Drawing.Point(6, 542);
-            this.button_getCrt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button_getCrt.Location = new System.Drawing.Point(5, 434);
             this.button_getCrt.Name = "button_getCrt";
-            this.button_getCrt.Size = new System.Drawing.Size(439, 58);
+            this.button_getCrt.Size = new System.Drawing.Size(384, 46);
             this.button_getCrt.TabIndex = 11;
             this.button_getCrt.Text = "인증번호 받기";
             this.button_getCrt.UseVisualStyleBackColor = false;
@@ -207,9 +201,9 @@
             // 
             this.linkLabel.AutoSize = true;
             this.linkLabel.LinkVisited = true;
-            this.linkLabel.Location = new System.Drawing.Point(373, 512);
+            this.linkLabel.Location = new System.Drawing.Point(326, 410);
             this.linkLabel.Name = "linkLabel";
-            this.linkLabel.Size = new System.Drawing.Size(84, 23);
+            this.linkLabel.Size = new System.Drawing.Size(70, 19);
             this.linkLabel.TabIndex = 21;
             this.linkLabel.TabStop = true;
             this.linkLabel.Text = "다시 전송";
@@ -220,9 +214,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.label4.Location = new System.Drawing.Point(7, 510);
+            this.label4.Location = new System.Drawing.Point(6, 408);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 23);
+            this.label4.Size = new System.Drawing.Size(28, 19);
             this.label4.TabIndex = 22;
             this.label4.Text = "0:0";
             this.label4.Visible = false;
@@ -230,20 +224,19 @@
             // textBox_phoneNum3
             // 
             this.textBox_phoneNum3.Font = new System.Drawing.Font("맑은 고딕", 20F);
-            this.textBox_phoneNum3.Location = new System.Drawing.Point(311, 458);
-            this.textBox_phoneNum3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox_phoneNum3.Location = new System.Drawing.Point(272, 366);
             this.textBox_phoneNum3.MaxLength = 4;
             this.textBox_phoneNum3.Name = "textBox_phoneNum3";
-            this.textBox_phoneNum3.Size = new System.Drawing.Size(138, 52);
+            this.textBox_phoneNum3.Size = new System.Drawing.Size(121, 43);
             this.textBox_phoneNum3.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 19.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(273, 458);
+            this.label2.Location = new System.Drawing.Point(239, 366);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 45);
+            this.label2.Size = new System.Drawing.Size(28, 37);
             this.label2.TabIndex = 20;
             this.label2.Text = "-";
             // 
@@ -251,30 +244,28 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 19.75F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(88, 458);
+            this.label1.Location = new System.Drawing.Point(77, 366);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 45);
+            this.label1.Size = new System.Drawing.Size(28, 37);
             this.label1.TabIndex = 19;
             this.label1.Text = "-";
             // 
             // textBox_phoneNum2
             // 
             this.textBox_phoneNum2.Font = new System.Drawing.Font("맑은 고딕", 20F);
-            this.textBox_phoneNum2.Location = new System.Drawing.Point(126, 458);
-            this.textBox_phoneNum2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox_phoneNum2.Location = new System.Drawing.Point(110, 366);
             this.textBox_phoneNum2.MaxLength = 4;
             this.textBox_phoneNum2.Name = "textBox_phoneNum2";
-            this.textBox_phoneNum2.Size = new System.Drawing.Size(138, 52);
+            this.textBox_phoneNum2.Size = new System.Drawing.Size(121, 43);
             this.textBox_phoneNum2.TabIndex = 4;
             // 
             // textBox_phoneNum1
             // 
             this.textBox_phoneNum1.Font = new System.Drawing.Font("맑은 고딕", 20F);
-            this.textBox_phoneNum1.Location = new System.Drawing.Point(11, 458);
-            this.textBox_phoneNum1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox_phoneNum1.Location = new System.Drawing.Point(10, 366);
             this.textBox_phoneNum1.MaxLength = 3;
             this.textBox_phoneNum1.Name = "textBox_phoneNum1";
-            this.textBox_phoneNum1.Size = new System.Drawing.Size(69, 52);
+            this.textBox_phoneNum1.Size = new System.Drawing.Size(61, 43);
             this.textBox_phoneNum1.TabIndex = 3;
             // 
             // comboBox_newsAgency
@@ -287,10 +278,9 @@
             "KT",
             "LG",
             "알뜰폰"});
-            this.comboBox_newsAgency.Location = new System.Drawing.Point(6, 366);
-            this.comboBox_newsAgency.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox_newsAgency.Location = new System.Drawing.Point(5, 293);
             this.comboBox_newsAgency.Name = "comboBox_newsAgency";
-            this.comboBox_newsAgency.Size = new System.Drawing.Size(439, 53);
+            this.comboBox_newsAgency.Size = new System.Drawing.Size(385, 45);
             this.comboBox_newsAgency.TabIndex = 12;
             // 
             // comboBox_gender
@@ -301,10 +291,9 @@
             this.comboBox_gender.Items.AddRange(new object[] {
             "남자",
             "여자"});
-            this.comboBox_gender.Location = new System.Drawing.Point(6, 265);
-            this.comboBox_gender.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox_gender.Location = new System.Drawing.Point(5, 212);
             this.comboBox_gender.Name = "comboBox_gender";
-            this.comboBox_gender.Size = new System.Drawing.Size(439, 53);
+            this.comboBox_gender.Size = new System.Drawing.Size(385, 45);
             this.comboBox_gender.TabIndex = 11;
             // 
             // timer
@@ -313,15 +302,25 @@
             this.timer.Interval = 3000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            this.label3.ForeColor = System.Drawing.Color.IndianRed;
+            this.label3.Location = new System.Drawing.Point(76, 107);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(94, 13);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "주민번호 앞6자리";
+            // 
             // FormMembersJoin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(659, 1055);
+            this.ClientSize = new System.Drawing.Size(577, 844);
             this.Controls.Add(this.button_goHome);
             this.Controls.Add(this.groupBox_getInfo);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormMembersJoin";
             this.Text = "회원가입";
             this.groupBox_getInfo.ResumeLayout(false);
@@ -353,5 +352,6 @@
         private System.Windows.Forms.ComboBox comboBox_newsAgency;
         private System.Windows.Forms.ComboBox comboBox_gender;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -47,6 +47,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormImg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormImg.designer.cs">
+      <DependentUpon>FormImg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManager.designer.cs">
+      <DependentUpon>FormManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMember.designer.cs">
+      <DependentUpon>FormMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUseTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUseTicket.designer.cs">
+      <DependentUpon>FormUseTicket.cs</DependentUpon>
+    </Compile>
     <Compile Include="TblMember.cs" />
     <Compile Include="FormMembersJoin.cs">
       <SubType>Form</SubType>
@@ -109,6 +133,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="img\book-1822474_1280.jpg" />
+    <Content Include="img\boys-286245_1280.jpg" />
+    <Content Include="img\library-1400312_1280.jpg" />
+    <Content Include="img\open-book-1428428_640.jpg" />
+    <Content Include="img\science-1182713_1280.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

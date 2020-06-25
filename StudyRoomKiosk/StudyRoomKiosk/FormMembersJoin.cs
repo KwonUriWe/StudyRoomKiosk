@@ -67,20 +67,20 @@ namespace StudyRoomKiosk
                                 int maxNum = int.Parse(sql.Query_Select_DataSet("MAX(memberNo) as MAX", "", "TBL_MEMBER").Tables[0].Rows[0]["MAX"].ToString());
                                 maxNum += 1;
                                 sql.Query_Modify("INSERT INTO TBL_MEMBER ( memberNo,name,dateBirth,gender,newsAgency,phoneNum,memberbool) VALUES (" + maxNum + ",'" + textBox_name.Text + "','"
-                                + textBox_dateBirth.Text + "','" + comboBox_newsAgency.Text + "','" + comboBox_gender.Text + "','"
+                                + textBox_dateBirth.Text + "','" + comboBox_gender.Text + "','" + comboBox_newsAgency.Text + "','"
                                 + tel + "','" + true + "')");
                             }
                             else
                             {
                                 sql.Query_Modify("INSERT INTO TBL_MEMBER ( memberNo,name,dateBirth,gender,newsAgency,phoneNum,memberbool) VALUES (1,'" + textBox_name.Text + "','"
-                               + textBox_dateBirth.Text + "','" + comboBox_newsAgency.Text + "','" + comboBox_gender.Text + "','"
+                               + textBox_dateBirth.Text + "','" + comboBox_gender.Text + "','" + comboBox_newsAgency.Text + "','"
                                + tel + "','" + true + "')");
                             }
-                            //sql.Query_Select_DataSet("MAX(memberNo)", "");memberNo ,memberNo ,name,dateBirth,gender,phoneNum
-                            //회원 memberNo을 해야하는데 max를 구할때 원하는 값이 안나옴
-                            //방법 1 테이블을 따로 구분하여 만든다.
-                            //방법 2 ?
-
+                            FormHome form = new FormHome();
+                            this.Visible = false;
+                            form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+                            form.ShowDialog();
+                            Process.GetCurrentProcess().Kill();
                         }
                         else if (randomNum == 0)
                         {

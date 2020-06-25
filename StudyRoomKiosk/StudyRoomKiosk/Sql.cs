@@ -28,19 +28,19 @@ namespace StudyRoomKiosk
             conn = new SqlConnection(conn.ConnectionString);
             conn.Open();
         }
-        public DataGridView Query_Select()
+        public DataGridView DataGridView_Select(String str,String tableStr)
         {//dataGridView 띄우기
             ConnectDB();
             cmd.Connection = conn;
-            cmd.CommandText = "SELECT * FROM TBL_MEMBER";
+            cmd.CommandText = str;
             da = new SqlDataAdapter(cmd);
             ds = new DataSet();
-            da.Fill(ds, "TBL_MEMBER");
+            da.Fill(ds, tableStr);
             conn.Close();
             int count = ds.Tables[0].Rows.Count;
             if (count == 0)
             {
-                MessageBox.Show("없는 테이블 입니다.");
+               // MessageBox.Show("없는 테이블 입니다.");
                 dataGridView = null;
             }
             else
@@ -65,7 +65,7 @@ namespace StudyRoomKiosk
             int count = ds.Tables[0].Rows.Count;
             if (count == 0)
             {
-                MessageBox.Show("없는 테이블 입니다.");
+              //  MessageBox.Show("없는 테이블 입니다.");
                 return dataGridView = null;
             }
             else
@@ -127,7 +127,7 @@ namespace StudyRoomKiosk
             int count = ds.Tables[0].Rows.Count;
             if (count == 0)
             {
-                MessageBox.Show("없는 테이블 입니다.");
+               // MessageBox.Show("없는 테이블 입니다.");
                 return false;
             }
             else

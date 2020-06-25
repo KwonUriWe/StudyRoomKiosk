@@ -37,6 +37,8 @@
             this.button_nonMembersEnt = new System.Windows.Forms.Button();
             this.label_total = new System.Windows.Forms.Label();
             this.label_empty = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -140,12 +142,22 @@
             this.label_empty.TabIndex = 3;
             this.label_empty.Text = "남은 좌석 수 : ";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(560, 319);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(584, 962);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label_empty);
             this.Controls.Add(this.label_total);
             this.Controls.Add(this.button_nonMembersEnt);
@@ -158,6 +170,7 @@
             this.Font = new System.Drawing.Font("돋움", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Name = "FormHome";
             this.Text = "홈";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,5 +186,6 @@
         private System.Windows.Forms.Button button_nonMembersEnt;
         private System.Windows.Forms.Label label_total;
         private System.Windows.Forms.Label label_empty;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

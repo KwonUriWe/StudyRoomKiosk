@@ -61,7 +61,7 @@ namespace StudyRoomKiosk
                 //DB에 번호 있는지 없는지 확인
                 string checkPhonenumStr = "phonenum = '" + phonenum + "'";
                 bool phoneNumcheck = sql.Query_Select_Bool("tbl_member", checkPhonenumStr);
-
+                bool checkNoMember = sql.Query_Select_Bool("tbl_member", checkPhonenumStr + " and  memberbool = 0");
                 //DB에 이용 중인 자리 있는지 없는지 확인
                 string checkSeatStr = "seatNo is not null and phoneNum = '" + phonenum + "'";
                 bool checkSeat = sql.Query_Select_Bool("tbl_member", checkSeatStr);
@@ -93,7 +93,7 @@ namespace StudyRoomKiosk
                         seatNo = sql.Query_Select_DataSet("seatNo", " where phonenum = '" + phonenum + "'", "tbl_member").Tables[0].Rows[0][0].ToString();
                                     
                     //비회원 퇴장
-                    bool checkNoMember = sql.Query_Select_Bool("tbl_member", checkPhonenumStr + " and  memberbool = 0");
+                    
                     if (checkNoMember)
                     {
                         sql.Query_Modify("update tbl_seat set status = 0 where seatNo = " + seatNo);
@@ -191,7 +191,7 @@ namespace StudyRoomKiosk
                         else
                         {
                             //회원인데 비회원으로 입장하여 실패 시
-                            if (phoneNumcheck)
+                            if (phoneNumcheck&&!(checkNoMember))
                             {
                                 DialogResult result = MessageBox.Show("이미 가입된 번호 입니다. 회원 입장으로 이동하시겠습니까?", "이동알림창", MessageBoxButtons.YesNo);
                                 if (result == DialogResult.Yes)
@@ -201,7 +201,7 @@ namespace StudyRoomKiosk
                                 }
                             }
                             //비회원 입장
-                            else
+                            else if(!phoneNumcheck)
                             {
                                 FormSelectSeatTime form = new FormSelectSeatTime();
                                 this.Visible = false;
@@ -209,6 +209,17 @@ namespace StudyRoomKiosk
                                 form.ShowDialog();
                                 Process.GetCurrentProcess().Kill();
 
+                            }
+                            else
+                            {
+                                DataSet ds = sql.Query_Select_DataSet("*", " where " + checkSeatStr, "TBL_MEMBER");
+                                TblMember.seatNo = ds.Tables[0].Rows[0]["seatNo"].ToString();
+                                MessageBox.Show(TblMember.seatNo + "로입장하십시오.");
+                                FormHome formHome = new FormHome();
+                                this.Visible = false;
+                                formHome.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+                                formHome.ShowDialog();
+                                Process.GetCurrentProcess().Kill();
                             }
                         }
                     }

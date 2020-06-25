@@ -21,7 +21,12 @@ namespace StudyRoomKiosk
         {
             InitializeComponent();
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-
+            if (sql.Query_Select_Bool("TBL_IMG", " imgName  is Not null")){
+                String img = sql.Query_Select_DataSet("imgName", "TBL_IMG", " ").Tables[0].Rows[0]["imgName"].ToString(); 
+                //경로 자기 파일 위치에 따라 다르니 그때 그때 변경 바람
+                pictureBox1.Load(@"Z:\git_UJI\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\img\" + img);
+            }
+               
             if (sql.Query_Select_Bool("TBL_MEMBER", " seatNo is not null"))
             {
                 //사용중인 좌석 개수를 구한다.
@@ -105,6 +110,15 @@ namespace StudyRoomKiosk
         {
             Sql.pageType = 3;
             FormMembersEnt form = new FormMembersEnt();
+            this.Visible = false;
+            form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            form.ShowDialog();
+            Process.GetCurrentProcess().Kill();
+        }
+
+        private void button3_admin_Click(object sender, EventArgs e)
+        {
+            FormManager form = new FormManager();
             this.Visible = false;
             form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             form.ShowDialog();
