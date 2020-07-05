@@ -1,6 +1,8 @@
 # StudyRoomKiosk
 ## C# Windows Forms와 MsSQL을 이용한 독서실 무인 입장 키오스크
 
+### 개발 참여자 : 권우리   노진욱   유정인
+
 ### 화면설계 및 요구사항
    
 ![슬라이드2](https://user-images.githubusercontent.com/59382990/84610669-5e917400-aef6-11ea-8d7e-cf247fd706db.JPG)
