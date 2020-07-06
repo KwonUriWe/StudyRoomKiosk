@@ -116,7 +116,7 @@ namespace StudyRoomKiosk
             Process.GetCurrentProcess().Kill();
         }
 
-        private void button3_admin_Click(object sender, EventArgs e)
+        private void button3_admin_Click_1(object sender, EventArgs e)
         {
             FormManager form = new FormManager();
             this.Visible = false;
