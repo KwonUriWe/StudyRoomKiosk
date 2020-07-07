@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace StudyRoomKiosk
 {
@@ -17,11 +18,15 @@ namespace StudyRoomKiosk
         {
             
             InitializeComponent();
-            dataGridView1.DataSource = sql.DataGridView_Select("SELECT timeUse '시간',amount '가격' FROM TBL_TIME where status = 'false'", "TBL_TIME").DataSource;
-            dataGridView1.DataMember = "TBL_TIME";
+          
+                
+                    dataGridView1.DataSource = sql.DataGridView_Select("SELECT timeUse '시간',amount '가격' FROM TBL_TIME where status = 'false'", "TBL_TIME").DataSource;
+                    dataGridView1.DataMember = "TBL_TIME";
 
-            dataGridView2.DataSource = sql.DataGridView_Select("SELECT timeUse '시간',amount '가격' FROM TBL_TIME where status = 'true'", "TBL_TIME").DataSource;
-            dataGridView2.DataMember = "TBL_TIME";
+                    dataGridView2.DataSource = sql.DataGridView_Select("SELECT timeUse '시간',amount '가격' FROM TBL_TIME where status = 'true'", "TBL_TIME").DataSource;
+                    dataGridView2.DataMember = "TBL_TIME";
+                
+            
         }
 
         private void dataGridView1_CurrentCellChanged(object sender, EventArgs e)
@@ -82,7 +87,8 @@ namespace StudyRoomKiosk
             this.Visible = false;
             form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             form.ShowDialog();
-            //Process.GetCurrentProcess().Kill();
+            Process.GetCurrentProcess().Kill();
+
         }
     }
 }

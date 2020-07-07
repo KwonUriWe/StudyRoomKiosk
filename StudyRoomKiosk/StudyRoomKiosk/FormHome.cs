@@ -24,7 +24,7 @@ namespace StudyRoomKiosk
             if (sql.Query_Select_Bool("TBL_IMG", " imgName  is Not null")){
                 String img = sql.Query_Select_DataSet("imgName", "TBL_IMG", " ").Tables[0].Rows[0]["imgName"].ToString(); 
                 //경로 자기 파일 위치에 따라 다르니 그때 그때 변경 바람
-                pictureBox1.Load(@"Z:\git_UJI\StudyRoomKiosk\StudyRoomKiosk\StudyRoomKiosk\img\" + img);
+                pictureBox1.Load(ImgPath.imgPath() + img);
             }
                
             if (sql.Query_Select_Bool("TBL_MEMBER", " seatNo is not null"))

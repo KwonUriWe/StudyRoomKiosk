@@ -17,9 +17,20 @@ namespace StudyRoomKiosk
         {
 
             InitializeComponent();
-            dataGridView1.DataSource = sql.DataGridView_Select("SELECT memberNo '번호',name '이름',dateBirth '생일',gender '성별',phoneNum '번호',expiredTime '종료 시간',seatNo '사용 좌석 번호',checkInDate '최근 접속 날짜' FROM TBL_MEMBER where memberbool = 'true'", "TBL_MEMBER").DataSource;
-            //dataGridView1.DataSource = sql.DataGridView_Select("select* from TBL_MEMBER where checkInDate < DATEADD(yy, -1, GETDATE())", "TBL_MEMBER").DataSource;
-            dataGridView1.DataMember = "TBL_MEMBER";
+            if (sql.Query_Select_Bool("TBL_MEMBER", "memberBool = 'true'"))
+            {
+                dataGridView1.DataSource = sql.DataGridView_Select("SELECT memberNo '번호',name '이름',dateBirth '생일',gender '성별',phoneNum '번호',expiredTime '종료 시간',seatNo '사용 좌석 번호',checkInDate '최근 접속 날짜' FROM TBL_MEMBER where memberbool = 'true'", "TBL_MEMBER").DataSource;
+                //dataGridView1.DataSource = sql.DataGridView_Select("select* from TBL_MEMBER where checkInDate < DATEADD(yy, -1, GETDATE())", "TBL_MEMBER").DataSource;
+                dataGridView1.DataMember = "TBL_MEMBER";
+            }
+            else
+            {
+                MessageBox.Show("회원이 없습니다.");
+                FormManager form = new FormManager();
+                this.Visible = false;
+                form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+                form.ShowDialog();
+            }
 
         }
 

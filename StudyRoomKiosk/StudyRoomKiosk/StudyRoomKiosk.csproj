@@ -71,6 +71,7 @@
     <Compile Include="FormUseTicket.designer.cs">
       <DependentUpon>FormUseTicket.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImgPath.cs" />
     <Compile Include="TblMember.cs" />
     <Compile Include="FormMembersJoin.cs">
       <SubType>Form</SubType>
@@ -99,6 +100,12 @@
       <DependentUpon>FormSelectSeatTime.cs</DependentUpon>
     </Compile>
     <Compile Include="Sql.cs" />
+    <EmbeddedResource Include="FormImg.resx">
+      <DependentUpon>FormImg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManager.resx">
+      <DependentUpon>FormManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMembersJoin.resx">
       <DependentUpon>FormMembersJoin.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMembersEnt.resx">
       <DependentUpon>FormMembersEnt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUseTicket.resx">
+      <DependentUpon>FormUseTicket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

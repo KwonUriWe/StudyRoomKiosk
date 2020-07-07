@@ -45,5 +45,13 @@ namespace StudyRoomKiosk
             form.ShowDialog();
             //Process.GetCurrentProcess().Kill();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FormHome form = new FormHome();
+            this.Visible = false;
+            form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            form.ShowDialog();
+        }
     }
 }
