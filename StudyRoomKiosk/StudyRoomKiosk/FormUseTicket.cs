@@ -64,21 +64,24 @@ namespace StudyRoomKiosk
 
         private void button_update_Click(object sender, EventArgs e)
         {
-            if(sql.Query_Select_Bool("TBL_TIME", "timeUse= '" + textBox_timeUse.Text + "'"))
+            if (sql.Query_Select_Bool("TBL_TIME", "timeUse= '" + textBox_timeUse.Text + "'"))
             {
-                DialogResult result = MessageBox.Show("시간이 이미 존재 합니다. 가격만 수정 하시겠습니까?","수정", MessageBoxButtons.YesNo);
-                if(result == DialogResult.Yes)
+                DialogResult result = MessageBox.Show("시간이 이미 존재 합니다. 가격만 수정 하시겠습니까?", "수정", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
                 {
-                    sql.Query_Modify("UPDATE TBL_TIME SET  amount=" + textBox_amount.Text + " where timeUse ='" + label_timeUse.Text + "'");
+                    sql.Query_Modify("UPDATE TBL_TIME SET  amount= " + textBox_amount.Text +" where timeUse ='" + label_timeUse.Text + "'");
+                    MessageBox.Show("변경완료");
                 }
-               
+
             }
             else
             {
-                sql.Query_Modify("UPDATE TBL_TIME SET timeUse = '" + textBox_timeUse.Text + "', amount=" + textBox_amount.Text +" where timeUse = '"+label_timeUse.Text+"'");
+                sql.Query_Modify("UPDATE TBL_TIME SET timeUse = '" + textBox_timeUse.Text + "', amount=" + textBox_amount.Text + " where timeUse = '" + label_timeUse.Text + "'");
+                MessageBox.Show("변경완료");
             }
             dataGridView1.DataSource = sql.DataGridView_Select("SELECT timeUse '시간',amount '가격' FROM TBL_TIME where status = 'false'", "TBL_TIME").DataSource;
             dataGridView2.DataSource = sql.DataGridView_Select("SELECT timeUse '시간',amount '가격' FROM TBL_TIME where status = 'true'", "TBL_TIME").DataSource;
+           
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -88,7 +91,6 @@ namespace StudyRoomKiosk
             form.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             form.ShowDialog();
             Process.GetCurrentProcess().Kill();
-
         }
     }
 }
