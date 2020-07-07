@@ -36,5 +36,5 @@ GO
 
   --장기 구분을 위해 추가
   ALTER TABLE [StudyRoomKiosk].[dbo].[TBL_TIME] ADD status bit ;
-  UPDATE [StudyRoomKiosk].[dbo].[TBL_TIME] SET [statuse] = 'true' where timeUse like '%일' or timeUse like '%주'  ;
-  UPDATE [StudyRoomKiosk].[dbo].[TBL_TIME] SET [statuse] = 'false' where timeUse like '%시간';
+  UPDATE [StudyRoomKiosk].[dbo].[TBL_TIME] SET [status] = 'true' where timeUse like '%일' or timeUse like '%주'  ;
+  UPDATE [StudyRoomKiosk].[dbo].[TBL_TIME] SET [status] = 'false' where timeUse like '%시간';
