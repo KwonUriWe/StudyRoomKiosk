@@ -85,6 +85,7 @@
             this.button3_admin.TabIndex = 0;
             this.button3_admin.Text = "관리자메뉴";
             this.button3_admin.UseVisualStyleBackColor = false;
+            this.button3_admin.Click += new System.EventHandler(this.button3_admin_Click);
             // 
             // button_membersJoin
             // 
