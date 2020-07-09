@@ -19,8 +19,7 @@ CREATE TABLE [dbo].[TBL_TIME](
 
 GO
 
---시간 추가
-  INSERT INTO [StudyRoomKiosk].[dbo].[TBL_TIME] VALUES
+  INSERT INTO [StudyRoomKiosk].[dbo].[TBL_TIME] ([timeUse],[amount])VALUES 
 		('2시간', 3000),
 		('3시간', 4000),
 		('5시간', 6000),
